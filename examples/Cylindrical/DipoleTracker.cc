@@ -95,14 +95,15 @@ std::cout << "TDJ - client side - File " << __FILE__ << " line " << __LINE__ << 
     PAC::Position& p = bunch[ip].getPosition();
     tmp = p;
 #include "verboseBlock.h"
-    s_algorithm.passEntry(m_edata, p);
+    s_algorithm.passEntry(ip, m_edata, p, 0., 0.);
     s_algorithm.makeVelocity(p, tmp, v0byc);
     s_algorithm.makeRV(p, tmp, e0, p0, m0);
 std::cout << "File " << __FILE__ << " line " << __LINE__ << " about to  s_algorithm.passBend(m_data, m_edata, p, tmp, v0byc);\n";
     s_algorithm.passBend(m_data, m_edata, p, tmp, v0byc, cba);
 //                      [      original interface      ] [central orbit ]
 std::cout << "File " << __FILE__ << " line " << __LINE__ << " back from s_algorithm.passBend(m_data, m_edata, p, tmp, v0byc, e0, p0, m0);\n";
-    s_algorithm.passExit(m_edata, p);
+    s_algorithm.passExit(ip, m_edata, p, 0., 0.);
+//  s_algorithm.passExit(m_edata, p);
     // testAperture(p);
   }
 

@@ -25,7 +25,7 @@ LIBS += -L$(UAL_SXF)/lib/$(UAL_ARCH) 		-lUalSXF2
 LIBS += -L$(UAL_ACCSIM)/lib/$(UAL_ARCH) 	-lAccsim
 LIBS += -L$(UAL_TEAPOT)/lib/$(UAL_ARCH) 	-lTeapot
 LIBS += -L$(UAL_ETEAPOT)/lib/$(UAL_ARCH) 	-lETeapot
-LIBS += -L$(UAL_PAC)/lib/$(UAL_ARCH)  		-lPacSMF -lPacOptics -lPac
+LIBS += -L$(UAL_PAC)/lib/$(UAL_ARCH)  		-lPacSMF -lPacOptics -lPac -lPacSurvey
 LIBS += -L$(UAL_ZLIB)/lib/$(UAL_ARCH) 		-lZTps
 LIBS += -L$(UAL)/codes/UAL/lib/$(UAL_ARCH) 	-lUal
 LIBS += -L$(SXF)/lib/$(UAL_ARCH) 		-lSXF
@@ -35,24 +35,16 @@ LIBS += 					-lm
 SRC_DIR  = .
 OBJ_DIR  = ./lib/$(UAL_ARCH)/obj
 
-OBJS = $(OBJ_DIR)/positionPrinter.o \
-	$(OBJ_DIR)/xmgracePrint.o \
-	$(OBJ_DIR)/DipoleTracker.o
-
 compile : $(OBJS) ./tracker
 
 clean :
-	rm -f $(OBJS) $(OBJ_DIR)/tracker.o ./tracker
+	rm -f $(OBJS) ./tracker $(OBJ_DIR)/*.o
 
-./tracker  : $(OBJ_DIR)/tracker.o $(OBJS)
-	$(LD) -o $@  $(LDFLAGS) $(INC) $(OBJ_DIR)/tracker.o $(OBJS) $(LIBS)
-
-./sxfUtility: $(OBJ_DIR)/sxfUtility.o
-	$(LD) -o $@  $(LDFLAGS) $(INC) $(OBJ_DIR)/sxfUtility.o $(LIBS)
+./tracker  : $(OBJ_DIR)/tracker.o $(OBJ_DIR)/xmgracePrint.o $(OBJ_DIR)/DipoleTracker.o $(OBJ_DIR)/positionPrinter.o
+	$(LD) -o $@  $(LDFLAGS) $(INC) $(OBJ_DIR)/tracker.o $(LIBS) $(OBJ_DIR)/xmgracePrint.o $(OBJ_DIR)/DipoleTracker.o $(OBJ_DIR)/positionPrinter.o
 
 $(OBJ_DIR)/%.o : $(SRC_DIR)/%.cc
 	$(CC) $(CCFLAGS) $(INC) -c $< -o $@
 
 $(OBJ_DIR)/%.o : $(SRC_DIR)/%.cpp
 	$(CC) $(CCFLAGS) $(INC) -c $< -o $@
-

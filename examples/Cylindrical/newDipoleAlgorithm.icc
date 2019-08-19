@@ -29,7 +29,7 @@ double R0=data.m_l/data.m_angle;
 
    handleSplitBendBoundary(p,cba,data.m_l/data.m_angle);       //  should be markSplitBendBoundary?
 
-   makeVelocity(p, tmp, v0byc);	         // common
+   this->makeVelocity(p, tmp, v0byc);	         // common
 
    traverseSplitBendExactly(data.m_slices[1], p, tmp, v0byc, cba,data.m_l/data.m_angle,data.m_angle/2);
 
@@ -41,6 +41,7 @@ exit(1);
 
  // Complex Element
 
+/*
  double rIr = 1./data.m_ir;
  double rkicks = 0.25*rIr;
 
@@ -51,12 +52,13 @@ exit(1);
      passBendSlice(data.m_slices[counter], p, tmp, v0byc);
      applyMltKick(edata, rkicks, p);
      applyThinBendKick(data, edata, rkicks, p, v0byc);
-     makeVelocity(p, tmp, v0byc);	
+     this->makeVelocity(p, tmp, v0byc);	
    }
    counter++;
    passBendSlice(data.m_slices[counter], p, tmp, v0byc);
-   makeVelocity(p, tmp, v0byc);
+   this->makeVelocity(p, tmp, v0byc);
  }
+*/
 
  return;
 }
