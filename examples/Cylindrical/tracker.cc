@@ -31,9 +31,9 @@ using namespace UAL;
 
 int main(int argc,char * argv[]){
  if(argc!=2){
-  std::cout << "usage: ./tracker ./data/pre-E_pEDm.sxf (> ! myOut)\n";
+  std::cout << "usage: ./tracker ./data/E_FirstTest.sxf (>! myOut)\n";
   std::cout << "argv[0] is this executable: ./tracker\n";
-  std::cout << "argv[1] is the input sxf file - ./data/pre-E_pEDm.sxf\n";
+  std::cout << "argv[1] is the input sxf file - ./data/E_FirstTest.sxf\n";
   exit(0);
  }
 
