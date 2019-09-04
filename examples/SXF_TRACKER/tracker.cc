@@ -111,9 +111,8 @@ int main(int argc,char * argv[]){
   std::cout << " calculate suml" << std::endl;
   shell.analysis(UAL::Args());
 
-  // ************************************************************************
+/*
   std::cout << "\nAlgorithm Part. " << std::endl;
-  // ************************************************************************
 
   std::string apdfFile = argv[1];
 
@@ -131,9 +130,7 @@ int main(int argc,char * argv[]){
   std::cout << "\n SXF_TRACKER tracker, ";
   std::cout << "size : " << ap->getRootNode().size() << " propagators " << endl;
 
-  // ************************************************************************
   std::cout << "\nBunch Part." << std::endl;
-  // ************************************************************************
 
   ba.setG(0.0011659230);             // adds muon G factor
 
@@ -151,9 +148,7 @@ int main(int argc,char * argv[]){
     bunch[ip].setSpin(spin);
   }
 
- // ************************************************************************
   std::cout << "\nTracking. " << std::endl;
-  // ************************************************************************
 
   double t; // time variable
 
@@ -184,6 +179,7 @@ int main(int argc,char * argv[]){
   std::cout << "time  = " << t << " ms" << endl;
 
   pP.close();
+*/
 
   return 1;
 }

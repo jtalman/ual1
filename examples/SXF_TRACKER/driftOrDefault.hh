@@ -34,6 +34,8 @@ namespace SXF_TRACKER {
     /** Destructor */
     ~driftOrDefault();
 
+    const char* getType(){return "JDT_SXF_DriftOrDefault";}
+
     /** Returns false */
     bool isSequence() { return false; }
 

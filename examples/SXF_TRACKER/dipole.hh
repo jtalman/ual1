@@ -39,6 +39,8 @@ namespace SXF_TRACKER {
     /** Destructor */
     ~dipole();
 
+    const char* getType(){return "JDT_SXF_Dipole";}
+
     /** Returns false */
     bool isSequence() { return false; }
 
@@ -123,7 +125,6 @@ UAL::AcceleratorNode& getBackAcceleratorNode()
 
     dipoleRegister();
   };
-
 
 }
 
