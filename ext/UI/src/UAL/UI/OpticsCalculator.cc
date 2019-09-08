@@ -182,7 +182,6 @@ void UAL::OpticsCalculator::calculateMaps(const std::vector<int>& elems,
   }
 
   map.mltOrder(mltOrder);
-
 }
 
 void UAL::OpticsCalculator::calculateOrbit(const std::vector<int>& elems,
@@ -330,7 +329,6 @@ void UAL::OpticsCalculator::chromfit(double chromx, double chromy,
 void UAL::OpticsCalculator::selectElementsByNames(const std::string& names, 
 						  std::vector<int>& elemVector)
 {
-
   if(!m_teapot) return;
 
   std::list<int> elemList;
@@ -367,6 +365,7 @@ void UAL::OpticsCalculator::selectElementsByNames(const std::string& names,
 void UAL::OpticsCalculator::writeTeapotTwissToFile(const std::string& accName,
     const std::string& fileName, const std::string& elemNames)
 {
+std::cout << "File " << __FILE__ << " line " << __LINE__ << " enter void void UAL::OpticsCalculator::writeTeapotTwissToFile\n";
 
   PacLattices::iterator latIterator = PacLattices::instance()->find(accName);
   if(latIterator == PacLattices::instance()->end()){
@@ -402,40 +401,55 @@ void UAL::OpticsCalculator::writeTeapotTwissToFile(const std::string& accName,
   columns[8]  = "alfay";
   columns[9]  = "qy";
   columns[10] = "dy";
-
   char endLine = '\0';
 
   double twopi = 2.0*UAL::pi;
-
 
   out << "------------------------------------------------------------";
   out << "------------------------------------------------------------" << std::endl; 
 
   char line[200];
   sprintf(line, "%-5s %-10s   %-15s %-10s %-10s %-10s %-10s %-10s %-10s %-10s %-10s%c", 
-	columns[0].c_str(),  columns[1].c_str(), columns[2].c_str(), columns[3].c_str(),  
+	columns[0].c_str(),
+        columns[1].c_str(),
+        columns[2].c_str(),
+        columns[3].c_str(),  
 	columns[4].c_str(),
-	columns[5].c_str(), columns[6].c_str(), columns[7].c_str(), columns[8].c_str(),  
-	columns[9].c_str(), columns[10].c_str(), endLine);
+	columns[5].c_str(),
+        columns[6].c_str(),
+        columns[7].c_str(),
+        columns[8].c_str(),  
+	columns[9].c_str(),
+        columns[10].c_str(),
+        endLine);
   out << line << std::endl;
 
   out << "------------------------------------------------------------";
   out << "------------------------------------------------------------" << std::endl; 
 
+  std::string myName = "-";
   for(int i=0; i < lattice.size(); i++){
-
     PacLattElement& el = lattice[i];
-
+    myName = el.getDesignName().c_str();
+    if( el.getDesignName().length()==0 ) myName="-";
     sprintf(line, "%5d %-10s %15.7e %10.3e %10.3e %10.3e %10.3e %10.3e %10.3e %10.3e %10.3e%c", 
-	    i, el.getDesignName().c_str(), positions[i], 
-	    twiss[i].beta(0), twiss[i].alpha(0), 
-	    twiss[i].mu(0)/twopi, twiss[i].d(0),
-	    twiss[i].beta(1), twiss[i].alpha(1), 
-	    twiss[i].mu(1)/twopi, twiss[i].d(1), endLine);
+	    i,
+            myName.c_str(),
+            positions[i], 
+	    twiss[i].beta(0),
+            twiss[i].alpha(0), 
+	    twiss[i].mu(0)/twopi,
+            twiss[i].d(0),
+	    twiss[i].beta(1),
+            twiss[i].alpha(1), 
+	    twiss[i].mu(1)/twopi,
+            twiss[i].d(1),
+            endLine);
     out << line << std::endl;
   }
 
   out.close();
+std::cout << "File " << __FILE__ << " line " << __LINE__ << " leave void void UAL::OpticsCalculator::writeTeapotTwissToFile\n";
 }
 
 void UAL::OpticsCalculator::writeTeapotTwissToFile(const std::string& accName,
