@@ -55,7 +55,7 @@ void TeapotElement::erase()
 void TeapotElement::initialize()
 {
   _l  = 0.0;
-  _ir = 1;   //   0;            //   JDT 9/16/2019
+  _ir = 0;
 
   int bendKey = 0;
   double tilt = 0.0, angle = 0.0, e1 = 0.0, e2 = 0.0;
