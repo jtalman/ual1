@@ -33,7 +33,20 @@
 using namespace UAL;
 
 int main(int argc,char * argv[]){
-#include "include/getArgs"
+ if(argc!=8){
+  std::cout << "usage: this is intended to be run upstairs\n";
+  std::cout << "       ./getOrbitWithShell/getOrbitWithShell dummy 646617.830 -1.2 0 1 0.02 10 > ./working.orbit\n";
+  std::cout << "argv[0] is this executable          - ./getOrbitWithShell/getOrbitWithShell\n";
+  std::cout << "argv[1] is a dummy sxf file         - dummy                                \n";
+  std::cout << "argv[2] is the design frequency, fD - 646617.830 -                         \n";
+  std::cout << "argv[3] is the nominal electrode m  - -1.2                                 \n";
+  std::cout << "argv[4] is the initialSpin file creation type - 0                          \n";
+  std::cout << "argv[5] is the number of turns - 1                                         \n";
+  std::cout << "argv[6] is the fringe field length - 0.02                                  \n";
+  std::cout << "argv[7] is the ""decimation factor"" - 10                                  \n";
+  exit(0);
+}
+
 #include "include/setStatic"
 #include "userManifest/designBeamValues.hh"
 #include "userManifest/extractParameters.h"

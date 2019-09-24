@@ -22,17 +22,17 @@ LIBS   += -L$(UAL)/codes/UAL/lib/$(UAL_ARCH)  -lUal
 
 #LIBS   += -lm
 
-compile: $(UAL)/codes/TEAPOT/lib/linux/libTeapot.so ./getMapWithOpticsCalculator
+compile: ./getMapWithOpticsCalculator
 
 clean:
 	rm ./getMapWithOpticsCalculator.o ./getMapWithOpticsCalculator
 	rm $(UAL)/codes/TEAPOT/lib/linux/libTeapot.so
 
+./getMapWithOpticsCalculator: ./getMapWithOpticsCalculator.o $(UAL)/codes/TEAPOT/lib/linux/libTeapot.so
+	$(CC) -o $@  $(INC) ./getMapWithOpticsCalculator.o $(LIBS)
+
 ./getMapWithOpticsCalculator.o: ./getMapWithOpticsCalculator.cc
 	$(CC)  $(CCFLAGS) $(INC) -c $< -o $@ -I$(UAL)/codes/ZLIB/src
-
-./getMapWithOpticsCalculator: ./getMapWithOpticsCalculator.o
-	$(CC) -o $@  $(INC) ./getMapWithOpticsCalculator.o $(LIBS)
 
 $(UAL)/codes/TEAPOT/lib/linux/libTeapot.so:
 	\cp -f ./TeapotElement.cc $(UAL)/codes/TEAPOT/src/Integrator

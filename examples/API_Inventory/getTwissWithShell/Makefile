@@ -22,7 +22,7 @@ LIBS   += -L$(UAL)/codes/UAL/lib/$(UAL_ARCH)  -lUal
 
 #LIBS   += -lm
 
-compile: $(OBJS) ./getTwissWithShell
+compile: ./getTwissWithShell
 
 clean:
 	rm ./getTwissWithShell.o ./getTwissWithShell
