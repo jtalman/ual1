@@ -26,7 +26,7 @@ void setLatticeElements(const UAL::AcceleratorNode& sequence,
                                                int is1,
                                                const UAL::AttributeSet& attSet)
 {
-std::cout << "TDJ - server side - File " << __FILE__ << " line " << __LINE__ << " enter method void ETEAPOT2::bend::setLatticeElements(const UAL::AcceleratorNode& sequence,int is0,int is1,const UAL::AttributeSet& attSet)\n"; 
+//std::cout << "TDJ - server side - File " << __FILE__ << " line " << __LINE__ << " enter method void ETEAPOT2::bend::setLatticeElements(const UAL::AcceleratorNode& sequence,int is0,int is1,const UAL::AttributeSet& attSet)\n"; 
 
   if(is0 < sequence.getNodeCount()) m_frontNode = 
                                      *((PacLattElement*) sequence.getNodeAt(is0));
@@ -50,8 +50,8 @@ std::cout << "TDJ - server side - File " << __FILE__ << " line " << __LINE__ << 
 
 void setLatticeElement(const PacLattElement& e)
 {
-std::cout << "TDJ - server side - File " << __FILE__ << " line " << __LINE__ << " enter method void ETEAPOT2::bend::setLatticeElement(const PacLattElement& e)\n";
-std::cout << "e.getName() " << e.getName() << " e.getPosition() " << e.getPosition() << "\n";
+//std::cout << "TDJ - server side - File " << __FILE__ << " line " << __LINE__ << " enter method void ETEAPOT2::bend::setLatticeElement(const PacLattElement& e)\n";
+//std::cout << "e.getName() " << e.getName() << " e.getPosition() " << e.getPosition() << "\n";
   m_data.m_m=ETEAPOT2::bend::m_m;
   m_data.setLatticeElement(e);
   m_edata.setLatticeElement(e);
