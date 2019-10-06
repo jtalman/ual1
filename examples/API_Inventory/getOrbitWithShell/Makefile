@@ -46,12 +46,12 @@ clean:
 	rm -f ../working.orbit
 	rm -f $(OBJ_DIR)/getOrbitWithShell.o ./getOrbitWithShell
 	rm -rf m_m echo.sxf NikolayOut* out/*
-	rm $(UAL)/codes/ETEAPOT2/lib/linux/libETeapot2.so
+	rm -f $(UAL)/codes/ETEAPOT2/lib/linux/libETeapot2.so
 
-./getOrbitWithShell: $(OBJ_DIR)/getOrbitWithShell.o $(UAL)/codes/ETEAPOT2/lib/linux/libETeapot2.so
+./getOrbitWithShell: $(UAL)/codes/ETEAPOT2/lib/linux/libETeapot2.so $(OBJ_DIR)/getOrbitWithShell.o
 	$(LD) -o $@  $(LDFLAGS) $(INC) $(OBJ_DIR)/getOrbitWithShell.o $(OBJS) $(LIBS)
 
-$(OBJ_DIR)/%.o : $(SRC_DIR)/%.cc
+$(OBJ_DIR)/getOrbitWithShell.o : $(SRC_DIR)/getOrbitWithShell.cc
 	$(CC) $(CCFLAGS) $(INC) -c $< -o $@
 
 $(UAL)/codes/ETEAPOT2/lib/linux/libETeapot2.so:
