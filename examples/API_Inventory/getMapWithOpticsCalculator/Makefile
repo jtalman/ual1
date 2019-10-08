@@ -25,10 +25,10 @@ LIBS   += -L$(UAL)/codes/UAL/lib/$(UAL_ARCH)  -lUal
 compile: ./getMapWithOpticsCalculator
 
 clean:
-	rm ./getMapWithOpticsCalculator.o ./getMapWithOpticsCalculator
-	rm $(UAL)/codes/TEAPOT/lib/linux/libTeapot.so
+	rm -f ./getMapWithOpticsCalculator.o ./getMapWithOpticsCalculator
+	rm -f $(UAL)/codes/TEAPOT/lib/linux/libTeapot.so
 
-./getMapWithOpticsCalculator: ./getMapWithOpticsCalculator.o $(UAL)/codes/TEAPOT/lib/linux/libTeapot.so
+./getMapWithOpticsCalculator: $(UAL)/codes/TEAPOT/lib/linux/libTeapot.so ./getMapWithOpticsCalculator.o
 	$(CC) -o $@  $(INC) ./getMapWithOpticsCalculator.o $(LIBS)
 
 ./getMapWithOpticsCalculator.o: ./getMapWithOpticsCalculator.cc

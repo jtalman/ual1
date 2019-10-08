@@ -25,7 +25,7 @@ LIBS   += -L$(UAL)/codes/UAL/lib/$(UAL_ARCH)  -lUal
 compile: ./getTwissWithShell
 
 clean:
-	rm ./getTwissWithShell.o ./getTwissWithShell
+	rm -f ./getTwissWithShell.o ./getTwissWithShell
 
 ./getTwissWithShell.o: ./getTwissWithShell.cc
 	$(CC)  $(CCFLAGS) $(INC) -c $< -o $@ -I$(UAL)/codes/ZLIB/src
