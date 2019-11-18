@@ -6,7 +6,7 @@ Benchmark-III Instructions, 16 Nov. 2019
 2. $ cd $UAL/examples/ETEAPOT/benchmarks/III
    (Necessary server-side modification may be applied initially.) 
    $ ll runExample*   // provides list (just one in this case)
-             runExampleFor_ETEAPOT_MltTurn-mod
+             runExampleFor_ETEAPOT_BM-III-MltTurn-mod
 
 3. Copy and paste from entire file.
 
@@ -41,3 +41,9 @@ Benchmark-III Instructions, 16 Nov. 2019
              latex/E_benchmark_III-updated.pdf
              latex/E_benchmark_III-updated.tex
              latex/E_benchmark_III.tar
+
+6. (Optionally) to reproduce benchmark_III report
+        $ cd latex
+        $ tar xvf E_benchmark_III.tar
+        $ cd E_benchmark_III_updated/
+    and proceed with latex editing
