@@ -1,8 +1,5 @@
 CC       = g++                       # Compiler
-CCFLAGS  = -O -fpic -ansi -Wall      # Compilation flags
-
-DLD      = g++                       # Dynamic linker
-DLDFLAGS = -shared                   # Dynamic linker flags
+CCFLAGS  = -g -fpic -ansi -Wall      # Compilation flags
 LD       = g++                       # Linker
 LDFLAGS  =                           # Linker flags
 
@@ -32,21 +29,13 @@ LIBS += -L$(SXF)/lib/$(UAL_ARCH) 		-lSXF
 LIBS += -L$(UAL)/tools/lib/$(UAL_ARCH) 		-lpcre -lxml2 -lrfftw -lfftw
 LIBS += 					-lm
 
-SRC_DIR  = .
-OBJ_DIR  = ./lib/$(UAL_ARCH)/obj
+compile: ./shell_sns
 
-OBJS = 
+clean:
+	rm -f ./lib/linux/obj/shell_sns.o ./shell_sns
 
+./shell_sns: ./lib/linux/obj/shell_sns.o
+	$(LD) -o $@  $(LDFLAGS) $(INC) ./lib/linux/obj/shell_sns.o $(LIBS)
 
-compile : $(OBJS) ./shell_sns
-
-clean :
-	rm -f $(OBJS) ./shell_sns
-
-./shell_sns  : $(OBJ_DIR)/shell_sns.o $(OBJS) 
-	$(LD) -o $@  $(LDFLAGS) $(INC) $(OBJ_DIR)/shell_sns.o $(OBJS) $(LIBS)
-
-
-$(OBJ_DIR)/%.o : $(SRC_DIR)/%.cc
-	$(CC) $(CCFLAGS) $(INC) -c $< -o $@
-
+./lib/linux/obj/shell_sns.o: ./shell_sns.cc
+	$(CC) -c $< -o $@ $(CCFLAGS) $(INC)

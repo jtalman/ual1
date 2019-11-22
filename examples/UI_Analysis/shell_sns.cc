@@ -1,9 +1,8 @@
-
 #include "UAL/UI/Shell.hh"
 
 using namespace UAL;
 
-int main(){
+int main(int argc,char * argv[]){
 
   UAL::Shell shell;
 
@@ -12,7 +11,6 @@ int main(){
   // ************************************************************************
   
   shell.setMapAttributes(Args() << Arg("order", 5)); 
-
 
   // ************************************************************************
   std::cout << "\nBuild lattice." << std::endl;
@@ -75,9 +73,5 @@ int main(){
   tw.beta(1, 12.32);
   tw.alpha(1, -2.26);
 
-  
   shell.twiss(Args() << Arg("print", "./out/cpp/tline.twiss"), tw); 
-
-
 }
-
