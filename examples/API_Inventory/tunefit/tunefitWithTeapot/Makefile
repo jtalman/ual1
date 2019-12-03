@@ -9,6 +9,7 @@ INC    += -I$(UAL_SXF)/src                   #             sxf
 
 INC    += -I$(UAL_TEAPOT)/src
 INC    += -I$(UAL)/codes/UAL/src
+INC    += -I$(UAL)/tools/include
 
 LIBS   += -L$(UAL_PAC)/lib/$(UAL_ARCH)        -lPacSMF -lPacOptics -lPac
 LIBS   += -L$(UAL)/ext/UI/lib/$(UAL_ARCH)     -lUalUI
@@ -19,6 +20,7 @@ LIBS   += -L$(UAL_SXF)/lib/$(UAL_ARCH)        -lUalSXF2
 
 LIBS   += -L$(UAL_TEAPOT)/lib/$(UAL_ARCH)     -lTeapot
 LIBS   += -L$(UAL)/codes/UAL/lib/$(UAL_ARCH)  -lUal
+LIBS   += -L$(UAL)/tools/lib/$(UAL_ARCH)      -lpcre
 
 #LIBS   += -lm
 
