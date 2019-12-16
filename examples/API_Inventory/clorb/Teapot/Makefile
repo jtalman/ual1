@@ -37,5 +37,6 @@ clean:
 	$(CC)  $(CCFLAGS) $(INC) -c $< -o $@ -I$(UAL)/codes/ZLIB/src
 
 $(UAL)/codes/TEAPOT/lib/linux/libTeapot.so:
+	\cp -f ./Teapot.h $(UAL)/codes/TEAPOT/src/Main
 	\cp -f ./TeapotElement.cc $(UAL)/codes/TEAPOT/src/Integrator
 	( cd $(UAL)/codes/TEAPOT; make clean; make; echo "######################"; ls -l lib/linux/libTeapot.so; echo "######################"; )
