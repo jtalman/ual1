@@ -40,7 +40,7 @@ void setLatticeElement(const PacLattElement& e)
   m_ir = e.getN();
 
 if(!m_ir){
- std::cerr << "enter sext::void setLatticeElement(const PacLattElement& e) - m_ir = e.getN()- " << m_ir << "\n";
+// std::cerr << "enter sext::void setLatticeElement(const PacLattElement& e) - m_ir = e.getN()- " << m_ir << "\n";
 }
 else{
  std::cerr << "Complex Elements not allowed!!!\n";
