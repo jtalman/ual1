@@ -6,7 +6,7 @@ DLDFLAGS = -shared                   # Dynamic linker flags
 LD       = nvcc                       # Linker
 else
 CC       = g++                       # Compiler                                 
-CCFLAGS  = -O -fpic -ansi -Wall      # Compilation flags                        
+CCFLAGS  = -g -fpic -ansi -Wall      # Compilation flags                        
 
 DLD      = g++                       # Dynamic linker                           
 DLDFLAGS = -shared                   # Dynamic linker flags                     
