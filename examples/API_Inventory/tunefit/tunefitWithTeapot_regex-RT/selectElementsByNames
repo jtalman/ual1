@@ -17,7 +17,10 @@ std::cerr << "names " << names << "\n";
 //  const char* cc_elname=(const char*)elname;
     int rc = regexec(&preg, cc_elname, 1, pmatch, 0); 
 //  int rc = regexec(&preg, elname.c_str(), 1, pmatch, 0); 
-    if(rc == 0) elemList.push_back(i);    
+    if(rc == 0){
+     std::cerr << "hit " << i << " " << cc_elname << "\n";
+     elemList.push_back(i);    
+    }
   }
 
   regfree(&preg); 

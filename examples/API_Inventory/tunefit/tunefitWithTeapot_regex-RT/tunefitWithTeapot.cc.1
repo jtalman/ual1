@@ -10,7 +10,6 @@
 Teapot* m_teapot;
 
 #include"selectElementsByNames"
-//#include"selectElementsByNamesIntoNames"
 
 int main(int argc, char*argv[]){
  UAL::ShellImp::getInstance().m_space = new ZLIB::Space(6, 1);  //   6
@@ -22,7 +21,7 @@ int main(int argc, char*argv[]){
 //   const char* b1f="^qf\\.*\\d*$";
 //   const char* b1d="^qd\\.*\\d*$";
 
-    const char* b1f="^qu2$|^qu3$|^qu10$|^qu11$|^qu14$|^qu15$|^qu22$|^qu23$|^qu6$|^qu7$|^qu18$|^qu19$";
+    const char* b1f="^qu2$|^qu3$|^qu10$|^qu11$|^qu14$|^qu15$|^qu22$|^qu23$|^qu6$|^qu7$|^qu18$|^qu19$ ";
     const char* b1d="^qu1$|^qu4$|^qu5$|^qu8$|^qu9$|^qu12$|^qu13$|^qu16$|^qu17$|^qu20$|^qu21$|^qu24$";
 
  m_teapot = new Teapot();
@@ -51,22 +50,17 @@ int main(int argc, char*argv[]){
  }
 
  std::vector<int> b1fVector;
- std::vector<std::string> b1fVectorName;
  selectElementsByNames(b1f, b1fVector);
-// selectElementsByNamesIntoNames(b1f, b1fVectorName);
  std::cerr << "focusing\n";
  for(int i = 0; i < b1fVector.size(); i++){
-//std::cerr << i << " " << b1fVector[i] << "\n";
- }
- for(int i = 0; i < b1fVectorName.size(); i++){
-//std::cerr << i << " " << b1fVectorName[i] << "\n";
+  std::cerr << i << " " << b1fVector[i] << "\n";
  }
 
  std::vector<int> b1dVector;
  selectElementsByNames(b1d, b1dVector);
  std::cerr << "defocusing\n";
  for(int i = 0; i < b1dVector.size(); i++){
-//std::cerr << i << " " << b1dVector[i] << "\n";
+  std::cerr << i << " " << b1dVector[i] << "\n";
  }
 
  UAL::OpticsCalculator& optics = UAL::OpticsCalculator::getInstance();
