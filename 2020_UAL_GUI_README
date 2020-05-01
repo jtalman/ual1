@@ -1,0 +1,44 @@
+There's a new tar, qt-x11-free-3.3.4-mod.tar. It is a small modification to qt-x11-free-3.3.4.tar, the free qt code from Trolltech ca 2005.
+
+It's likely downloaded from GIT
+      git clone git://github.com/jtalman/ual1
+
+This larger repository, $UAL, must be built first. The equivalent of
+      cd ual1
+      setenv UAL `pwd`
+needs to be run.
+
+Everything keys off this environmental variable: $UAL.
+
+There's a new tcshrc (without the leading dot) whose environmental variables should be "sourced". It's probably easiest to overwrite ~/.tcshrc with it, then launch a new terminal. It must be edited first so that this new terminal comes up in the downloaded ual1.
+
+The current tcshrc would give
+      UALUSR = ~ (login directory)
+      UAL = ~/UAL_GUI/ual1
+
+Then, from unpack of qt-x11-free-3.3.4-mod.tar:
+      tar xvf qt-x11-free-3.3.4-mod.tar
+      cd qt-x11-free-3.3.4
+
+      Then command
+            ./configure --thread -no-xft -qt-gif --no-exceptions
+                  yes
+      can be run. This is the "legacy" procedure, dating back 15 years or so. It may or may not be "current".
+
+Then
+      make clean
+      make all >&! make.log
+finishes the original qt-x11-free-3.3.4 build. Note that this "breaks" the conventional UAL build process.
+
+Then
+      pushd examples/Player
+      cp XXXMakefileXXX Makefile
+      make clean
+      make all 
+completes the mod build.
+
+Finally
+      ./Player
+completes the "smoke test" if an USPAS template GUI appears.
+
+This has verified on SL5.2 (Boron).
