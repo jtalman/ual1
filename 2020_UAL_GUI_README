@@ -1,4 +1,4 @@
-There's a new tar, qt-x11-free-3.3.4-mod.tar. It is a small modification to qt-x11-free-3.3.4.tar, the free qt code from Trolltech ca 2005.
+There's a new tar, qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod.tar.gz. It is a small modification to qt-x11-free-3.3.4.tar, the free qt code from Trolltech ca 2005.
 
 It's likely downloaded from GIT
       git clone git://github.com/jtalman/ual1
@@ -16,19 +16,19 @@ The current tcshrc would give
       UALUSR = ~ (login directory)
       UAL = ~/UAL_GUI/ual1
 
-Then, from unpack of qt-x11-free-3.3.4-mod.tar:
-      tar xvf qt-x11-free-3.3.4-mod.tar
-      cd qt-x11-free-3.3.4
+Then, from unpack of qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod.tar.gz:
+      tar xvfz qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod.tar.gz
+      cd       qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod
 
-      Then command
+      and commands
             ./configure --thread -no-xft -qt-gif --no-exceptions
                   yes
-      can be run. This is the "legacy" procedure, dating back 15 years or so. It may or may not be "current".
+      can be run. This is the "legacy" procedure, dating back 15 years or so. It may or may not be "current". The "yes" is for the token license acceptance for the qt3 use. Otherwise, it would probably be better to upload the unpacked tar.
 
 Then
       make clean
       make all >&! make.log
-finishes the original qt-x11-free-3.3.4 build. Note that this "breaks" the conventional UAL build process.
+finishes the original, and slightly augmented, qt-x11-free-3.3.4 build. Note that this "breaks" the conventional UAL build process.
 
 Then
       pushd examples/Player
@@ -41,4 +41,4 @@ Finally
       ./Player
 completes the "smoke test" if an USPAS template GUI appears.
 
-This has verified on SL5.2 (Boron).
+This has verified on SL7.6 (Nitrogen).

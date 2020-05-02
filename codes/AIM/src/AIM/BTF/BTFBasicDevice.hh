@@ -18,6 +18,8 @@ namespace AIM {
     /** Destructor */
     virtual ~BTFBasicDevice() {}
 
+    const char* getType(){return "JDT_AIM_BTFBasicDevice";}
+
     /** Returns false */
     bool isSequence() { return false; }
 

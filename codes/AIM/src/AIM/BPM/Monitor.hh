@@ -26,6 +26,9 @@ namespace AIM {
     /** Destructor */
     virtual ~Monitor();
 
+    const char* getType(){return "JDT_AIM_MONITOR";}
+
+
     bool isSequence() { return false; }
 
     /** Returns a deep copy of this object 
@@ -81,7 +84,6 @@ namespace AIM {
     void init(const UAL::AcceleratorNode& lattice, int i0, int i1, 
 	      const UAL::AttributeSet& beamAttributes);
 
-
   protected:
 
     /** accelerator name */
@@ -118,14 +120,12 @@ namespace AIM {
 
   };
 
-
   class MonitorRegister 
   {
     public:
 
     MonitorRegister(); 
   };
-
 
 }
 

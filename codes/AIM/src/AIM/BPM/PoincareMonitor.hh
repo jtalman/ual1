@@ -26,6 +26,8 @@ namespace AIM {
     /** Destructor */
     virtual ~PoincareMonitor();
 
+    const char* getType(){return "JDT_AIM_PoincareMonitor";}
+
     bool isSequence() { return false; }
 
     /** Returns a deep copy of this object 
@@ -74,12 +76,10 @@ namespace AIM {
 
     void write(const char* fileName);
 
-
   protected:
 
     void init(const UAL::AcceleratorNode& lattice, int i0, int i1, 
 	      const UAL::AttributeSet& beamAttributes);
-
 
   protected:
 
@@ -113,7 +113,6 @@ namespace AIM {
     void copy(const PoincareMonitor& monitor);
 
   };
-
 
   class PoincareMonitorRegister 
   {
