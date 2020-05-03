@@ -24,7 +24,7 @@ AIM::PoincareMonitor::~PoincareMonitor()
 
 UAL::PropagatorNode* AIM::PoincareMonitor::clone()
 {
-  return new AIM::PoincareMonitor::PoincareMonitor(*this);
+  return new AIM::PoincareMonitor(*this);
 }
 
 UAL::AcceleratorNode& AIM::PoincareMonitor::getFrontAcceleratorNode()

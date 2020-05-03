@@ -6,24 +6,26 @@ It's likely downloaded from GIT
 This larger repository, $UAL, must be built first. The equivalent of
       cd ual1
       setenv UAL `pwd`
+      source setup-linux-ual
 needs to be run.
 
 Everything keys off this environmental variable: $UAL.
 
-There's a new tcshrc (without the leading dot) whose environmental variables should be "sourced". It's probably easiest to overwrite ~/.tcshrc with it, then launch a new terminal. It must be edited first so that this new terminal comes up in the downloaded ual1.
+Once it is established:
+      cd gui
 
-The current tcshrc would give
-      UALUSR = ~ (login directory)
-      UAL = ~/UAL_GUI/ual1
+      cd muparser_v134
+      ./configure
+      make
+      cd ..
 
 Then, from unpack of qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod.tar.gz:
       tar xvfz qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod.tar.gz
       cd       qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod
 
-      and commands
-            ./configure --thread -no-xft -qt-gif --no-exceptions
-                  yes
-      can be run. This is the "legacy" procedure, dating back 15 years or so. It may or may not be "current". The "yes" is for the token license acceptance for the qt3 use. Otherwise, it would probably be better to upload the unpacked tar.
+      ./configure --thread -no-xft -qt-gif --no-exceptions
+            yes
+This is the "legacy" configuration procedure, dating back 15 years or so. It may or may not be "current". The "yes" is for the token license acceptance for the qt3 use. Otherwise, it would probably be better to upload the unpacked tar.
 
 Then
       make clean
@@ -41,4 +43,12 @@ Finally
       ./Player
 completes the "smoke test" if an USPAS template GUI appears.
 
-This has verified on SL7.6 (Nitrogen).
+This has been verified on SL7.6 (Nitrogen).
+
+___________________________________________________________________________________________________________________
+
+There's a new tcshrc (without the leading dot) whose environmental variables can be "sourced". It's probably easiest to overwrite ~/.tcshrc with it, then launch a new terminal. It must be edited first so that this new terminal comes up in the downloaded ual1.
+
+This tcshrc would give
+      UALUSR = ~ (login directory)
+      UAL = ~/UAL_GUI/ual1

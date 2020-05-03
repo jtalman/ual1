@@ -1,12 +1,9 @@
-
-
 #include "UAL/APF/PropagatorFactory.hh"
 #include "PAC/Beam/Bunch.hh"
 #include "SMF/PacLattice.h"
 
 #include "AIM/BPM/Monitor.hh"
 #include "AIM/BPM/MonitorCollector.hh"
-
 
 AIM::Monitor::Monitor() 
 {
@@ -24,7 +21,7 @@ AIM::Monitor::~Monitor()
 
 UAL::PropagatorNode* AIM::Monitor::clone()
 {
-  return new AIM::Monitor::Monitor(*this);
+  return new AIM::Monitor(*this);
 }
 
 UAL::AcceleratorNode& AIM::Monitor::getFrontAcceleratorNode()
