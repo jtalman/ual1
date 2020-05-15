@@ -12,8 +12,8 @@ UICDECLS = MainPlayerUI.hh \
 	   PlayerUI.hh \
 	   TablePageUI.hh 
 
-UICIMPLS = MainPlayerUI.cc \
-	   PlayerUI.cc \
+#UICIMPLS = MainPlayerUI.cc \
+UICIMPLS =  PlayerUI.cc \
 	   TablePageUI.cc 
 
 SRCMOC   = moc_MainPlayerUI.cc \
@@ -35,10 +35,13 @@ clean:
 	rm -rf $(OBJS)
 	rm -rf $(MY_DIR)/include/UAL/QT/Player
 
-MainPlayerUI.cc: MainPlayerUI.ui 
-	$(UIC) -impl MainPlayerUI.hh MainPlayerUI.ui   -o $@
-PlayerUI.cc: PlayerUI.ui 
-	$(UIC) -impl PlayerUI.hh PlayerUI.ui   -o $@
+#MainPlayerUI.cc: MainPlayerUI.ui 
+#	$(UIC) -impl MainPlayerUI.hh MainPlayerUI.ui   -o $@
+#	cp ../../../../../XXXMainPlayerUI.ccXXX .
+
+#PlayerUI.cc: PlayerUI.ui 
+#	$(UIC) -impl PlayerUI.hh PlayerUI.ui   -o $@
+
 TablePageUI.cc: TablePageUI.ui 
 	$(UIC) -impl TablePageUI.hh TablePageUI.ui   -o $@
 
