@@ -8,7 +8,7 @@ This repository must be built first. The equivalent of
       make clean
       make >&! make.log
 needs to be run and verified (no errors in make.log, other than the two doc/html ones).
-Everything keys off environmental variable: $UAL.
+Almost everything keys off environmental variable: $UAL.
 This is all assumed as quickly familiar, and under control.
 _____________________________________________________________________________________
 
@@ -40,6 +40,7 @@ There's two tars in $UAL/gui/:
                  I use "our legacy" configuration procedure, dating back 20 years or so.
                  This may or may not be "current".
 These tars would probably work more seamlessly unpacked. Possibly this will be done at some point.
+These tars do not depend on environmental variable $UAL.
 
 The recipe below has been verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) ca 5/12/2020.
 This partially accounts for the awkward names.
@@ -58,10 +59,14 @@ RECIPE:
 (2) spot check the root build:
       tar xvfz root_v4.04.02.source-SL7.6Nitrogen-UAL-mod.tar.gz
       cd       root_v4.04.02.source-SL7.6Nitrogen-UAL-mod
-      ./configure --enable-shared --enable-thread --enable-soversion --enable-qt --enable-table --disable-ldap --with-qt-incdir=../qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod/include/ --with-qt-libdir=../qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod/lib
       setenv BUILDQT yes
+:     setenv ROOTSYS .
+:     ./configure --enable-shared --enable-thread --enable-soversion --enable-qt --enable-table --disable-ldap --with-qt-incdir=../qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod/include/ --with-qt-libdir=../qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod/lib
+      ./configure
+:     cp config/XXXMakefile.configXXX config/Makefile.config
       make >&! make.log
-      ll lib/libGQt.so.4.04
+:     make all-qt
+      ll lib/libGQt.so
 :           1092328
       cd ..
 
