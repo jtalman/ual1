@@ -1,5 +1,6 @@
 running
       cd lib
       ./linux/run ring ../../project/apdf/teapot.apdf ../../lattices/general_fodo.sxf
-executes, but with a SIGSEGV fault
+pops up a gui, MainPlayerUI.
 
+This has been verified on SL7.6 Nitrogen.
