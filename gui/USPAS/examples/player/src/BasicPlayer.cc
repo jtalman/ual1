@@ -131,6 +131,7 @@ std::cerr << __FILE__ << ": " << __LINE__ << "leave void UAL::USPAS::BasicPlayer
 
 void UAL::USPAS::BasicPlayer::showPage(QListViewItem* item)
 {
+std::cerr << __FILE__ << " " << __LINE__ << " enter void UAL::USPAS::BasicPlayer::showPage(QListViewItem* item)\n";
   if(item->text(0) == "Beam") {
       widgetStack->raiseWidget(1);
   }
@@ -208,14 +209,18 @@ void UAL::USPAS::BasicPlayer::showPage(QListViewItem* item)
   }
 
   if(item->text(0) == "Twiss") {
+std::cerr << __LINE__ << "\n";
     if(m_viewers.find("UAL::ROOT::TwissViewer") != m_viewers.end()) return;
 
+std::cerr << __LINE__ << "\n";
     std::vector<double> atVector;
     std::vector<PacTwissData> twissVector;
 
+std::cerr << __LINE__ << "\n";
     UAL::OpticsCalculator& optics = UAL::OpticsCalculator::getInstance(); 
     optics.getTwiss(atVector, twissVector);
 
+std::cerr << __LINE__ << "\n";
     UAL::ROOT::TwissViewer* viewer = new UAL::ROOT::TwissViewer(this, atVector, twissVector);
     addViewer("UAL::ROOT::TwissViewer", viewer);
     viewer->show();
@@ -297,4 +302,5 @@ void UAL::USPAS::BasicPlayer::showPage(QListViewItem* item)
     viewer->show();
   }
 
+std::cerr << __FILE__ << " " << __LINE__ << " leave void UAL::USPAS::BasicPlayer::showPage(QListViewItem* item)\n";
 }
