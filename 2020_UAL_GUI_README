@@ -44,7 +44,9 @@ There's two "legacy" tars in $UAL/gui/:
                  I use "our legacy" (RT, NM, and JDT) configuration procedure, dating back 15 years or so.
                  This may or may not be "current"/optimal.
                  There is a token license acceptance for the qt3 use.
------->>>>>>     This can't be "copy and pasted" like rest of the RECIPE!
+                       18360 Jan 21  2005 ../qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod/LICENSE.GPL
+                        4689 Jan 21  2005 ../qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod/LICENSE.QPL
+------>>>>>>     Can't be "copy and pasted" like rest of RECIPE!      <<<<<<------
 
       (ii) root_v4.04.02.source-SL7.6Nitrogen-UAL-mod.tar.gz
                  This is a fairly small modification to root_v4.04.02.source.tar, the free root code from CERN ca 2000.
@@ -56,20 +58,28 @@ There's two "legacy" tars in $UAL/gui/:
                        in 100 files or so.
                        A few lines/stanzas are simply commented out.
                  I use the simplest configuration procedure, with a slightly modified configure script.
-                       enable_qt is set to yes internally.
+                         ...
+                       1361 qtinc=$UAL/gui/qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod/include/
+                       1362 qtincdir=$UAL/gui/qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod/include/
+                       1363 enable_qt=yes
+                         ...
                  This may or may not be "current".
+                 There is a token license
+                       1604 Feb  9  2004 LICENSE
 
 These tars would probably work more seamlessly unpacked. Possibly this will be done at some point.
 These tars are pretty slow to build.
-They do not depend on environmental variable $UAL.
+      qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod does not depend on environmental variable $UAL.
+      root_v4.04.02.source-SL7.6Nitrogen-UAL-mod does depend on environmental variable $UAL.
 
 The recipe below has been verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) ca 5/16/2020.
+The recipe below has been verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) ca 6/2/2020.
 This partially accounts for the awkward names.
 _____________________________________________________________________________________
 
 RECIPE:
 
-This all takes place from:
+This all takes place within $UAL/gui:
 ------>>>>>>      cd $UAL/gui                                         <<<<<<------
 
 Slow build and NOT "copy and pastable":
@@ -78,11 +88,11 @@ Slow build and NOT "copy and pastable":
             cd       qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod
             ./configure --thread -no-xft -qt-gif --no-exceptions
                   yes                                                 <<<<<<------
-      make all >&! make.log
-      ll lib/libqt-mt.so.3.3.4
-:           9590800
-      cd ..
-Note the license acceptance, yes.                                     <<<<<<------
+            make all >&! make.log
+            ll lib/libqt-mt.so.3.3.4
+:                 9590800
+            cd ..
+Note the explicit license acceptance, yes.                            <<<<<<------
 Note the unfamiliar, make all, syntax!                                <<<<<<------
 "qt" tends to use "make all".                                         <<<<<<------
 
@@ -90,16 +100,12 @@ Slow build and "copy and pastable":
       (2) spot check the root build:
             tar xvfz root_v4.04.02.source-SL7.6Nitrogen-UAL-mod.tar.gz
             cd       root_v4.04.02.source-SL7.6Nitrogen-UAL-mod
-            setenv BUILDQT yes
-:           setenv ROOTSYS .
-:           ./configure --enable-shared --enable-thread --enable-soversion --enable-qt --enable-table --disable-ldap --with-qt-incdir=../qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod/include/ --with-qt-libdir=../qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod/lib
             ./configure
-:           cp config/XXXMakefile.configXXX config/Makefile.config
             make >&! make.log
-:           make all-qt
             ll lib/libGQt.so
-:           1092328
-      cd ..
+:                 1092328
+            cd ..
+No explicit license acceptance.
 
 Pretty quick builds and "copy and pastable".
       (3) spot check the muParser build:
@@ -107,7 +113,7 @@ Pretty quick builds and "copy and pastable".
             ./configure
             make
             ll lib/libmuparser.so.0.0.0
-:                366384 
+:                 366384 
             cd ..
 
       (4) spot check the UAL ROOT build:
