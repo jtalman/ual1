@@ -129,6 +129,8 @@ Pretty quick builds and "copy and pastable".
             ll lib/linux/libUalQt.so
 :                 2668680 
 :                 2668656 
+:                 2665096 
+:                 2665120 
             cd ..
 
       (6) spot check the UAL QT example build:
@@ -189,6 +191,7 @@ ________________________________________________________________________________
             cd ../../..
 There's a NOTES file that specifies run procedure and syntax.
             ll USPAS/examples/longitudinal/NOTES
+            cd USPAS/examples/longitudinal/
 When followed:
             cd lib
             ./linux/run ring ../../project/apdf/teapot.apdf ../../lattices/general_fodo.sxf
