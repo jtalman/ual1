@@ -29,7 +29,7 @@ Most of it can be "copy and pasted", however.
             ...
 can't be copy and pasted.
 
-"<<<<<<------" identifies steps (0) to (9) in the RECIPE.
+"   <<<<<<------" identifies steps (0) to (9) in the RECIPE.
 
 The execute (hence, build) verification of the code in directory tree
       $UAL/gui/USPAS/examples/longitudinal
@@ -76,18 +76,22 @@ root_v4.04.02.source-SL7.6Nitrogen-UAL-mod does depend on environmental variable
 Something like the recipe below has been verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) ca 5/16/2020.
 Something like the recipe below has been verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) ca 6/2/2020.
 Something like the recipe below has been verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) ca 6/4/2020.
-This partially accounts for the awkward names.
+
+This recipe is about to be uploaded 6/10/2020. Hopefully it will be verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) promptly.
+
+The awkward names may be improved at some point.
 _____________________________________________________________________________________
 
 RECIPE, steps (0) - (9). The doubly indented lines are all to be executed.
 This all takes place within $UAL/gui:
 
-(0) Additional envirionment:                                           <<<<<<------
+STEP                                                                 STEP
+(0) Additional gui envirionment:                                      (0) <<<<<<------
       "Copy and pastable":
             cd $UAL/gui
             source env
 
-(1) Build qt, and spot check it:                                       <<<<<<-----
+(1) Build qt, and spot check it:                                      (1) <<<<<<------
       NOT copy and pastable, slow build:
             tar xvfz qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod.tar.gz
             cd       qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod
@@ -98,21 +102,21 @@ This all takes place within $UAL/gui:
 :                 9590800
             cd ..
 Note the explicit license acceptance, yes.
-Note the unfamiliar, make all, syntax!
+Note the possibly unfamiliar, make all, syntax!
 "qt" tends to use "make all".
 
-(2) Build root, and spot check it:                                     <<<<<<------
+(2) Build root, and spot check it:                                    (2) <<<<<<------
       Copy and pastable, slow build:
             tar xvfz root_v4.04.02.source-SL7.6Nitrogen-UAL-mod.tar.gz
             cd       root_v4.04.02.source-SL7.6Nitrogen-UAL-mod
-            /configure --with-qt-incdir=$UAL/gui/qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod/include/ --with-qt-libdir=$UAL/gui/qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod/lib/
+            ./configure --with-qt-incdir=$UAL/gui/qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod/include/ --with-qt-libdir=$UAL/gui/qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod/lib/
             make >&! make.log
             ll lib/libGQt.so
 :                 1092328
             cd ..
 No explicit license acceptance.
 
-(3) Build muParser, and spot check it:                                 <<<<<<------
+(3) Build muParser, and spot check it:                                (3) <<<<<<------
       Copy and pastable, quick:
             cd muparser_v134
             ./configure
@@ -121,7 +125,7 @@ No explicit license acceptance.
 :                 366384 
             cd ..
 
-(4) Build UAL ROOT, and spot check it:                                 <<<<<<------
+(4) Build UAL ROOT, and spot check it:                                (4) <<<<<<------
       Copy and pastable, quick:
             cd ROOT
             make >&! make.log
@@ -129,7 +133,7 @@ No explicit license acceptance.
 :                 661512
             cd ..
 
-(5) Build UAL QT, and spot check it:                                   <<<<<<------
+(5) Build UAL QT, and spot check it:                                  (5) <<<<<<------
       Copy and pastable, quick:
             cd QT
             make >&! make.log
@@ -141,7 +145,7 @@ No explicit license acceptance.
 :                 2665096 
             cd ..
 
-(6) Build UAL QT example, spot check it, and try it:                   <<<<<<------
+(6) Build UAL QT example, spot check it, and try it:                  (6) <<<<<<------
       Copy and pastable, quick:
             cd qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod/examples/Player
             \cp XXXMakefileXXX Makefile
@@ -154,13 +158,14 @@ No explicit license acceptance.
             cd ../../..
 A template GUI should popup.
 An error message
-      ...cannot open shared object file...
+      "...cannot open shared object file..."
 might appear. The above LD_LIBRARY_PATH mod is one such patch. It is not necessary on the verified box.
-Note the modified, make all, syntax!
+Again, note the modified, make all, syntax.
+Again, this is in a "qt context".
 _____________________________________________________________________________________
 
 Developmental:
-(7) Build UAL USPAS example player, and spot check it:                 <<<<<<------
+(7) Build UAL USPAS example player, and spot check it:                (7) <<<<<<------
       Copy and pastable, quick:
             cd USPAS/examples/player
             make clean
@@ -173,7 +178,7 @@ File that specifies run procedure and syntax.
 Seems to fail on the splitting.
 Thus examining this is not recommended at this time.
 
-(8) Build UAL USPAS example transverse, and spot check it:             <<<<<<------
+(8) Build UAL USPAS example transverse, and spot check it:            (8) <<<<<<------
       Copy and pastable, quick:
             cd USPAS/examples/transverse
             make clean
@@ -191,7 +196,7 @@ ________________________________________________________________________________
 
 ------>>>>>>          Current Focus:
 
-(9) Build UAL USPAS example longitudinal, spot check , and try:        <<<<<<------
+(9) Build UAL USPAS example longitudinal, spot check , and try:       (9) <<<<<<------
       Copy and pastable, quick:
             cd USPAS/examples/longitudinal
             make clean
@@ -200,7 +205,7 @@ ________________________________________________________________________________
 :                 230568
             cd lib
             ./linux/run ring ../../project/apdf/teapot.apdf ../../lattices/general_fodo.sxf
-it pops up a GUI, MainPlayerUI, on the verified machine.
+Pops up a GUI, MainPlayerUI, on the verified machine.
 There's a NOTES file that specifies run procedure and syntax.
 It doesn't try to split.
 Thus examining this is the "Current Focus" for the time being.
