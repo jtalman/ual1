@@ -73,10 +73,11 @@ int main(int argc, char*argv[]){
  optics.use("ring");                                            //   lattice name
 
  if(argc!=3){
-  std::cout << "Usage:\n./tunefitWithTeapot 3.6 3.4\n";
-  std::cout << "argv[0] is this executable - ./tunefitWithTeapot\n";
-  std::cout << "argv[1] is tuneX           -3.5\n";
-  std::cout << "argv[2] is tuneY           -3.5\n";
+  std::cout << "Usage:\n./tunefitWithTeapot-cosy 3.6 3.4\n";
+  std::cout << "argv[0] is this executable - ./tunefitWithTeapot-cosy\n";
+  std::cout << "argv[1] is tuneX           -3.6\n";
+  std::cout << "argv[2] is tuneY           -3.4\n";
+  std::cout << "(cosy.sxf is the lattice file, line 34)\n";
   exit(0);
  }
  double tuneX = atof(argv[1]);
