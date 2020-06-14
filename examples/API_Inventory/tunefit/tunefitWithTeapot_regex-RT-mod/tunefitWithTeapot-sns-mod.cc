@@ -1,5 +1,6 @@
 #include<stdlib.h>
 #include<regex.h>
+#include<string>
 
 #include"UAL/UI/ShellImp.hh"
 #include"Optics/PacTMap.h"
@@ -22,8 +23,9 @@ int main(int argc, char*argv[]){
 //   const char* b1f="^qf\\.*\\d*$";
 //   const char* b1d="^qd\\.*\\d*$";
 
-    const char* b1f="^QFH.2$|^QFH.3$|^QFH.4$|^QFH.5$|^QFH.6$|^QFH.7$|^QFH.8$|^QFH.9$|^QFH.10$|^QFH.11$|^QFH.12$|^QFH.13$|^QFH.14$|^QFH.15$|^QFH.16$";
-    const char* b1d="^QFD.1$|^QFD.2$|^QFD.3$|^QFD.4$|^QFD.5$|^QFD.6$|^QFD.7$|^QFD.8$|^QFD.9$|^QFD.10$|^QFD.11$|^QFD.12$|QFD.13$|^QFD.14$|^QFD.15$|^QFD.16$" ;
+//const char* b1f="^QFH.2$|^QFH.3$|^QFH.4$|^QFH.5$|^QFH.6$|^QFH.7$|^QFH.8$|^QFH.9$|^QFH.10$|^QFH.11$";
+//const char* b1d="^QFD.1$|^QFD.2$|^QFD.3$|^QFD.4$|^QFD.5$|^QFD.6$|^QFD.7$|^QFD.8$|^QFD.9$|^QFD.10$";
+#include"snsRegex"
 
  m_teapot = new Teapot();
  PacLattices::iterator latIterator;
@@ -52,9 +54,9 @@ int main(int argc, char*argv[]){
 
  std::vector<int> b1fVector;
  std::vector<std::string> b1fVectorName;
+ std::cerr << "focusing\n";
  selectElementsByNames(b1f, b1fVector);
 // selectElementsByNamesIntoNames(b1f, b1fVectorName);
- std::cerr << "focusing\n";
  for(int i = 0; i < b1fVector.size(); i++){
 //std::cerr << i << " " << b1fVector[i] << "\n";
  }
@@ -63,8 +65,8 @@ int main(int argc, char*argv[]){
  }
 
  std::vector<int> b1dVector;
- selectElementsByNames(b1d, b1dVector);
  std::cerr << "defocusing\n";
+ selectElementsByNames(b1d, b1dVector);
  for(int i = 0; i < b1dVector.size(); i++){
 //std::cerr << i << " " << b1dVector[i] << "\n";
  }
@@ -83,5 +85,7 @@ int main(int argc, char*argv[]){
  double tuneX = atof(argv[1]);
  double tuneY = atof(argv[2]);
 // m_teapot->clorbit(orbit, ba);
+
+std::cerr << __FILE__ << ": " << __LINE__ << "\n";
    m_teapot->tunethin(ba, orbit, b1fVector, b1dVector, tuneX, tuneY);
 }
