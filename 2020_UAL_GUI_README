@@ -13,25 +13,26 @@ Much "in this part" (non gui) of the repository keys off environmental variable:
 This is all assumed as familiar and quickly under control.
 
 Almost everything from here keys off environmental variable: $UAL.
-Almost everything from here applies to "the gui" part of the repository.
+Almost everything from here only applies to "the gui" part of the repository.
 _____________________________________________________________________________________
 
 Thus this README really starts here, and really only applies to the gui subdirectory, $UAL/gui/.
 
 There's a hopefully fully explicit RECIPE section after this section.
-This gui build/make recipe/subprocess is not nearly as seamless as the larger repository build!
+This gui build/make RECIPE/subprocess is not nearly as seamless as the larger repository build!
 Thus it should be followed carefully. Possibly it will be improved at some point.
 Most of it can be "copy and pasted", however.
+
 "------>>>>>>" is for noteworthy aspects of the RECIPE. For example it shows where RECIPE step
       (1) Build qt
             ...
------>>>>>        yes
+------>>>>>>      yes                                                 ENTERED MANUALLY!
             ...
 can't be copy and pasted.
 
 "   <<<<<<------" identifies steps (0) to (9) in the RECIPE.
 
-The execute (hence, build) verification of the code in directory tree
+The execute (hence, also build) verification of the code in directory tree
       $UAL/gui/USPAS/examples/longitudinal
 is likely to be the focus for a while.
 It builds and runs and pops up a GUI. This is described in the last stanza:
@@ -41,6 +42,8 @@ It builds and runs and pops up a GUI. This is described in the last stanza:
 ...
 ------>>>>>>          Current Focus:
 It is developmental/simple at this point.
+Revisiting it, with everything else built, is likely.
+The essential environment parts covered by/in step (0) is repeated with this in mind.
 
 The other gui build, and execute, verifications are even more developmental/simple at this point.
 They should probably be ignored, as they don't even pop up their GUI.
@@ -54,6 +57,7 @@ There's two "legacy" tars in $UAL/gui/:
                        18360 Jan 21  2005 ../qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod/LICENSE.GPL
                         4689 Jan 21  2005 ../qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod/LICENSE.QPL
 ------>>>>>>     Can't be copy and pasted like rest of RECIPE!
+------>>>>>>      yes                                                 ENTERED MANUALLY!
 
       (ii) root_v4.04.02.source-SL7.6Nitrogen-UAL-mod.tar.gz
                  This is a fairly small modification to root_v4.04.02.source.tar, the free root code from CERN ca 2000.
@@ -76,8 +80,9 @@ root_v4.04.02.source-SL7.6Nitrogen-UAL-mod does depend on environmental variable
 Something like the recipe below has been verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) ca 5/16/2020.
 Something like the recipe below has been verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) ca 6/2/2020.
 Something like the recipe below has been verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) ca 6/4/2020.
+Something like the recipe below has been verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) ca 6/23/2020.
 
-This recipe is about to be uploaded 6/10/2020. Hopefully it will be verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) promptly.
+Hopefully it will be verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) promptly.
 
 The awkward names may be improved at some point.
 _____________________________________________________________________________________
@@ -90,7 +95,10 @@ STEP                                                                 STEP
       "Copy and pastable":
             cd $UAL/gui
             source env
-            tar zvfz libxml2-git-snapshot.tar.gz
+            setenv LD_LIBRARY_PATH $UAL/gui/libxml2-2.9.7/.libs/:$LD_LIBRARY_PATH
+:           setenv LD_LIBRARY_PATH $UAL/gui/libxml2-2.9.7/.libs/libxml2.so.2.9.7:$LD_LIBRARY_PATH
+:           setenv LD_LIBRARY_PATH ../../lib/:$LD_LIBRARY_PATH
+            tar xvfz libxml2-git-snapshot.tar.gz
             cd libxml2-2.9.7/
             ./configure
             make
@@ -101,7 +109,7 @@ STEP                                                                 STEP
             tar xvfz qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod.tar.gz
             cd       qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod
             ./configure --thread -no-xft -qt-gif --no-exceptions
------>>>>>        yes
+------>>>>>>      yes                                                 ENTERED MANUALLY!
             make all >&! make.log
             ll lib/libqt-mt.so.3.3.4
 :                 9590800
@@ -213,6 +221,10 @@ before (re)trying STEP (9).
             setenv LD_LIBRARY_PATH $UAL/gui/libxml2-2.9.7/.libs/:$LD_LIBRARY_PATH
 :           setenv LD_LIBRARY_PATH $UAL/gui/libxml2-2.9.7/.libs/libxml2.so.2.9.7:$LD_LIBRARY_PATH
 :           setenv LD_LIBRARY_PATH ../../lib/:$LD_LIBRARY_PATH
+            cd USPAS/examples
+            make clean
+            make
+            cd ../../
 
 (9) Build UAL USPAS example longitudinal, spot check , and try:       (9) <<<<<<------
       Copy and pastable, quick:
@@ -222,13 +234,13 @@ before (re)trying STEP (9).
             ll lib/linux/run
 :                 230568
             cd lib
-:           ./linux/run ring ../../project/apdf/teapot.apdf ../../lattices/general_fodo.sxf
+:           ./linux/run ring ../../project/apdf/teapot.apdf   ../../lattices/general_fodo.sxf
 :           ./linux/run ring ../../lattices/eq_tune_fodo.adxf ../../project/apdf/eteapot.apdf
 :           ./linux/run ring ../../lattices/eq_tune_fodo.adxf ../../project/apdf/teapot.apdf
-:           ./linux/run ring ../../lattices/general_fodo.sxf ../../project/apdf/teapot.apdf
-:           ./linux/run ring ../../lattices/general_fodo.sxf ../../project/apdf/eteapot.apdf
-:           ./linux/run ring ../../lattices/general_fodo.sxf ../apdf/tibetan.apdf
-            ./linux/run ring ../../lattices/general_fodo.sxf $UAL/gui/USPAS/examples/project/apdf/eteapot.apdf
+:           ./linux/run ring ../../lattices/general_fodo.sxf  ../../project/apdf/teapot.apdf
+:           ./linux/run ring ../../lattices/general_fodo.sxf  ../../project/apdf/eteapot.apdf
+:           ./linux/run ring ../../lattices/general_fodo.sxf  ../apdf/tibetan.apdf
+            ./linux/run ring ../../lattices/general_fodo.sxf  $UAL/gui/USPAS/examples/project/apdf/eteapot.apdf
 :           ./linux/run ring ../../lattices/eq_tune_fodo.adxf ../../project/apdf/tibetan.apdf
 
 Pops up a GUI, MainPlayerUI, on the verified machine.
