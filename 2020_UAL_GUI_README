@@ -90,6 +90,11 @@ STEP                                                                 STEP
       "Copy and pastable":
             cd $UAL/gui
             source env
+            tar zvfz libxml2-git-snapshot.tar.gz
+            cd libxml2-2.9.7/
+            ./configure
+            make
+            cd ..
 
 (1) Build qt, and spot check it:                                      (1) <<<<<<------
       NOT copy and pastable, slow build:
@@ -196,6 +201,19 @@ ________________________________________________________________________________
 
 ------>>>>>>          Current Focus:
 
+The likely scenario is one is revisiting this last stanza with the above already verified.
+
+Then, one needs to reset the environment, STEP (0),
+before (re)trying STEP (9).
+
+(0) Additional gui envirionment:                                      (0) <<<<<<------
+      "Copy and pastable":
+            cd $UAL/gui
+            source env
+            setenv LD_LIBRARY_PATH $UAL/gui/libxml2-2.9.7/.libs/:$LD_LIBRARY_PATH
+:           setenv LD_LIBRARY_PATH $UAL/gui/libxml2-2.9.7/.libs/libxml2.so.2.9.7:$LD_LIBRARY_PATH
+:           setenv LD_LIBRARY_PATH ../../lib/:$LD_LIBRARY_PATH
+
 (9) Build UAL USPAS example longitudinal, spot check , and try:       (9) <<<<<<------
       Copy and pastable, quick:
             cd USPAS/examples/longitudinal
@@ -204,7 +222,15 @@ ________________________________________________________________________________
             ll lib/linux/run
 :                 230568
             cd lib
-            ./linux/run ring ../../project/apdf/teapot.apdf ../../lattices/general_fodo.sxf
+:           ./linux/run ring ../../project/apdf/teapot.apdf ../../lattices/general_fodo.sxf
+:           ./linux/run ring ../../lattices/eq_tune_fodo.adxf ../../project/apdf/eteapot.apdf
+:           ./linux/run ring ../../lattices/eq_tune_fodo.adxf ../../project/apdf/teapot.apdf
+:           ./linux/run ring ../../lattices/general_fodo.sxf ../../project/apdf/teapot.apdf
+:           ./linux/run ring ../../lattices/general_fodo.sxf ../../project/apdf/eteapot.apdf
+:           ./linux/run ring ../../lattices/general_fodo.sxf ../apdf/tibetan.apdf
+            ./linux/run ring ../../lattices/general_fodo.sxf $UAL/gui/USPAS/examples/project/apdf/eteapot.apdf
+:           ./linux/run ring ../../lattices/eq_tune_fodo.adxf ../../project/apdf/tibetan.apdf
+
 Pops up a GUI, MainPlayerUI, on the verified machine.
 There's a NOTES file that specifies run procedure and syntax.
 It doesn't try to split.
