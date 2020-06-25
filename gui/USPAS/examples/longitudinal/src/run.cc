@@ -1,12 +1,9 @@
-// Qt
 #include <qapplication.h>
-// Coin 3D
-// #include <Inventor/Qt/SoQt.h>
-// Root
-#include "TRint.h"
-#include <TSystem.h>
-#include <TStyle.h>
-// DA
+
+#include<TRint.h>
+#include<TSystem.h>
+#include<TStyle.h>
+
 #include "ZLIB/Tps/Space.hh"
 
 #include "UAL/QT/Player/PlayerShell.hh"
@@ -29,8 +26,8 @@ int main(int argc, char *argv[])
   std::cout << argc << std::endl;
 
   std::string lattice      = argv[1];   // "ring";
-  std::string latticeFile  = argv[2];   // "../../lattices/eq_tune_fodo.adxf"; 
-  std::string apdfFile     = argv[3];   // "../apdf/tibetan.apdf";
+  std::string latticeFile  = argv[2];   // "../../lattices/general_fodo.sxf"; 
+  std::string apdfFile     = argv[3];   // "$UAL/gui/USPAS/examples/project/apdf/eteapot.apdf";
 
   // ************************************************************************
   std::cout << "Declare Qt, ROOT, DA, UAL environment." << std::endl;
