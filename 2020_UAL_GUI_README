@@ -24,7 +24,7 @@ Thus it should be followed carefully. Possibly it will be improved at some point
 Most of it can be "copy and pasted", however.
 
 "------>>>>>>" is for noteworthy aspects of the RECIPE. For example it shows where RECIPE step
-      (1) Build qt
+(1) Build qt, and spot check it:                                      (1) <<<<<<------
             ...
 ------>>>>>>      yes                                                 ENTERED MANUALLY!
             ...
@@ -42,8 +42,12 @@ It builds and runs and pops up a GUI. This is described in the last stanza:
 ...
 ------>>>>>>          Current Focus                                       ENDS HERE!!!
 It is developmental/simple at this point.
-Revisiting it, with everything else built, is likely.
-The essential environment parts covered by/in step (0) is repeated with this in mind.
+
+Revisiting step (9), with almost everything else built, is likely.
+The essential environment parts covered by/in step (0) is repeated near the end of this document with this in mind.
+This can be viewed as part of the subsequent (DEBUG) stanzas, also near the end of this document.
+
+The last stanza, at the very end of this document, gives some context/history for the debugging effort.
 
 The other gui build, and execute, verifications are even more developmental/simple at this point.
 They should probably be ignored, as they don't even pop up their GUI.
@@ -82,6 +86,7 @@ Something like the recipe below has been verified on a Lenovo X201 laptop with S
 Something like the recipe below has been verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) ca 6/2/2020.
 Something like the recipe below has been verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) ca 6/4/2020.
 Something like the recipe below has been verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) ca 6/23/2020.
+Something like the recipe below has been verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) ca 6/29/2020.
 
 Hopefully it will be verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) promptly.
 
@@ -103,6 +108,8 @@ STEP                                                                 STEP
             cd libxml2-2.9.7/
             ./configure
             make
+            ll .libs/libxml2.so.2.9.7
+:           5402944
             cd ..
 
 (1) Build qt, and spot check it:                                      (1) <<<<<<------
@@ -135,7 +142,9 @@ Note the possibly unfamiliar, make all, syntax!
             ll lib/libGQt.so
 :                 1092328
 :                 1097120
+:                 1092328
             cd ..
+Note the possibly unfamiliar, make all, syntax!
 No explicit license acceptance.
 
 (3) Build muParser, and spot check it:                                (3) <<<<<<------
@@ -218,23 +227,6 @@ ________________________________________________________________________________
 
 ------>>>>>>          Current Focus:
 
-The likely scenario is that one is revisiting this last stanza with the above already verified.
-
-Then, one needs to reset the environment, STEP (0),
-before (re)trying STEP (9).
-
-(0) Additional gui envirionment:                                      (0) <<<<<<------
-      "Copy and pastable":
-            cd $UAL/gui
-            source env
-            setenv LD_LIBRARY_PATH $UAL/gui/libxml2-2.9.7/.libs/:$LD_LIBRARY_PATH
-:           setenv LD_LIBRARY_PATH $UAL/gui/libxml2-2.9.7/.libs/libxml2.so.2.9.7:$LD_LIBRARY_PATH
-:           setenv LD_LIBRARY_PATH ../../lib/:$LD_LIBRARY_PATH
-            cd USPAS/examples
-            make clean
-            make
-            cd ../../
-
 (9) Build UAL USPAS example longitudinal, spot check , and try:       (9) <<<<<<------
       Copy and pastable, quick:
             cd USPAS/examples/longitudinal
@@ -257,44 +249,36 @@ There's a NOTES file that specifies run procedure and syntax.
 It doesn't try to split.
 Thus examining this is the "Current Focus" for the time being.
 
-Files
-            ./dump4
-            ./dumpLatest5
-            ./one                                                         <<<<<<------ 6/25/2020
-            ./two                                                         <<<<<<------ 6/25/2020
-are error outputs from trying to launch (double click) the
-            Twiss
-sub selection, from the Tools
-            Preprocessing
-selection in the GUI. A syntax such as
-            Tools/Preprocessing/Twiss
-is probably appropriate.
-            ./dump4 and ./dumpLatest5 are legacy.
-            ./one and ./two are DEBUG latest, They are similar, but not identical.
-
-Seemingly (at least mostly) working selections are
-            Tools/Info/Propagators
-            Tools/Info/Parameters
-            Tools/Input/Chrom Fitting
-            Tools/Input/Tune Fitting
-            Tools/Input/Beam
-
-Thus getting
-            Tools/Preprocessing/Twiss
-to work will likely be important progress.
-
 ------>>>>>>          Current Focus                                       ENDS HERE!!!
-
 _____________________________________________________________________________________
+_____________________________________________________________________________________
+
+From here this document is "exploratory", as the code is under development.
+
+The likely scenario is that one is revisiting this last stanza, step (9), with the above already verified.
+Then, one only needs to reset the environment, STEP (0),
+before (re)trying STEP (9).
+The steps for this are:
+
+(DEBUG 0  Additional gui envirionment ( w/o libxml2-2.9.7/)           (0) <<<<<<------
+  and
+ DEBUG 9) Build UAL USPAS example longitudinal, spot check , and try: (9) <<<<<<------
+      "Copy and pastable", quick:
+            cd $UAL/gui
+            source env
+            setenv LD_LIBRARY_PATH $UAL/gui/libxml2-2.9.7/.libs/:$LD_LIBRARY_PATH
+            cd USPAS/examples
+            make clean
+            make
+            cd longitudinal/lib/
+            ./linux/run ring ../../lattices/general_fodo.sxf  $UAL/gui/USPAS/examples/project/apdf/eteapot.apdf
 _____________________________________________________________________________________
 
 (DEBUG) Build verbose root, and spot check it:
       Copy and pastable, slow build:
             cd $UAL/gui
             source env
-            setenv LD_LIBRARY_PATH $UAL/gui/libxml2-2.9.7/.libs/:$LD_LIBRARY_PATH
-:           setenv LD_LIBRARY_PATH $UAL/gui/libxml2-2.9.7/.libs/libxml2.so.2.9.7:$LD_LIBRARY_PATH
-:           setenv LD_LIBRARY_PATH ../../lib/:$LD_LIBRARY_PATH
+:           setenv LD_LIBRARY_PATH $UAL/gui/libxml2-2.9.7/.libs/:$LD_LIBRARY_PATH
             tar xvfz root_v4.04.02.source-SL7.6Nitrogen-UAL-mod.tar.gz
             cd       root_v4.04.02.source-SL7.6Nitrogen-UAL-mod
             ./configure --with-qt-incdir=$UAL/gui/qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod/include/ --with-qt-libdir=$UAL/gui/qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod/lib/
@@ -306,6 +290,9 @@ ________________________________________________________________________________
             cp ./verbose/TQtWidget.cxx ./qt/src/
             cp ./verbose/TGQt.cxx ./qt/src/
             cp ./verbose/TCanvas.cxx ./gpad/src/
+            cp ./verbose/TVirtualX.cxx ./base/src/
+            cp ./verbose/TROOT.cxx ./base/src/
+            cp ./verbose/TApplication.cxx ./base/src/
             make all >&! make.log
             cd lib
             ln -s libRint.so libRint.so.4.04
@@ -313,4 +300,61 @@ ________________________________________________________________________________
             ll lib/libGQt.so
 :                 1092328
 :                 1097120
+:                 1101216
             cd ..
+_____________________________________________________________________________________
+
+(DEBUG) ROOTandQt_example HelloWord:                                  (*) <<<<<<------
+      "Copy and pastable", quick:
+            cd $UAL/gui
+            source env
+            cd ROOTandQt_examples
+            source env
+            cd HelloWord
+            rm HelloWord
+            g++ `root-config --cflags --glibs` -I$QTDIR/include -L$QTDIR/lib -lqt-mt HelloWord.cxx -o HelloWord
+            setenv LD_LIBRARY_PATH $ROOTSYS/lib/:$LD_LIBRARY_PATH
+            ./HelloWord
+
+(DEBUG) ROOTandQt_example HelloCanvas:                                (*) <<<<<<------
+            cd $UAL/gui
+            source env
+            cd ROOTandQt_examples
+            source env
+            cd HelloCanvas
+            setenv LD_LIBRARY_PATH $ROOTSYS/lib/:$LD_LIBRARY_PATH
+:           qmake -project
+:           qmake
+            make clean
+            make
+            ./HelloCanvas
+_____________________________________________________________________________________
+
+Files
+            ./dump4
+            ./dumpLatest5
+            ./one                                                         <<<<<<------ 6/25/2020
+            ./two                                                         <<<<<<------ 6/25/2020
+            ./three                                                       <<<<<<------ 6/29/2020
+are error outputs from trying to launch (double click) the
+            Twiss
+sub selection, from the Tools
+            Preprocessing
+selection in the GUI. A syntax such as
+            Tools/Preprocessing/Twiss
+is probably appropriate.
+            ./dump4 and ./dumpLatest5 are legacy.
+            ./one and ./two are DEBUG near latest, They are similar, but not identical.
+            ./three is DEBUG latest, from the DEBUG root build.
+
+Seemingly (at least mostly) working selections are
+            Tools/Info/Propagators
+            Tools/Info/Parameters
+            Tools/Input/Chrom Fitting
+            Tools/Input/Tune Fitting
+            Tools/Input/Beam
+
+Thus getting
+            Tools/Preprocessing/Twiss
+to work will likely be important progress.
+_____________________________________________________________________________________
