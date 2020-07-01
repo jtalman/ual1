@@ -75,7 +75,7 @@ There's two "legacy" tars in $UAL/gui/:
                  The subsequent modifications to the configuration, and the build, need to be described (TBD).
                  There is a token license
                        1604 Feb  9  2004 LICENSE
-                 There is a debug stanza for this code at the very end of this document: "post RECIPE".
+                 There is a DEBUG stanza for this code at the very end of this document: "post RECIPE".
 
 These tars would probably work more seamlessly unpacked. Possibly this will be done at some point.
 These tars are pretty slow to build.
@@ -116,7 +116,8 @@ STEP                                                                 STEP
       NOT copy and pastable, slow build:
             tar xvfz qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod.tar.gz
             cd       qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod
-            ./configure --thread -no-xft -qt-gif --no-exceptions
+:           ./configure --thread -no-xft -qt-gif --no-exceptions
+            ./configure -thread -no-xft -qt-gif -no-exceptions
 ------>>>>>>      yes                                                 ENTERED MANUALLY!
             make all >&! make.log
             ll lib/libqt-mt.so.3.3.4
@@ -128,6 +129,7 @@ Note the possibly unfamiliar, make all, syntax!
 
 (2) Build root, and spot check it:                                    (2) <<<<<<------
       Copy and pastable, slow build:
+            rm -rf root_v4.04.02.source-SL7.6Nitrogen-UAL-mod
             tar xvfz root_v4.04.02.source-SL7.6Nitrogen-UAL-mod.tar.gz
             cd       root_v4.04.02.source-SL7.6Nitrogen-UAL-mod
             ./configure --with-qt-incdir=$UAL/gui/qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod/include/ --with-qt-libdir=$UAL/gui/qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod/lib/
@@ -256,7 +258,7 @@ ________________________________________________________________________________
 From here this document is "exploratory", as the code is under development.
 
 The likely scenario is that one is revisiting this last stanza, step (9), with the above already verified.
-Then, one only needs to reset the environment, STEP (0),
+Then, one typically only needs to reset the environment, STEP (0),
 before (re)trying STEP (9).
 The steps for this are:
 
@@ -293,6 +295,13 @@ ________________________________________________________________________________
             cp ./verbose/TVirtualX.cxx ./base/src/
             cp ./verbose/TROOT.cxx ./base/src/
             cp ./verbose/TApplication.cxx ./base/src/
+            cp ./silent/TRint.cxx ./rint/src/
+            cp ./silent/TQtWidget.cxx ./qt/src/
+            cp ./silent/TGQt.cxx ./qt/src/
+            cp ./silent/TCanvas.cxx ./gpad/src/
+            cp ./silent/TVirtualX.cxx ./base/src/
+            cp ./silent/TROOT.cxx ./base/src/
+            cp ./silent/TApplication.cxx ./base/src/
             make all >&! make.log
             cd lib
             ln -s libRint.so libRint.so.4.04
@@ -301,6 +310,8 @@ ________________________________________________________________________________
 :                 1092328
 :                 1097120
 :                 1101216
+:                 1101360
+:                 1105456
             cd ..
 _____________________________________________________________________________________
 
@@ -328,6 +339,30 @@ ________________________________________________________________________________
             make clean
             make
             ./HelloCanvas
+
+(DEBUG) ROOTandQt_example Player:                                (*) <<<<<<------
+            cd $UAL/gui
+            source env
+            cd ROOTandQt_examples
+            source env
+            cd Player
+            setenv LD_LIBRARY_PATH $ROOTSYS/lib/:$LD_LIBRARY_PATH
+            cp XXXMakefileXXX Makefile
+            make clean
+            make
+            ./Player
+
+(DEBUG) ROOTandQt_example main:                                (*) <<<<<<------
+            cd $UAL/gui
+            source env
+            cd ROOTandQt_examples
+            source env
+            cd web/main/
+            setenv LD_LIBRARY_PATH $ROOTSYS/lib/:$LD_LIBRARY_PATH
+            cp XXXMakefileXXX Makefile
+            make clean
+            make
+            ./main
 _____________________________________________________________________________________
 
 Files
