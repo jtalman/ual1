@@ -15,6 +15,7 @@ This is all assumed as familiar and quickly under control.
 Almost everything from here keys off environmental variable: $UAL.
 Almost everything from here only applies to "the gui" part of the repository.
 _____________________________________________________________________________________
+_____________________________________________________________________________________
 
 Thus this README really starts here, and really only applies to the gui subdirectory, $UAL/gui/.
 
@@ -90,18 +91,19 @@ qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod does not depend on environmental variabl
 root_v4.04.02.source-SL7.6Nitrogen-UAL-mod does depend on environmental variable $UAL.
 
 The awkward names may be improved at some point.
-
 _____________________________________________________________________________________
+_____________________________________________________________________________________
+
 begin CHRONOLOGY NOTES:
 
 Something like the recipe below has been verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) ca 5/16/2020.
-Something like the recipe below has been verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) ca 6/2/2020.
-Something like the recipe below has been verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) ca 6/4/2020.
-Something like the recipe below has been verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) ca 6/23/2020.
-Something like the recipe below has been verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) ca 6/29/2020.
-Something like the recipe below has been verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) ca 7/8/2020.
+Something like the recipe below has been verified on a Lenovo X201 laptop with SL7.6 ca 6/2/2020.
+Something like the recipe below has been verified on a Lenovo X201 laptop with SL7.6 ca 6/4/2020.
+Something like the recipe below has been verified on a Lenovo X201 laptop with SL7.6 ca 6/23/2020.
+Something like the recipe below has been verified on a Lenovo X201 laptop with SL7.6 ca 6/29/2020.
+Something like the recipe below has been verified on a Lenovo X201 laptop with SL7.6 ca 7/8/2020.
 
-Hopefully it will be verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) promptly.
+It should be verified on a Lenovo X201 laptop with SL7.6 promptly.
 
 7/8/2020:
       My current thinking is to "stub out" the malfunctioning code so that a dialog can be started on where
@@ -109,7 +111,7 @@ Hopefully it will be verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) prom
       This has tentatively been accomplished.
 
       Hopefully the previously working code can be readily brought to bear!
-      I haven't been able to this code base working yet, however.
+      I haven't been able to get this code base working yet, however.
 
       My sense is the "plumbing" for the underlying TEAPOT/UAL code is in place and working.
       Thus the sxf file, and apdf file, input and processing, seems to be working.
@@ -121,12 +123,20 @@ Hopefully it will be verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) prom
       Thus the stubbing.
       Again, the tentative direction is identifying where to start on new functioning code.
 
+      Another substantive update is the mod to the comments on step (7):
+(257)       Seems to fail on the splitting.                                 TENTATIVELY FIXED 7/8/2020
+(258)       Thus examining this is not recommended at this time.            TENTATIVELY FIXED 7/8/2020
+      Thus step (7) has been added to the Current Focus as step (10) below.
+
 end CHRONOLOGY NOTES:
 _____________________________________________________________________________________
 _____________________________________________________________________________________
 
 RECIPE, steps (0) - (9). The doubly indented lines are all to be executed.
 This all takes place within $UAL/gui:
+Thus all steps could begin with
+      cd $UAL/gui
+but don't at present. The orientation is to to stay in the gui subdirectory.
 
 STEP                                                                 STEP
 (0) Additional gui envirionment:                                      (0) <<<<<<------
@@ -211,6 +221,7 @@ No explicit license acceptance.
 :                 2665120 
 :                 2666592 
 :                 2666272 
+:                 2664824 
             cd ..
 
 (6) Build UAL QT example, spot check it, and try it:                  (6) <<<<<<------
@@ -245,7 +256,7 @@ Developmental:
 File that specifies run procedure and syntax.
 Seems to fail on the splitting.                                       TENTATIVELY FIXED 7/8/2020
 Thus examining this is not recommended at this time.                  TENTATIVELY FIXED 7/8/2020
-This code has been added to the Current Focus section.
+This code has been added to the Current Focus section as step (10).
 
 (8) Build UAL USPAS example transverse, and spot check it:            (8) <<<<<<------
       Copy and pastable, quick:
@@ -267,11 +278,12 @@ ________________________________________________________________________________
 
 (9) Build UAL USPAS example longitudinal, spot check , and try:       (9) <<<<<<------
       Copy and pastable, quick:
-            cd USPAS/examples/longitudinal
+            cd $UAL/gui/USPAS/examples/longitudinal
             make clean
             make
             ll lib/linux/run
 :                 230568
+:                 230560
             cd lib
 :           ./linux/run ring ../../project/apdf/teapot.apdf   ../../lattices/general_fodo.sxf
 :           ./linux/run ring ../../lattices/eq_tune_fodo.adxf ../../project/apdf/eteapot.apdf
@@ -285,11 +297,13 @@ ________________________________________________________________________________
 Pops up a GUI, MainPlayerUI, on the verified machine.
 There's a NOTES file that specifies run procedure and syntax.
 It doesn't try to split.
-Thus examining this, or the next stanza, step (10), is the Current Focus for the time being.
+Thus examining this, or the next stanza, "step (10)", is the Current Focus for the time being.
 
-(10) Build UAL USPAS example player, spot check , and try:           (10) <<<<<<------
+New as of 7/8/2020:
+(7 --->>>
+ 10) Build UAL USPAS example player, spot check , and try:           (10) <<<<<<------
       Copy and pastable, quick:
-            cd USPAS/examples/player
+            cd $UAL/gui/USPAS/examples/player
             make clean
             make
             ll lib/linux/run
