@@ -228,6 +228,8 @@ void UAL::QT::BasicPlayer::initRun()
 
 void UAL::QT::BasicPlayer::startRun()
 {
+std::cerr << __FILE__ << " " << __LINE__ << " enter void UAL::QT::BasicPlayer::startRun()\n";
+/*
   turnSlider->setRange(0, m_turns);
 
   setupButton->setEnabled(false);
@@ -237,10 +239,14 @@ void UAL::QT::BasicPlayer::startRun()
   stopButton->setEnabled(true);
 
   m_worker.startRun();
+*/
+std::cerr << __FILE__ << " " << __LINE__ << " leave void UAL::QT::BasicPlayer::startRun()\n";
 }
 
 void UAL::QT::BasicPlayer::pauseRun()
 {
+std::cerr << __FILE__ << " " << __LINE__ << " enter void UAL::QT::BasicPlayer::pauseRun()\n";
+/*
   m_worker.pauseRun();
 
   setupButton->setEnabled(false);
@@ -248,23 +254,29 @@ void UAL::QT::BasicPlayer::pauseRun()
   pauseButton->setEnabled(false);
   continueButton->setEnabled(true);
   stopButton->setEnabled(false);
-
+*/
+std::cerr << __FILE__ << " " << __LINE__ << " leave void UAL::QT::BasicPlayer::pauseRun()\n";
 }
 
 void UAL::QT::BasicPlayer::continueRun()
 {
+std::cerr << __FILE__ << " " << __LINE__ << " enter void UAL::QT::BasicPlayer::continueRun()\n";
+/*
   setupButton->setEnabled(false);
   runButton->setEnabled(false);
   pauseButton->setEnabled(true);
   continueButton->setEnabled(false);
   stopButton->setEnabled(true);
-
+*/
   m_worker.continueRun();
 
+std::cerr << __FILE__ << " " << __LINE__ << " leave void UAL::QT::BasicPlayer::continueRun()\n";
 }
 
 void UAL::QT::BasicPlayer::stopRun()
 {
+std::cerr << __FILE__ << " " << __LINE__ << " enter void UAL::QT::BasicPlayer::stopRun()\n";
+/*
   m_worker.stopRun();
 
   setupButton->setEnabled(true);
@@ -272,11 +284,14 @@ void UAL::QT::BasicPlayer::stopRun()
   pauseButton->setEnabled(false);
   continueButton->setEnabled(false);
   stopButton->setEnabled(false);
+*/
+std::cerr << __FILE__ << " " << __LINE__ << " leave void UAL::QT::BasicPlayer::stopRun()\n";
 }
 
 void UAL::QT::BasicPlayer::update(int turn)
 {
-
+std::cerr << __FILE__ << " " << __LINE__ << " enter void UAL::QT::BasicPlayer::update(int turn)\n";
+/*
   int t = m_turns/100;
   if(((turn/t)*t ) == turn) {
     turnSlider->setValue(turn);
@@ -289,6 +304,8 @@ void UAL::QT::BasicPlayer::update(int turn)
     QApplication::postEvent(this, event);
     std::cout << "UAL::QT::BasicPlayer::update: update and post event " << turn << std::endl;
   }
+*/
+std::cerr << __FILE__ << " " << __LINE__ << " leave void UAL::QT::BasicPlayer::update(int turn)\n";
 }
 
 void UAL::QT::BasicPlayer::customEvent(QCustomEvent* customEvent)
@@ -307,5 +324,3 @@ void UAL::QT::BasicPlayer::customEvent(QCustomEvent* customEvent)
 
   m_worker.continueRun();
 }
-
-

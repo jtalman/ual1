@@ -23,22 +23,29 @@ This gui build/make RECIPE/subprocess is not nearly as seamless as the larger re
 Thus it should be followed carefully. Possibly it will be improved at some point.
 Most of it can be "copy and pasted", however.
 
-"------>>>>>>" is for noteworthy aspects of the RECIPE. For example it shows where RECIPE step
-(1) Build qt, and spot check it:                                      (1) <<<<<<------
-            ...
------->>>>>>      yes                                                 ENTERED MANUALLY!
-            ...
+Symbol
+      "------>>>>>>"
+is for noteworthy aspects of the RECIPE. For example it shows where RECIPE step
+      (1) Build qt, and spot check it:                                      (1) <<<<<<------
+                  ...
+      ------>>>>>>      yes                                                 ENTERED MANUALLY!
+                  ...
 can't be copy and pasted.
-
-"   <<<<<<------" identifies steps (0) to (9) in the RECIPE.
+Symbol
+      "   <<<<<<------"
+identifies steps (0) to (9) in the RECIPE.
 
 The execute (hence, also build) verification of the code in directory tree
+      $UAL/gui/USPAS/examples/player
+and
       $UAL/gui/USPAS/examples/longitudinal
 is likely to be the focus for a while.
-It builds and runs and pops up a GUI. This is described in the last stanza:
+They build and run and pop up a GUI. This is described in the last stanza:
 ------>>>>>>          Current Focus:
 ...
 (9) spot check the UAL USPAS example longitudinal build:
+...
+(10) spot check the UAL USPAS example player build:
 ...
 ------>>>>>>          Current Focus                                       ENDS HERE!!!
 It is developmental/simple at this point.
@@ -82,15 +89,40 @@ These tars are pretty slow to build.
 qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod does not depend on environmental variable $UAL.
 root_v4.04.02.source-SL7.6Nitrogen-UAL-mod does depend on environmental variable $UAL.
 
+The awkward names may be improved at some point.
+
+_____________________________________________________________________________________
+begin CHRONOLOGY NOTES:
+
 Something like the recipe below has been verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) ca 5/16/2020.
 Something like the recipe below has been verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) ca 6/2/2020.
 Something like the recipe below has been verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) ca 6/4/2020.
 Something like the recipe below has been verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) ca 6/23/2020.
 Something like the recipe below has been verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) ca 6/29/2020.
+Something like the recipe below has been verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) ca 7/8/2020.
 
 Hopefully it will be verified on a Lenovo X201 laptop with SL7.6 (Nitrogen) promptly.
 
-The awkward names may be improved at some point.
+7/8/2020:
+      My current thinking is to "stub out" the malfunctioning code so that a dialog can be started on where
+      to begin to implement new functioning code.
+      This has tentatively been accomplished.
+
+      Hopefully the previously working code can be readily brought to bear!
+      I haven't been able to this code base working yet, however.
+
+      My sense is the "plumbing" for the underlying TEAPOT/UAL code is in place and working.
+      Thus the sxf file, and apdf file, input and processing, seems to be working.
+
+      My sense is the "plumbing" for the gui is in place and working.
+      Thus the interface is hopefully familiar.
+
+      What is not working is accepting user input in the gui and invoking it.
+      Thus the stubbing.
+      Again, the tentative direction is identifying where to start on new functioning code.
+
+end CHRONOLOGY NOTES:
+_____________________________________________________________________________________
 _____________________________________________________________________________________
 
 RECIPE, steps (0) - (9). The doubly indented lines are all to be executed.
@@ -176,6 +208,9 @@ No explicit license acceptance.
 :                 2665096 
 :                 2665120 
 :                 2665096 
+:                 2665120 
+:                 2666592 
+:                 2666272 
             cd ..
 
 (6) Build UAL QT example, spot check it, and try it:                  (6) <<<<<<------
@@ -208,8 +243,9 @@ Developmental:
             cd ../../..
             ll USPAS/examples/player/NOTES
 File that specifies run procedure and syntax.
-Seems to fail on the splitting.
-Thus examining this is not recommended at this time.
+Seems to fail on the splitting.                                       TENTATIVELY FIXED 7/8/2020
+Thus examining this is not recommended at this time.                  TENTATIVELY FIXED 7/8/2020
+This code has been added to the Current Focus section.
 
 (8) Build UAL USPAS example transverse, and spot check it:            (8) <<<<<<------
       Copy and pastable, quick:
@@ -224,10 +260,10 @@ File that specifies run procedure and syntax.
 Seems to fail on the splitting.
 Thus examining this is not recommended at this time.      
 
-Recommended for exploration is:
+Recommended for exploration is "The Current Focus":
 _____________________________________________________________________________________
 
------->>>>>>          Current Focus:
+------>>>>>>          The Current Focus:
 
 (9) Build UAL USPAS example longitudinal, spot check , and try:       (9) <<<<<<------
       Copy and pastable, quick:
@@ -249,13 +285,28 @@ ________________________________________________________________________________
 Pops up a GUI, MainPlayerUI, on the verified machine.
 There's a NOTES file that specifies run procedure and syntax.
 It doesn't try to split.
-Thus examining this is the "Current Focus" for the time being.
+Thus examining this, or the next stanza, step (10), is the Current Focus for the time being.
+
+(10) Build UAL USPAS example player, spot check , and try:           (10) <<<<<<------
+      Copy and pastable, quick:
+            cd USPAS/examples/player
+            make clean
+            make
+            ll lib/linux/run
+:                 230448
+            cd lib
+            ./linux/run ring ../../lattices/general_fodo.sxf  $UAL/gui/USPAS/examples/project/apdf/eteapot.apdf
+
+Pops up a GUI, MainPlayerUI, on the verified machine.
+There's a NOTES file that specifies run procedure and syntax.
+It doesn't try to split.
+Thus examining this, or the previous stanza, step (9), is the "Current Focus" for the time being.
 
 ------>>>>>>          Current Focus                                       ENDS HERE!!!
 _____________________________________________________________________________________
 _____________________________________________________________________________________
 
-From here this document is "exploratory", as the code is under development.
+From here this document is "exploratory/tentative", as the code is under development.
 
 The likely scenario is that one is revisiting this last stanza, step (9), with the above already verified.
 Then, one typically only needs to reset the environment, STEP (0),
@@ -272,7 +323,9 @@ The steps for this are:
             cd USPAS/examples
             make clean
             make
-            cd longitudinal/lib/
+:           cd longitudinal/lib/
+:           ./linux/run ring ../../lattices/general_fodo.sxf  $UAL/gui/USPAS/examples/project/apdf/eteapot.apdf
+            cd player/lib/
             ./linux/run ring ../../lattices/general_fodo.sxf  $UAL/gui/USPAS/examples/project/apdf/eteapot.apdf
 _____________________________________________________________________________________
 
@@ -312,6 +365,7 @@ ________________________________________________________________________________
 :                 1101216
 :                 1101360
 :                 1105456
+:                 1092312
             cd ..
 _____________________________________________________________________________________
 

@@ -167,6 +167,8 @@ std::cerr << __FILE__ << " " << __LINE__ << " enter void UAL::USPAS::BasicPlayer
   */
 
   if(item->text(0) == "Bunch X-PX") {
+std::cerr << __FILE__ << " " << __LINE__ << " enter Bunch X-PX\n";
+/*
     if(m_viewers.find("UAL::ROOT::BunchXPxViewer") != m_viewers.end()) return;
     UAL::ROOT::BunchXPxViewer* viewer = 
       new UAL::ROOT::BunchXPxViewer(this, &p_shell->getBunch());
@@ -175,9 +177,13 @@ std::cerr << __FILE__ << " " << __LINE__ << " enter void UAL::USPAS::BasicPlayer
     viewer->setFprint(m_fprint);
     addViewer("UAL::ROOT::BunchXPxViewer", viewer);
     viewer->show();
+*/
+std::cerr << __FILE__ << " " << __LINE__ << " leave Bunch X-PX\n";
   }
 
   if(item->text(0) == "Bunch Y-PY") {
+std::cerr << __FILE__ << " " << __LINE__ << " enter Bunch Y-PY\n";
+/*
     if(m_viewers.find("UAL::ROOT::BunchYPyViewer") != m_viewers.end()) return;
     UAL::ROOT::BunchYPyViewer* viewer = 
       new UAL::ROOT::BunchYPyViewer(this, &p_shell->getBunch());
@@ -186,9 +192,13 @@ std::cerr << __FILE__ << " " << __LINE__ << " enter void UAL::USPAS::BasicPlayer
     viewer->setFprint(m_fprint);
     addViewer("UAL::BunchYPyViewer", viewer);
     viewer->show();
+*/
+std::cerr << __FILE__ << " " << __LINE__ << " leave Bunch Y-PY\n";
   }
 
   if(item->text(0) == "Bunch CT-DE") {
+std::cerr << __FILE__ << " " << __LINE__ << " enter Bunch CT-DE\n";
+/*
     if(m_viewers.find("UAL::ROOT::BunchCtDeViewer") != m_viewers.end()) return;
     UAL::ROOT::BunchCtDeViewer* viewer = 
       new UAL::ROOT::BunchCtDeViewer(this,  &p_shell->getBunch());
@@ -196,9 +206,13 @@ std::cerr << __FILE__ << " " << __LINE__ << " enter void UAL::USPAS::BasicPlayer
     viewer->setFprint(m_fprint);
     addViewer("UAL::ROOT::BunchCtDeViewer", viewer);
     viewer->show();
+*/
+std::cerr << __FILE__ << " " << __LINE__ << " leave Bunch CT-DE\n";
   }
 
   if(item->text(0) == "Mountain Range") {
+std::cerr << __FILE__ << " " << __LINE__ << " enter Mountain Range\n";
+/*
     if(m_viewers.find("UAL::MountainRangeViewer") != m_viewers.end()) return;
     UAL::ROOT::MountainRangeViewer* viewer = 
       new UAL::ROOT::MountainRangeViewer(this, &p_shell->getBunch());
@@ -206,9 +220,12 @@ std::cerr << __FILE__ << " " << __LINE__ << " enter void UAL::USPAS::BasicPlayer
     viewer->setFprint(m_fprint);
     addViewer("UAL::ROOT::MountainRangeViewer", viewer);
     viewer->show();
+*/
+std::cerr << __FILE__ << " " << __LINE__ << " leave Mountain Range\n";
   }
 
   if(item->text(0) == "Twiss") {
+std::cerr << __FILE__ << " " << __LINE__ << " enter Twiss\n";
 std::cerr << __LINE__ << "\n";
     if(m_viewers.find("UAL::ROOT::TwissViewer") != m_viewers.end()) return;
 
@@ -221,26 +238,38 @@ std::cerr << __LINE__ << "\n";
     optics.getTwiss(atVector, twissVector);
 
 std::cerr << __LINE__ << "\n";
-    UAL::ROOT::TwissViewer* viewer = new UAL::ROOT::TwissViewer(this, atVector, twissVector);
-    addViewer("UAL::ROOT::TwissViewer", viewer);
-    viewer->show();
+//  UAL::ROOT::TwissViewer* viewer = new UAL::ROOT::TwissViewer(this, atVector, twissVector);
+std::cerr << __LINE__ << "\n";
+//  addViewer("UAL::ROOT::TwissViewer", viewer);
+std::cerr << __LINE__ << "\n";
+//  viewer->show();
+std::cerr << __FILE__ << " " << __LINE__ << " leave Twiss\n";
   }
 
   if(item->text(0) == "Orbit") {
+std::cerr << __FILE__ << " " << __LINE__ << " enter Orbit\n";
+std::cerr << __LINE__ << "\n";
     if(m_viewers.find("UAL::ROOT::OrbitViewer") != m_viewers.end()) return;
 
     std::vector<double> atVector;
     std::vector<PAC::Position> orbitVector;
+std::cerr << __LINE__ << "\n";
 
     UAL::OpticsCalculator& optics = UAL::OpticsCalculator::getInstance(); 
     optics.getOrbit(atVector, orbitVector);
 
-    UAL::ROOT::OrbitViewer* viewer = new UAL::ROOT::OrbitViewer(this, atVector, orbitVector);
-    addViewer("UAL::ROOT::OrbitViewer", viewer);
-    viewer->show();
+std::cerr << __LINE__ << "\n";
+//  UAL::ROOT::OrbitViewer* viewer = new UAL::ROOT::OrbitViewer(this, atVector, orbitVector);
+std::cerr << __LINE__ << "\n";
+//  addViewer("UAL::ROOT::OrbitViewer", viewer);
+std::cerr << __LINE__ << "\n";
+//  viewer->show();
+std::cerr << __FILE__ << " " << __LINE__ << " leave Orbit\n";
   }
 
   if(item->text(0) == "BPM TBT") {
+std::cerr << __FILE__ << " " << __LINE__ << " enter BPM TBT\n";
+/*
     if(m_viewers.find("UAL::ROOT::BunchTBTViewer") != m_viewers.end()) return;
 
     UAL::ROOT::BunchTBTViewer* viewer = 
@@ -248,25 +277,37 @@ std::cerr << __LINE__ << "\n";
 
     addViewer("UAL::ROOT::BunchTBTViewer", viewer);
     viewer->show();
+*/
+std::cerr << __FILE__ << " " << __LINE__ << " leave BPM TBT\n";
   }
 
   if(item->text(0) == "FFT") {
+std::cerr << __FILE__ << " " << __LINE__ << " enter FFT\n";
+/*
     if(m_viewers.find("UAL::ROOT::MonitorFFTViewer") != m_viewers.end()) return;
 
     UAL::ROOT::MonitorFFTViewer* viewer = new UAL::ROOT::MonitorFFTViewer(this);
     addViewer("UAL::ROOT::MonitorFFTViewer", viewer);
     viewer->show();
+*/
+std::cerr << __FILE__ << " " << __LINE__ << " leave FFT\n";
   }
 
   if(item->text(0) == "PCA X") {
+std::cerr << __FILE__ << " " << __LINE__ << " enter PCA X\n";
+/*
     if(m_viewers.find("UAL::ROOT::BpmSvdXViewer") != m_viewers.end()) return;
 
     UAL::ROOT::BpmSvd1DViewer* viewer = new UAL::ROOT::BpmSvd1DViewer(this, 0);
     addViewer("UAL::ROOT::BpmSvdXViewer", viewer);
     // viewer->show();
+    // */
+std::cerr << __FILE__ << " " << __LINE__ << " leave PCA X\n";
   }
 
   if(item->text(0) == "Poincare X-PX") {
+std::cerr << __FILE__ << " " << __LINE__ << " enter Poincare X-PX\n";
+/*
     if(m_viewers.find("UAL::ROOT::PoincareXPxViewer") != m_viewers.end()) return;
 
     UAL::ROOT::PoincareXPxViewer* viewer = 
@@ -276,9 +317,13 @@ std::cerr << __LINE__ << "\n";
     viewer->setFprint(m_fprint);
     addViewer("UAL::ROOT::PoincareXPxViewer", viewer);
     viewer->show();
+*/
+std::cerr << __FILE__ << " " << __LINE__ << " leave Poincare X-PX\n";
   }
 
   if(item->text(0) == "Poincare Y-PY") {
+std::cerr << __FILE__ << " " << __LINE__ << " enter Poincare Y-PY\n";
+/*
     if(m_viewers.find("UAL::ROOT::PoincareYPyViewer") != m_viewers.end()) return;
 
     UAL::ROOT::PoincareYPyViewer* viewer = 
@@ -288,9 +333,13 @@ std::cerr << __LINE__ << "\n";
     viewer->setFprint(m_fprint);
     addViewer("UAL::ROOT::PoincareYPyViewer", viewer);
     viewer->show();
+*/
+std::cerr << __FILE__ << " " << __LINE__ << " leave Poincare Y-PY\n";
   }
 
   if(item->text(0) == "Poincare CT-DE") {
+std::cerr << __FILE__ << " " << __LINE__ << " enter Poincare CT-DE\n";
+/*
     if(m_viewers.find("UAL::ROOT::PoincareCtDeViewer") != m_viewers.end()) return;
 
     UAL::ROOT::PoincareCtDeViewer* viewer = 
@@ -300,6 +349,8 @@ std::cerr << __LINE__ << "\n";
     viewer->setFprint(m_fprint);
     addViewer("UAL::ROOT::PoincareCtDeViewer", viewer);
     viewer->show();
+*/
+std::cerr << __FILE__ << " " << __LINE__ << " leave Poincare CT-DE\n";
   }
 
 std::cerr << __FILE__ << " " << __LINE__ << " leave void UAL::USPAS::BasicPlayer::showPage(QListViewItem* item)\n";
