@@ -123,16 +123,16 @@ It should be verified on a Lenovo X201 laptop with SL7.6 promptly.
       Thus the stubbing.
       Again, the tentative direction is identifying where to start on new functioning code.
 
-      Another substantive update is the mod to the comments on step (7):
+      Another substantive update is the mod to the comments on step (8):
 (257)       Seems to fail on the splitting.                                 TENTATIVELY FIXED 7/8/2020
 (258)       Thus examining this is not recommended at this time.            TENTATIVELY FIXED 7/8/2020
-      Thus step (7) has been added to the Current Focus as step (10) below.
+      Thus step (8) has been added to the Current Focus as step (11) below.
 
 end CHRONOLOGY NOTES:
 _____________________________________________________________________________________
 _____________________________________________________________________________________
 
-RECIPE, steps (0) - (9). The doubly indented lines are all to be executed.
+RECIPE, steps (0) - (11). The doubly indented lines are all to be executed.
 This all takes place within $UAL/gui:
 Thus all steps could begin with
       cd $UAL/gui
@@ -146,6 +146,10 @@ STEP                                                                 STEP
             setenv LD_LIBRARY_PATH $UAL/gui/libxml2-2.9.7/.libs/:$LD_LIBRARY_PATH
 :           setenv LD_LIBRARY_PATH $UAL/gui/libxml2-2.9.7/.libs/libxml2.so.2.9.7:$LD_LIBRARY_PATH
 :           setenv LD_LIBRARY_PATH ../../lib/:$LD_LIBRARY_PATH
+
+(1) Build libxml, and spot check it:                                  (1) <<<<<<------
+      "Copy and pastable":
+            rm -rf libxml2-2.9.7
             tar xvfz libxml2-git-snapshot.tar.gz
             cd libxml2-2.9.7/
             ./configure
@@ -154,8 +158,9 @@ STEP                                                                 STEP
 :           5402944
             cd ..
 
-(1) Build qt, and spot check it:                                      (1) <<<<<<------
+(2) Build qt, and spot check it:                                      (2) <<<<<<------
       NOT copy and pastable, slow build:
+            rm -rf qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod
             tar xvfz qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod.tar.gz
             cd       qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod
 :           ./configure --thread -no-xft -qt-gif --no-exceptions
@@ -169,7 +174,7 @@ Note the explicit license acceptance, yes.
 Note the possibly unfamiliar, make all, syntax!
 "qt" tends to use "make all".
 
-(2) Build root, and spot check it:                                    (2) <<<<<<------
+(3) Build root, and spot check it:                                    (3) <<<<<<------
       Copy and pastable, slow build:
             rm -rf root_v4.04.02.source-SL7.6Nitrogen-UAL-mod
             tar xvfz root_v4.04.02.source-SL7.6Nitrogen-UAL-mod.tar.gz
@@ -191,8 +196,9 @@ Note the possibly unfamiliar, make all, syntax!
 Note the possibly unfamiliar, make all, syntax!
 No explicit license acceptance.
 
-(3) Build muParser, and spot check it:                                (3) <<<<<<------
+(4) Build muParser, and spot check it:                                (4) <<<<<<------
       Copy and pastable, quick:
+:           rm -rf muparser_v134
             cd muparser_v134
             ./configure
             make
@@ -200,16 +206,18 @@ No explicit license acceptance.
 :                 366384 
             cd ..
 
-(4) Build UAL ROOT, and spot check it:                                (4) <<<<<<------
+(5) Build UAL ROOT, and spot check it:                                (5) <<<<<<------
       Copy and pastable, quick:
+:           rm -rf ROOT
             cd ROOT
             make >&! make.log
             ll lib/linux/libUalRootViewers.so
 :                 661512
             cd ..
 
-(5) Build UAL QT, and spot check it:                                  (5) <<<<<<------
+(6) Build UAL QT, and spot check it:                                  (6) <<<<<<------
       Copy and pastable, quick:
+:           rm -rf QT
             cd QT
             make >&! make.log
             ll lib/linux/libUalQt.so
@@ -224,7 +232,7 @@ No explicit license acceptance.
 :                 2664824 
             cd ..
 
-(6) Build UAL QT example, spot check it, and try it:                  (6) <<<<<<------
+(7) Build UAL QT example, spot check it, and try it:                  (7) <<<<<<------
       Copy and pastable, quick:
             cd qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod/examples/Player
             \cp XXXMakefileXXX Makefile
@@ -244,7 +252,7 @@ Again, this is in a "qt context".
 _____________________________________________________________________________________
 
 Developmental:
-(7) Build UAL USPAS example player, and spot check it:                (7) <<<<<<------
+(8) Build UAL USPAS example player, and spot check it:                (8) <<<<<<------
       Copy and pastable, quick:
             cd USPAS/examples/player
             make clean
@@ -258,7 +266,7 @@ Seems to fail on the splitting.                                       TENTATIVEL
 Thus examining this is not recommended at this time.                  TENTATIVELY FIXED 7/8/2020
 This code has been added to the Current Focus section as step (10).
 
-(8) Build UAL USPAS example transverse, and spot check it:            (8) <<<<<<------
+(9) Build UAL USPAS example transverse, and spot check it:            (9) <<<<<<------
       Copy and pastable, quick:
             cd USPAS/examples/transverse
             make clean
@@ -276,7 +284,7 @@ ________________________________________________________________________________
 
 ------>>>>>>          The Current Focus:
 
-(9) Build UAL USPAS example longitudinal, spot check , and try:       (9) <<<<<<------
+(10) Build UAL USPAS example longitudinal, spot check , and try:      (10) <<<<<<------
       Copy and pastable, quick:
             cd $UAL/gui/USPAS/examples/longitudinal
             make clean
@@ -297,11 +305,11 @@ ________________________________________________________________________________
 Pops up a GUI, MainPlayerUI, on the verified machine.
 There's a NOTES file that specifies run procedure and syntax.
 It doesn't try to split.
-Thus examining this, or the next stanza, "step (10)", is the Current Focus for the time being.
+Thus examining this, or the next stanza, "step (11)", is the Current Focus for the time being.
 
 New as of 7/8/2020:
-(7 --->>>
- 10) Build UAL USPAS example player, spot check , and try:           (10) <<<<<<------
+(8 --->>>
+ 11) Build UAL USPAS example player, spot check , and try:           (11) <<<<<<------
       Copy and pastable, quick:
             cd $UAL/gui/USPAS/examples/player
             make clean
@@ -314,7 +322,7 @@ New as of 7/8/2020:
 Pops up a GUI, MainPlayerUI, on the verified machine.
 There's a NOTES file that specifies run procedure and syntax.
 It doesn't try to split.
-Thus examining this, or the previous stanza, step (9), is the "Current Focus" for the time being.
+Thus examining this, or the previous stanza, step (10), is the "Current Focus" for the time being.
 
 ------>>>>>>          Current Focus                                       ENDS HERE!!!
 _____________________________________________________________________________________
@@ -324,12 +332,12 @@ From here this document is "exploratory/tentative", as the code is under develop
 
 The likely scenario is that one is revisiting this last stanza, step (9), with the above already verified.
 Then, one typically only needs to reset the environment, STEP (0),
-before (re)trying STEP (9).
+before (re)trying STEP (10).
 The steps for this are:
 
 (DEBUG 0  Additional gui envirionment ( w/o libxml2-2.9.7/)           (0) <<<<<<------
   and
- DEBUG 9) Build UAL USPAS example longitudinal, spot check , and try: (9) <<<<<<------
+ DEBUG 10) Build UAL USPAS example longitudinal, spot check , and try:(10) <<<<<<------
       "Copy and pastable", quick:
             cd $UAL/gui
             source env
@@ -408,7 +416,7 @@ ________________________________________________________________________________
             make
             ./HelloCanvas
 
-(DEBUG) ROOTandQt_example Player:                                (*) <<<<<<------
+(DEBUG) ROOTandQt_example Player:                                     (*) <<<<<<------
             cd $UAL/gui
             source env
             cd ROOTandQt_examples
