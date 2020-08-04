@@ -19,7 +19,9 @@ ________________________________________________________________________________
 
 Thus this README really starts here, and really only applies to the gui subdirectory, $UAL/gui/.
 
-There's a hopefully fully explicit RECIPE section after this section.
+There's a hopefully fully explicit RECIPE section after this section. Lines 148 to 340.
+This RECIPE is the only independently verified section.
+Other sections are exploratory.
 This gui build/make RECIPE/subprocess is not nearly as seamless as the larger repository build!
 Thus it should be followed carefully. Possibly it will be improved at some point.
 Most of it can be "copy and pasted", however.
@@ -44,9 +46,9 @@ is likely to be the focus for a while.
 They build and run and pop up a GUI. This is described in the last stanza:
 ------>>>>>>          Current Focus:
 ...
-(9) spot check the UAL USPAS example longitudinal build:
+(10) spot check the UAL USPAS example longitudinal build:
 ...
-(10) spot check the UAL USPAS example player build:
+(11) spot check the UAL USPAS example player build:
 ...
 ------>>>>>>          Current Focus                                       ENDS HERE!!!
 It is developmental/simple at this point.
@@ -63,7 +65,7 @@ They should probably be ignored, as they don't even pop up their GUI.
 There's two "legacy" tars in $UAL/gui/:
       (i)  qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod.tar.gz
                  This is a small modification to qt-x11-free-3.3.4.tar, the free qt code from Trolltech ca 2005.
-                 I use "our legacy" (RT, NM, and JDT) configuration procedure, dating back 15 years or so.
+                 I use "the legacy" (RT, NM) configuration procedure, dating back 15 years or so.
                  This may or may not be "current"/optimal.
                  There is a token license acceptance for the qt3 use.
                        18360 Jan 21  2005 ../qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod/LICENSE.GPL
@@ -80,7 +82,13 @@ There's two "legacy" tars in $UAL/gui/:
                              endl         -->> std::endl
                        in 100 files or so.
                        A few lines/stanzas are simply commented out.
+                 The file
+                       ./config/rootrc.in
+                 is hardwired for qt:
+                       117 Gui.Backend:      qt
+                       118 Gui.Factory:      qt
                  The subsequent modifications to the configuration, and the build, need to be described (TBD).
+
                  There is a token license
                        1604 Feb  9  2004 LICENSE
                  There is a DEBUG stanza for this code at the very end of this document: "post RECIPE".
@@ -128,15 +136,21 @@ It should be verified on a Lenovo X201 laptop with SL7.6 promptly.
 (258)       Thus examining this is not recommended at this time.            TENTATIVELY FIXED 7/8/2020
       Thus step (8) has been added to the Current Focus as step (11) below.
 
+8/4/2020:
+      This file, $UAL/2020_UAL_GUI_README, has been somewhat reworked.
+            The main mod is splitting STEP (0) into STEP (0) and STEP (1).
+
 end CHRONOLOGY NOTES:
 _____________________________________________________________________________________
 _____________________________________________________________________________________
 
-RECIPE, steps (0) - (11). The doubly indented lines are all to be executed.
-This all takes place within $UAL/gui:
-Thus all steps could begin with
-      cd $UAL/gui
-but don't at present. The orientation is to to stay in the gui subdirectory.
+
+RECIPE:
+      steps (0) - (11). The doubly indented lines are all to be executed.
+      This all takes place within $UAL/gui:
+      Thus all steps could begin with
+            cd $UAL/gui
+      but don't at present. The orientation is to to stay in the gui subdirectory.
 
 STEP                                                                 STEP
 (0) Additional gui envirionment:                                      (0) <<<<<<------
@@ -284,7 +298,7 @@ ________________________________________________________________________________
 
 ------>>>>>>          The Current Focus:
 
-(10) Build UAL USPAS example longitudinal, spot check , and try:      (10) <<<<<<------
+(10) Build UAL USPAS example longitudinal, spot check, and try:       (10) <<<<<<------
       Copy and pastable, quick:
             cd $UAL/gui/USPAS/examples/longitudinal
             make clean
@@ -308,8 +322,7 @@ It doesn't try to split.
 Thus examining this, or the next stanza, "step (11)", is the Current Focus for the time being.
 
 New as of 7/8/2020:
-(8 --->>>
- 11) Build UAL USPAS example player, spot check , and try:           (11) <<<<<<------
+ 11) Build UAL USPAS example player, spot check ,and try:            (11) <<<<<<------
       Copy and pastable, quick:
             cd $UAL/gui/USPAS/examples/player
             make clean
@@ -325,19 +338,28 @@ It doesn't try to split.
 Thus examining this, or the previous stanza, step (10), is the "Current Focus" for the time being.
 
 ------>>>>>>          Current Focus                                       ENDS HERE!!!
+
+
+
 _____________________________________________________________________________________
 _____________________________________________________________________________________
+_____________________________________________________________________________________
+
+
 
 From here this document is "exploratory/tentative", as the code is under development.
+There's a debugging aspect, as well.
 
-The likely scenario is that one is revisiting this last stanza, step (9), with the above already verified.
+The likely scenario is that one is revisiting this last stanza, step (10) or step (11), with the above already verified.
 Then, one typically only needs to reset the environment, STEP (0),
-before (re)trying STEP (10).
+before (re)trying STEP (10) or STEP (11).
 The steps for this are:
 
 (DEBUG 0  Additional gui envirionment ( w/o libxml2-2.9.7/)           (0) <<<<<<------
   and
- DEBUG 10) Build UAL USPAS example longitudinal, spot check , and try:(10) <<<<<<------
+ DEBUG 10) Build UAL USPAS example longitudinal, spot check, and try: (10) <<<<<<------
+or
+ DEBUG 11) Build UAL USPAS example player, spot check, and try:       (11) <<<<<<------
       "Copy and pastable", quick:
             cd $UAL/gui
             source env
@@ -370,13 +392,13 @@ ________________________________________________________________________________
             cp ./verbose/TVirtualX.cxx ./base/src/
             cp ./verbose/TROOT.cxx ./base/src/
             cp ./verbose/TApplication.cxx ./base/src/
-            cp ./silent/TRint.cxx ./rint/src/
-            cp ./silent/TQtWidget.cxx ./qt/src/
-            cp ./silent/TGQt.cxx ./qt/src/
-            cp ./silent/TCanvas.cxx ./gpad/src/
-            cp ./silent/TVirtualX.cxx ./base/src/
-            cp ./silent/TROOT.cxx ./base/src/
-            cp ./silent/TApplication.cxx ./base/src/
+:           cp ./silent/TRint.cxx ./rint/src/
+:           cp ./silent/TQtWidget.cxx ./qt/src/
+:           cp ./silent/TGQt.cxx ./qt/src/
+:           cp ./silent/TCanvas.cxx ./gpad/src/
+:           cp ./silent/TVirtualX.cxx ./base/src/
+:           cp ./silent/TROOT.cxx ./base/src/
+:           cp ./silent/TApplication.cxx ./base/src/
             make all >&! make.log
             cd lib
             ln -s libRint.so libRint.so.4.04
