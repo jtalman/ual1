@@ -238,11 +238,11 @@ std::cerr << __LINE__ << "\n";
     optics.getTwiss(atVector, twissVector);
 
 std::cerr << __LINE__ << "\n";
-//  UAL::ROOT::TwissViewer* viewer = new UAL::ROOT::TwissViewer(this, atVector, twissVector);
+    UAL::ROOT::TwissViewer* viewer = new UAL::ROOT::TwissViewer(this, atVector, twissVector);
 std::cerr << __LINE__ << "\n";
-//  addViewer("UAL::ROOT::TwissViewer", viewer);
+    addViewer("UAL::ROOT::TwissViewer", viewer);
 std::cerr << __LINE__ << "\n";
-//  viewer->show();
+    viewer->show();
 std::cerr << __FILE__ << " " << __LINE__ << " leave Twiss\n";
   }
 

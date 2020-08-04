@@ -110,6 +110,7 @@ Something like the recipe below has been verified on a Lenovo X201 laptop with S
 Something like the recipe below has been verified on a Lenovo X201 laptop with SL7.6 ca 6/23/2020.
 Something like the recipe below has been verified on a Lenovo X201 laptop with SL7.6 ca 6/29/2020.
 Something like the recipe below has been verified on a Lenovo X201 laptop with SL7.6 ca 7/8/2020.
+Something like the recipe below has been verified on a Lenovo X201 laptop with SL7.6 ca 8/4/2020.
 
 It should be verified on a Lenovo X201 laptop with SL7.6 promptly.
 
@@ -139,6 +140,7 @@ It should be verified on a Lenovo X201 laptop with SL7.6 promptly.
 8/4/2020:
       This file, $UAL/2020_UAL_GUI_README, has been somewhat reworked.
             The main mod is splitting STEP (0) into STEP (0) and STEP (1).
+      The "Twiss" functionality: double click gives popup GUI seems to work on the dev box.
 
 end CHRONOLOGY NOTES:
 _____________________________________________________________________________________
@@ -162,7 +164,7 @@ STEP                                                                 STEP
 :           setenv LD_LIBRARY_PATH ../../lib/:$LD_LIBRARY_PATH
 
 (1) Build libxml, and spot check it:                                  (1) <<<<<<------
-      "Copy and pastable":
+      Copy and pastable, slow build:
             rm -rf libxml2-2.9.7
             tar xvfz libxml2-git-snapshot.tar.gz
             cd libxml2-2.9.7/
@@ -319,7 +321,7 @@ ________________________________________________________________________________
 Pops up a GUI, MainPlayerUI, on the verified machine.
 There's a NOTES file that specifies run procedure and syntax.
 It doesn't try to split.
-Thus examining this, or the next stanza, "step (11)", is the Current Focus for the time being.
+Thus examining this, or the next stanza, step (11), is the Current Focus for the time being.
 
 New as of 7/8/2020:
  11) Build UAL USPAS example player, spot check ,and try:            (11) <<<<<<------
@@ -347,8 +349,8 @@ ________________________________________________________________________________
 
 
 
-From here this document is "exploratory/tentative", as the code is under development.
-There's a debugging aspect, as well.
+From here this document is "exploratory/tentative", as the following code is under development.
+There's a JDT debugging aspect, as well.
 
 The likely scenario is that one is revisiting this last stanza, step (10) or step (11), with the above already verified.
 Then, one typically only needs to reset the environment, STEP (0),
