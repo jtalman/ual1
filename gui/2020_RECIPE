@@ -81,6 +81,7 @@ No explicit license acceptance.
             source env2
 :           rm -rf ROOT
             cd ROOT
+            make clean
             make >&! make.log
             ll lib/linux/libUalRootViewers.so
 :                 661512
@@ -92,6 +93,7 @@ No explicit license acceptance.
             source env2
 :           rm -rf QT
             cd QT
+            make clean
             make >&! make.log
             ll lib/linux/libUalQt.so
 :                 2668680 
@@ -103,6 +105,7 @@ No explicit license acceptance.
 :                 2666592 
 :                 2666272 
 :                 2664824 
+:                 2664888 
             cd ..
 
 (7) Build UAL QT example, spot check it, and try it:                  (7) <<<<<<------

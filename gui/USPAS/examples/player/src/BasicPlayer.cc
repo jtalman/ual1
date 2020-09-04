@@ -133,7 +133,9 @@ void UAL::USPAS::BasicPlayer::showPage(QListViewItem* item)
 {
 std::cerr << __FILE__ << " " << __LINE__ << " enter void UAL::USPAS::BasicPlayer::showPage(QListViewItem* item)\n";
   if(item->text(0) == "Beam") {
+std::cerr << __FILE__ << " " << __LINE__ << " enter Beam\n";
       widgetStack->raiseWidget(1);
+std::cerr << __FILE__ << " " << __LINE__ << " leave Beam\n";
   }
 
 
@@ -259,11 +261,11 @@ std::cerr << __LINE__ << "\n";
     optics.getOrbit(atVector, orbitVector);
 
 std::cerr << __LINE__ << "\n";
-//  UAL::ROOT::OrbitViewer* viewer = new UAL::ROOT::OrbitViewer(this, atVector, orbitVector);
+    UAL::ROOT::OrbitViewer* viewer = new UAL::ROOT::OrbitViewer(this, atVector, orbitVector);
 std::cerr << __LINE__ << "\n";
-//  addViewer("UAL::ROOT::OrbitViewer", viewer);
+    addViewer("UAL::ROOT::OrbitViewer", viewer);
 std::cerr << __LINE__ << "\n";
-//  viewer->show();
+    viewer->show();
 std::cerr << __FILE__ << " " << __LINE__ << " leave Orbit\n";
   }
 
