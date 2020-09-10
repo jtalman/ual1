@@ -35,8 +35,8 @@ UAL::QT::BasicPlayer::BasicPlayer()
   //  m_frame = new PlayerUI(this);
   // setCentralWidget(m_frame);
 
-  int w = 1000;//500;
-  int h = 600;//300;
+  int w = 500;
+  int h = 300;
   int x = QApplication::desktop()->width()/2 - w/2;
   int y = QApplication::desktop()->height()/2 - h/2; 
 
@@ -184,9 +184,7 @@ void UAL::QT::BasicPlayer::showPage(QListViewItem* item)
 
 void UAL::QT::BasicPlayer::addEditor(const std::string& className, UAL::QT::BasicEditor* editor)
 {
-std::cerr << __FILE__ << ": " << __LINE__ << "enter void UAL::QT::BasicPlayer::addEditor(const std::string& className, UAL::QT::BasicEditor* editor)\n";
   m_editors[className] = editor;
-std::cerr << __FILE__ << ": " << __LINE__ << "leave void UAL::QT::BasicPlayer::addEditor(const std::string& className, UAL::QT::BasicEditor* editor)\n";
 }
 
 void UAL::QT::BasicPlayer::removeEditor(const std::string& className)
@@ -197,9 +195,7 @@ void UAL::QT::BasicPlayer::removeEditor(const std::string& className)
 
 void UAL::QT::BasicPlayer::addViewer(const std::string& className, UAL::QT::BasicViewer* viewer)
 {
-std::cerr << __FILE__ << ": " << __LINE__ << "enter void UAL::QT::BasicPlayer::addViewer(const std::string& className, UAL::QT::BasicViewer* viewer)\n";
   m_viewers[className] = viewer;
-std::cerr << __FILE__ << ": " << __LINE__ << "leave void UAL::QT::BasicPlayer::addViewer(const std::string& className, UAL::QT::BasicViewer* viewer)\n";
 }
 
 void UAL::QT::BasicPlayer::removeViewer(const std::string& className)
@@ -209,7 +205,6 @@ void UAL::QT::BasicPlayer::removeViewer(const std::string& className)
 
 void UAL::QT::BasicPlayer::initRun()
 {
-std::cerr << __FILE__ << ": " << __LINE__ << "enter void UAL::QT::BasicPlayer::initRun()\n";
   turnSlider->setRange(0, m_turns);
 
   std::map<std::string, UAL::QT::BasicEditor* >::iterator it;
@@ -229,13 +224,12 @@ std::cerr << __FILE__ << ": " << __LINE__ << "enter void UAL::QT::BasicPlayer::i
     it->second->updateData();
   }
 
-std::cerr << __FILE__ << ": " << __LINE__ << "leave void UAL::QT::BasicPlayer::initRun()\n";
 }
 
 void UAL::QT::BasicPlayer::startRun()
 {
 std::cerr << __FILE__ << " " << __LINE__ << " enter void UAL::QT::BasicPlayer::startRun()\n";
-
+/*
   turnSlider->setRange(0, m_turns);
 
   setupButton->setEnabled(false);
@@ -245,7 +239,7 @@ std::cerr << __FILE__ << " " << __LINE__ << " enter void UAL::QT::BasicPlayer::s
   stopButton->setEnabled(true);
 
   m_worker.startRun();
-
+*/
 std::cerr << __FILE__ << " " << __LINE__ << " leave void UAL::QT::BasicPlayer::startRun()\n";
 }
 
@@ -282,7 +276,7 @@ std::cerr << __FILE__ << " " << __LINE__ << " leave void UAL::QT::BasicPlayer::c
 void UAL::QT::BasicPlayer::stopRun()
 {
 std::cerr << __FILE__ << " " << __LINE__ << " enter void UAL::QT::BasicPlayer::stopRun()\n";
-
+/*
   m_worker.stopRun();
 
   setupButton->setEnabled(true);
@@ -290,14 +284,14 @@ std::cerr << __FILE__ << " " << __LINE__ << " enter void UAL::QT::BasicPlayer::s
   pauseButton->setEnabled(false);
   continueButton->setEnabled(false);
   stopButton->setEnabled(false);
-
+*/
 std::cerr << __FILE__ << " " << __LINE__ << " leave void UAL::QT::BasicPlayer::stopRun()\n";
 }
 
 void UAL::QT::BasicPlayer::update(int turn)
 {
 std::cerr << __FILE__ << " " << __LINE__ << " enter void UAL::QT::BasicPlayer::update(int turn)\n";
-
+/*
   int t = m_turns/100;
   if(((turn/t)*t ) == turn) {
     turnSlider->setValue(turn);
@@ -310,7 +304,7 @@ std::cerr << __FILE__ << " " << __LINE__ << " enter void UAL::QT::BasicPlayer::u
     QApplication::postEvent(this, event);
     std::cout << "UAL::QT::BasicPlayer::update: update and post event " << turn << std::endl;
   }
-
+*/
 std::cerr << __FILE__ << " " << __LINE__ << " leave void UAL::QT::BasicPlayer::update(int turn)\n";
 }
 

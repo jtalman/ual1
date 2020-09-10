@@ -1,6 +1,13 @@
 Each of these STEPS can be run standalone. This is intended to facilitate debugging.
 
 STEP                                                                  STEP
+(0) Additional gui environment:                                       (0) <<<<<<------
+      "Copy and pastable":
+            cd $UAL/gui
+            source env2
+            setenv LD_LIBRARY_PATH $UAL/gui/libxml2-2.9.7/.libs/:$LD_LIBRARY_PATH
+This step is irrelevant. It is maintained for legacy reasons, and will probably be removed soon.
+
 (1) Build libxml, and spot check it:                                  (1) <<<<<<------
       Copy and pastable, slow build:
             cd $UAL/gui
@@ -12,6 +19,7 @@ STEP                                                                  STEP
             make
             ll .libs/libxml2.so.2.9.7
 :           5402944
+            cd ..
 
 (2) Build qt, and spot check it:                                      (2) <<<<<<------
       NOT copy and pastable, slow build:
@@ -26,6 +34,7 @@ STEP                                                                  STEP
             make all >&! make.log
             ll lib/libqt-mt.so.3.3.4
 :                 9590800
+            cd ..
 Note the explicit license acceptance, yes.
 Note the possibly unfamiliar, make all, syntax!
 "qt" tends to use "make all".
@@ -50,6 +59,7 @@ Note the possibly unfamiliar, make all, syntax!
 :                 1092328
 :                 1097120
 :                 1092328
+            cd ..
 Note the possibly unfamiliar, make all, syntax!
 No explicit license acceptance.
 
@@ -63,6 +73,7 @@ No explicit license acceptance.
             make
             ll lib/libmuparser.so.0.0.0
 :                 366384 
+            cd ..
 
 (5) Build UAL ROOT, and spot check it:                                (5) <<<<<<------
       Copy and pastable, quick:
@@ -74,6 +85,7 @@ No explicit license acceptance.
             make >&! make.log
             ll lib/linux/libUalRootViewers.so
 :                 661512
+            cd ..
 
 (6) Build UAL QT, and spot check it:                                  (6) <<<<<<------
       Copy and pastable, quick:
@@ -94,6 +106,7 @@ No explicit license acceptance.
 :                 2666272 
 :                 2664824 
 :                 2664888 
+            cd ..
 
 (7) Build UAL QT example, spot check it, and try it:                  (7) <<<<<<------
       Copy and pastable, quick:
@@ -107,6 +120,7 @@ No explicit license acceptance.
 :                 197928
             setenv LD_LIBRARY_PATH ../../lib/:$LD_LIBRARY_PATH
             ./Player
+            cd ../../..
 A template GUI should popup.
 An error message
       "...cannot open shared object file..."
@@ -123,9 +137,12 @@ Again, this is in a "qt context".
             make
             ll lib/linux/run
 :                 230448
-            cd lib
-            ./linux/run ring ../../lattices/general_fodo.sxf ../../project/apdf/teapot.apdf
-Pops up a GUI, MainPlayerUI, on the verified machine.
+            cd ../../..
+            ll USPAS/examples/player/NOTES
+File that specifies run procedure and syntax.
+Seems to fail on the splitting.                                       TENTATIVELY FIXED 7/8/2020
+Thus examining this is not recommended at this time.                  TENTATIVELY FIXED 7/8/2020
+This code has been added to the Current Focus section as step (10).
 
 (9) Build UAL USPAS example transverse:                               (9) <<<<<<------
       Copy and pastable, quick:
@@ -136,9 +153,11 @@ Pops up a GUI, MainPlayerUI, on the verified machine.
             make
             ll lib/linux/run
 :                 230448
-            cd lib
-            ./linux/run ring ../../lattices/general_fodo.sxf ../../project/apdf/teapot.apdf
-Pops up a GUI, MainPlayerUI, on the verified machine.
+            cd ../../..
+            ll USPAS/examples/transverse/NOTES
+File that specifies run procedure and syntax.
+Seems to fail on the splitting.
+Thus examining this is not recommended at this time.      
 
 (10) Build UAL USPAS example longitudinal, spot check, and try:       (10) <<<<<<------
       Copy and pastable, quick:
@@ -151,13 +170,33 @@ Pops up a GUI, MainPlayerUI, on the verified machine.
 :                 230568
 :                 230560
             cd lib
-            ./linux/run ring ../../lattices/general_fodo.sxf ../../project/apdf/teapot.apdf
 :           ./linux/run ring ../../project/apdf/teapot.apdf   ../../lattices/general_fodo.sxf
 :           ./linux/run ring ../../lattices/eq_tune_fodo.adxf ../../project/apdf/eteapot.apdf
 :           ./linux/run ring ../../lattices/eq_tune_fodo.adxf ../../project/apdf/teapot.apdf
 :           ./linux/run ring ../../lattices/general_fodo.sxf  ../../project/apdf/teapot.apdf
 :           ./linux/run ring ../../lattices/general_fodo.sxf  ../../project/apdf/eteapot.apdf
 :           ./linux/run ring ../../lattices/general_fodo.sxf  ../apdf/tibetan.apdf
-:           ./linux/run ring ../../lattices/general_fodo.sxf  $UAL/gui/USPAS/examples/project/apdf/eteapot.apdf
+            ./linux/run ring ../../lattices/general_fodo.sxf  $UAL/gui/USPAS/examples/project/apdf/eteapot.apdf
 :           ./linux/run ring ../../lattices/eq_tune_fodo.adxf ../../project/apdf/tibetan.apdf
+
 Pops up a GUI, MainPlayerUI, on the verified machine.
+There's a NOTES file that specifies run procedure and syntax.
+It doesn't try to split.
+Thus examining this, or the next stanza, step (11), is the Current Focus for the time being.
+
+(11) Build UAL USPAS example player, spot check ,and try:            (11) <<<<<<------
+      Copy and pastable, quick:
+            cd $UAL/gui
+            source env2
+            cd $UAL/gui/USPAS/examples/player
+            make clean
+            make
+            ll lib/linux/run
+:                 230448
+            cd lib
+            ./linux/run ring ../../lattices/general_fodo.sxf  $UAL/gui/USPAS/examples/project/apdf/eteapot.apdf
+
+Pops up a GUI, MainPlayerUI, on the verified machine.
+There's a NOTES file that specifies run procedure and syntax.
+It doesn't try to split.
+Thus examining this, or the previous stanza, step (10), is the "Current Focus" for the time being.

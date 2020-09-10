@@ -1,5 +1,0 @@
-running
-      cd lib
-      ./linux/run ring ../../project/apdf/teapot.apdf ../../lattices/general_fodo.sxf
-executes, but with a SIGSEGV fault
-
