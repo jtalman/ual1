@@ -1,0 +1,20 @@
+echo "xml"
+./xml
+
+echo "qt"
+./qt
+
+echo "root"
+./root
+
+echo "mu"
+./mu
+
+echo "ROOT"
+./ROOT
+
+echo "QT"
+./QT
+
+echo "list"
+./list
