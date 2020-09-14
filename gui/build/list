@@ -14,5 +14,10 @@ stat --format=%s:%n:%y $UAL/gui/ROOT/lib/linux/libUalRootViewers.so
 echo "661512"
 
 stat --format=%s:%n:%y $UAL/gui/QT/lib/linux/libUalQt.so
-echo "2665168"
+echo "2665192"
 
+stat --format=%s:%n:%y $UAL/gui/USPAS/examples/player/lib/linux/libUspasPlayer.so
+echo "478352"
+
+stat --format=%s:%n:%y $UAL/gui/USPAS/examples/player/lib/linux/run
+echo "230448"
