@@ -16,5 +16,8 @@ echo "ROOT"
 echo "QT"
 ./QT
 
+echo "player"
+./player
+
 echo "list"
 ./list
