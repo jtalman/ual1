@@ -271,7 +271,7 @@ std::cerr << __FILE__ << " " << __LINE__ << " leave Orbit\n";
 
   if(item->text(0) == "BPM TBT") {
 std::cerr << __FILE__ << " " << __LINE__ << " enter BPM TBT\n";
-/*
+
     if(m_viewers.find("UAL::ROOT::BunchTBTViewer") != m_viewers.end()) return;
 
     UAL::ROOT::BunchTBTViewer* viewer = 
@@ -279,7 +279,7 @@ std::cerr << __FILE__ << " " << __LINE__ << " enter BPM TBT\n";
 
     addViewer("UAL::ROOT::BunchTBTViewer", viewer);
     viewer->show();
-*/
+
 std::cerr << __FILE__ << " " << __LINE__ << " leave BPM TBT\n";
   }
 
@@ -309,7 +309,7 @@ std::cerr << __FILE__ << " " << __LINE__ << " leave PCA X\n";
 
   if(item->text(0) == "Poincare X-PX") {
 std::cerr << __FILE__ << " " << __LINE__ << " enter Poincare X-PX\n";
-/*
+
     if(m_viewers.find("UAL::ROOT::PoincareXPxViewer") != m_viewers.end()) return;
 
     UAL::ROOT::PoincareXPxViewer* viewer = 
@@ -319,7 +319,7 @@ std::cerr << __FILE__ << " " << __LINE__ << " enter Poincare X-PX\n";
     viewer->setFprint(m_fprint);
     addViewer("UAL::ROOT::PoincareXPxViewer", viewer);
     viewer->show();
-*/
+
 std::cerr << __FILE__ << " " << __LINE__ << " leave Poincare X-PX\n";
   }
 
