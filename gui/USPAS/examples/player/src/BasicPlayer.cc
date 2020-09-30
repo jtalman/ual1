@@ -170,7 +170,7 @@ std::cerr << __FILE__ << " " << __LINE__ << " leave Beam\n";
 
   if(item->text(0) == "Bunch X-PX") {
 std::cerr << __FILE__ << " " << __LINE__ << " enter Bunch X-PX\n";
-/*
+
     if(m_viewers.find("UAL::ROOT::BunchXPxViewer") != m_viewers.end()) return;
     UAL::ROOT::BunchXPxViewer* viewer = 
       new UAL::ROOT::BunchXPxViewer(this, &p_shell->getBunch());
@@ -179,7 +179,7 @@ std::cerr << __FILE__ << " " << __LINE__ << " enter Bunch X-PX\n";
     viewer->setFprint(m_fprint);
     addViewer("UAL::ROOT::BunchXPxViewer", viewer);
     viewer->show();
-*/
+
 std::cerr << __FILE__ << " " << __LINE__ << " leave Bunch X-PX\n";
   }
 
