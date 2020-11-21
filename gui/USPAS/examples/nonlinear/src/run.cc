@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
   gStyle->SetPalette(1, 0);
 
   // Declare DA space 
-  // ZLIB::Space space(6, 5);
+  ZLIB::Space space(6, 5);
 
   // Declare UI Interface
   UAL::QT::PlayerShell shell;
