@@ -296,7 +296,7 @@ std::cerr << __FILE__ << " " << __LINE__ << " leave void UAL::QT::BasicPlayer::s
 
 void UAL::QT::BasicPlayer::update(int turn)
 {
-std::cerr << __FILE__ << " " << __LINE__ << " enter void UAL::QT::BasicPlayer::update(int turn)\n";
+//std::cerr << __FILE__ << " " << __LINE__ << " enter void UAL::QT::BasicPlayer::update(int turn)\n";
 
   int t = m_turns/100;
   if(((turn/t)*t ) == turn) {
@@ -311,7 +311,7 @@ std::cerr << __FILE__ << " " << __LINE__ << " enter void UAL::QT::BasicPlayer::u
     std::cout << "UAL::QT::BasicPlayer::update: update and post event " << turn << std::endl;
   }
 
-std::cerr << __FILE__ << " " << __LINE__ << " leave void UAL::QT::BasicPlayer::update(int turn)\n";
+//std::cerr << __FILE__ << " " << __LINE__ << " leave void UAL::QT::BasicPlayer::update(int turn)\n";
 }
 
 void UAL::QT::BasicPlayer::customEvent(QCustomEvent* customEvent)
