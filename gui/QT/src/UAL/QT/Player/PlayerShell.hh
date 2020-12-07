@@ -21,6 +21,9 @@ namespace UAL
     /** Destructor */
     virtual ~PlayerShell();
 
+    void setTurns(int t){m_turns=t;}
+    int getTurns(){return m_turns;}
+
     /** Set beam attributes */
     bool setBeamAttributes(const UAL::Arguments& args);
 
@@ -64,6 +67,10 @@ namespace UAL
 
     /** SectorTracker */
     // UAL_RHIC::SectorTracker m_sectorTracker;
+    //
+ 
+  private:
+    int m_turns;
 
   };
  }

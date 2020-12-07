@@ -129,7 +129,7 @@ int main(int argc, char *argv[])
 //player->setTurns(500);
 
   player->setFprint(1000);
-  player->JDT();
+//player->JDT();
 
   // SoQt::init(gtPlayer);
 
