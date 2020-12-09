@@ -35,7 +35,10 @@ void UAL::QT::PlayerWorker::run()
     m_turn++;
     p_player->update(m_turn);   
 
-    if(m_turn > p_player->getTurns()) return;
+    if(m_turn > p_player->getTurns()){
+std::cout << "\n\n==================   END LOOP with TURNS: " << m_turn-1 << "   ==================\n\n";
+     return;
+    }
   }
 }
 

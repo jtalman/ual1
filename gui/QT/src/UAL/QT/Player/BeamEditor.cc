@@ -19,6 +19,7 @@ UAL::QT::BeamEditor::BeamEditor(QWidget* parent, const char *name)
 void UAL::QT::BeamEditor::setShell(UAL::QT::PlayerShell* shell)
 {
   p_shell = shell; // static_cast<UAL_RHIC::GtShell*>(shell);
+  std::cout << __FILE__ << ": " << __LINE__ << " enter void UAL::QT::BeamEditor::setShell(UAL::QT::PlayerShell* shell): p_shell->getTurns() " << p_shell->getTurns() << "\n";
 
   UAL::BunchGenerator& bg = p_shell->getBunchGenerator();
 
@@ -36,11 +37,17 @@ void UAL::QT::BeamEditor::setShell(UAL::QT::PlayerShell* shell)
 
   table->setText(7, 1, QString::number(p_shell->getCtHalfWidth()));
   table->setText(8, 1, QString::number(p_shell->getDeHalfWidth()));
+
+//table->setText( 9, 1, QString::number( -9999 ) );
+  table->setText( 9, 1, QString::number( p_shell->getTurns() ) );
+  std::cout << __FILE__ << ": " << __LINE__ << " leave void UAL::QT::BeamEditor::setShell(UAL::QT::PlayerShell* shell): p_shell->getTurns() " << p_shell->getTurns() << "\n";
 }
 
 void UAL::QT::BeamEditor::setPlayer(UAL::QT::BasicPlayer* player)
 {
-  p_player = player; // static_cast<UAL_RHIC::GtPlayer*>(player);
+ std::cout << __FILE__ << ": " << __LINE__ << " enter void UAL::QT::BeamEditor::setPlayer(UAL::QT::BasicPlayer* player) " << "\n";
+ p_player = player; // static_cast<UAL_RHIC::GtPlayer*>(player);
+ std::cout << __FILE__ << ": " << __LINE__ << " leave void UAL::QT::BeamEditor::setPlayer(UAL::QT::BasicPlayer* player) " << "\n";
 }
 
 
@@ -65,7 +72,8 @@ void UAL::QT::BeamEditor::initTable()
   table->setColumnStretchable(1, false);
   table->setColumnStretchable(2, true);
 
-  table->setNumRows(9);
+//table->setNumRows(9);
+  table->setNumRows(10);
 
   table->setText(0, 0, tr("type:"));
   table->setText(0, 1, tr(""));
@@ -103,10 +111,16 @@ void UAL::QT::BeamEditor::initTable()
   table->setText(8, 1, tr(""));
   table->setText(8, 2, tr(""));
 
+  table->setText(9, 0, tr("turns:"));
+  table->setText(9, 1, tr(""));
+  table->setText(9, 2, tr(""));
+
 }
 
 void UAL::QT::BeamEditor::setValue(int row, int col)
 {
+std::cout << __FILE__ << ": " << __LINE__ << " enter void UAL::QT::BeamEditor::setValue(int row, int col)\n";
+std::cout << __LINE__ << " row col" << row << " " << col << "\n";
   /*
   bool ok;
   double newValue = table->text(row, col).toDouble(&ok);
@@ -119,6 +133,7 @@ void UAL::QT::BeamEditor::setValue(int row, int col)
   }
   */
 
+std::cout << __FILE__ << ": " << __LINE__ << " leave void UAL::QT::BeamEditor::setValue(int row, int col)\n";
 }
 
 void UAL::QT::BeamEditor::updateData()
@@ -127,6 +142,7 @@ void UAL::QT::BeamEditor::updateData()
 
 void UAL::QT::BeamEditor::activateChanges()
 {
+std::cerr << __FILE__ << ": " << __LINE__ << " enter void UAL::QT::BeamEditor::activateChanges\n";
   bool ok;
 
   UAL::BunchGenerator& bg = p_shell->getBunchGenerator();
@@ -159,6 +175,12 @@ void UAL::QT::BeamEditor::activateChanges()
 
   // p_shell->initRun();
   // p_player->update(0);
+
+//unsigned int turns=table->text(9, 1).toInt(&ok);
+int turns=table->text(9, 1).toInt(&ok);
+  p_shell->setTurns(turns);
+//p_shell->setTurns((unsigned int)turns);
+std::cerr << __FILE__ << ": " << __LINE__ << " leave void UAL::QT::BeamEditor::activateChanges\n";
 }
 
 
