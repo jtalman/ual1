@@ -24,12 +24,6 @@ namespace UAL
     void setTurns(int t){m_turns=t;}
     int getTurns(){return m_turns;}
 
-    void setNbins(int nb){m_nbins=nb;}
-    int getNbins(){return m_nbins;}
-
-    void setNsteps(int ns){m_nsteps=ns;}
-    int getNsteps(){return m_nsteps;}
-
     /** Set beam attributes */
     bool setBeamAttributes(const UAL::Arguments& args);
 
@@ -77,8 +71,6 @@ namespace UAL
  
   private:
     int m_turns;
-    int m_nbins;
-    int m_nsteps;
 
   };
  }

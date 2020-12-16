@@ -115,18 +115,8 @@ int main(int argc, char *argv[])
 //playerShell.m_turns=1000;
 //unsigned int turns=1000;
 //int turns=500;
-
-#include"parameters"
-  std::cout << __LINE__ << "\n";
-//int turns=atoi(argv[4]);
-//int nbinsX=atoi(argv[5]);
-  std::cout << __LINE__ << " turns " << turns << "\n";
-//std::cout << __LINE__ << " nbinsX " << nbinsX << "\n";
+  int turns=atoi(argv[4]);
   playerShell.setTurns(turns);
-  std::cout << __LINE__ << "\n";
-  playerShell.setNbins(nbins);
-  playerShell.setNsteps(nsteps);
-  std::cout << __LINE__ << "\n";
 
   // ************************************************************************
   std::cout << "Open the Player application." << std::endl;

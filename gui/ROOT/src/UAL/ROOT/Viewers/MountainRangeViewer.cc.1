@@ -3,15 +3,17 @@
 #include "MountainRangeViewer.hh"
 
 UAL::ROOT::MountainRangeViewer::MountainRangeViewer(UAL::QT::BasicPlayer* player, 
-						    PAC::Bunch* bunch) : UAL::ROOT::BasicViewer(){
-std::cout << __FILE__ << ": " << __LINE__ << " enter UAL::ROOT::MountainRangeViewer::MountainRangeViewer\n";
+						    PAC::Bunch* bunch)
+  : UAL::ROOT::BasicViewer()
+{
+
   p_player     = player;
   p_bunch      = bunch;
 
   p_separatrix = &UAL::SeparatrixCalculator::getInstance(); 
 
-  m_nbins  = 10;
-  m_nsteps = 10;
+  m_nbins  = 100;
+  m_nsteps = 100;
 
   double ctMax = p_separatrix->getSumL()/p_separatrix->getRFCavity().getHarmon()/2.;
 
@@ -36,9 +38,6 @@ std::cout << __FILE__ << ": " << __LINE__ << " enter UAL::ROOT::MountainRangeVie
   viewer->cd(); 
   viewer->GetCanvas()->Modified();
   viewer->GetCanvas()->Update();
-std::cout << __LINE__ << " m_nbins " << m_nbins << "\n";
-std::cout << __LINE__ << " m_nsteps " << m_nsteps << "\n";
-std::cout << __FILE__ << ": " << __LINE__ << " leave UAL::ROOT::MountainRangeViewer::MountainRangeViewer\n";
 }
 
 void UAL::ROOT::MountainRangeViewer::updateViewer(int turn)
@@ -83,3 +82,4 @@ void UAL::ROOT::MountainRangeViewer::updatePoints(int step)
   // std::cout << "mp viewer: update points " << std::endl;
 
 }
+

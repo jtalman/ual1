@@ -1,0 +1,3 @@
+int turns  = 500;
+int nbins  = 10;
+int nsteps = 10;
