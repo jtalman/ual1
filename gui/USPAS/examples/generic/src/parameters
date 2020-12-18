@@ -1,3 +1,4 @@
-int turns  = 500;
-int nbins  = 10;
-int nsteps = 10;
+int turns  = 567;         // ACTIVE
+
+int nbins  = 10;          // NOT ACTIVE - hardwired in $UAL/gui/ROOT/src/UAL/ROOT/Viewers/MountainRangeViewer.hh
+int nsteps = 10;          // NOT ACTIVE - hardwired in $UAL/gui/ROOT/src/UAL/ROOT/Viewers/MountainRangeViewer.cc
