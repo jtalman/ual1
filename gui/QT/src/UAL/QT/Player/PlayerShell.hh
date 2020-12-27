@@ -21,8 +21,14 @@ namespace UAL
     /** Destructor */
     virtual ~PlayerShell();
 
+    void setBunchSize(int b){m_bunchSize=b;}
+    int getBunchSize(){return m_bunchSize;}
+
     void setTurns(int t){m_turns=t;}
     int getTurns(){return m_turns;}
+
+    void setPlotUpdates(int p){m_plotUpdates=p;}
+    int getPlotUpdates(){return m_plotUpdates;}
 
     void setNbins(int nb){m_nbins=nb;}
     int getNbins(){return m_nbins;}
@@ -77,6 +83,9 @@ namespace UAL
  
   private:
     int m_turns;
+    int m_bunchSize;
+    int m_plotUpdates;
+
     int m_nbins;
     int m_nsteps;
 
