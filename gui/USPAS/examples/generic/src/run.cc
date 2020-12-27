@@ -122,7 +122,9 @@ int main(int argc, char *argv[])
 //int nbinsX=atoi(argv[5]);
   std::cout << __LINE__ << " turns " << turns << "\n";
 //std::cout << __LINE__ << " nbinsX " << nbinsX << "\n";
+  playerShell.setBunchSize(bunchSize);
   playerShell.setTurns(turns);
+  playerShell.setPlotUpdates(plotUpdates);
   std::cout << __LINE__ << "\n";
   playerShell.setNbins(nbins);
   playerShell.setNsteps(nsteps);
@@ -138,7 +140,8 @@ int main(int argc, char *argv[])
   player->setTurns(turns);
 //player->setTurns(500);
 
-  player->setFprint(1000);
+  player->setFprint(plotUpdates);
+//player->setFprint(100);
 //player->JDT();
 
   // SoQt::init(gtPlayer);
