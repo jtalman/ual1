@@ -298,15 +298,12 @@ void UAL::QT::BasicPlayer::update(int turn)
 {
 //std::cerr << __FILE__ << " " << __LINE__ << " enter void UAL::QT::BasicPlayer::update(int turn)\n";
 
-/*
   int t = m_turns/100;
   if(((turn/t)*t ) == turn) {
     turnSlider->setValue(turn);
   }
-*/
 
   if((turn/m_fprint)*m_fprint == turn) {
-    turnSlider->setValue(turn);
     // std::cout << "basic player: post event " << turn << std::endl;
     UAL::QT::PlayerEvent* event = new UAL::QT::PlayerEvent();
     event->turn = turn;

@@ -40,10 +40,8 @@ void UAL::QT::BeamEditor::setShell(UAL::QT::PlayerShell* shell)
 
 //table->setText( 9, 1, QString::number( -9999 ) );
   table->setText( 9, 1, QString::number( p_shell->getTurns() ) );
-  table->setText( 10, 1, QString::number( p_shell->getPlotUpdates() ) );
-
-  table->setText( 11, 1, QString::number( p_shell->getNbins() ) );
-  table->setText( 12, 1, QString::number( p_shell->getNsteps() ) );
+  table->setText( 10, 1, QString::number( p_shell->getNbins() ) );
+  table->setText( 11, 1, QString::number( p_shell->getNsteps() ) );
 
   std::cout << __FILE__ << ": " << __LINE__ << " leave void UAL::QT::BeamEditor::setShell(UAL::QT::PlayerShell* shell): p_shell->getTurns() " << p_shell->getTurns() << "\n";
 }
@@ -79,8 +77,7 @@ void UAL::QT::BeamEditor::initTable()
 
 //table->setNumRows(9);
 //table->setNumRows(10);
-//table->setNumRows(12);
-  table->setNumRows(13);                 // plot updates
+  table->setNumRows(12);
 
   table->setText(0, 0, tr("type:"));
   table->setText(0, 1, tr(""));
@@ -122,17 +119,13 @@ void UAL::QT::BeamEditor::initTable()
   table->setText(9, 1, tr(""));
   table->setText(9, 2, tr(""));
 
-  table->setText(10, 0, tr("plot updates:"));
+  table->setText(10, 0, tr("steps:"));
   table->setText(10, 1, tr(""));
   table->setText(10, 2, tr(""));
 
-  table->setText(11, 0, tr("steps:"));
+  table->setText(11, 0, tr("bins:"));
   table->setText(11, 1, tr(""));
   table->setText(11, 2, tr(""));
-
-  table->setText(12, 0, tr("bins:"));
-  table->setText(12, 1, tr(""));
-  table->setText(12, 2, tr(""));
 
 }
 

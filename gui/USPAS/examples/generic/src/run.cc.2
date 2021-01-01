@@ -103,7 +103,7 @@ int main(int argc, char *argv[])
   // ************************************************************************
   
   playerShell.setBunch(Args() 
-//		 << Arg("np",    1000) 
+		 << Arg("np",    1000) 
 		 << Arg("enx",   1.5e-7)  
 		 << Arg("eny",   1.5e-7) 
 		 << Arg("ctMax", 0.567) 
@@ -122,9 +122,7 @@ int main(int argc, char *argv[])
 //int nbinsX=atoi(argv[5]);
   std::cout << __LINE__ << " turns " << turns << "\n";
 //std::cout << __LINE__ << " nbinsX " << nbinsX << "\n";
-  playerShell.setBunchSize(bunchSize);                     // NOT ACTIVE
-  playerShell.setBunch(Args() << Arg("np", bunchSize));
-
+  playerShell.setBunchSize(bunchSize);
   playerShell.setTurns(turns);
   playerShell.setPlotUpdates(plotUpdates);
   std::cout << __LINE__ << "\n";
