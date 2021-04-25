@@ -84,8 +84,8 @@ int main(int argc, char *argv[])
   double energy =  29.382*mass;
 
   shell.setBeamAttributes(Args() << Arg("charge", charge));
-  shell.setBeamAttributes(Args() << Arg("energy", energy));
   shell.setBeamAttributes(Args() << Arg("mass", mass));
+  shell.setBeamAttributes(Args() << Arg("energy", energy));
 
   // ************************************************************************
   std::cout << "Set RF." << std::endl;

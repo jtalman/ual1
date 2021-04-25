@@ -1,6 +1,20 @@
 #!/bin/tcsh
 #
 
+echo "UAL"
+echo $UAL
+
+#CAUTION                   CAUTION
+pushd $UAL/codes/UAL
+pushd src/UAL/APF
+ rm PropagatorFactory.hh
+ ln -s PropagatorFactory_LOOSE.hh PropagatorFactory.hh
+popd
+make clean
+make
+popd
+#CAUTION                   CAUTION
+
 set QTLIB           = $UAL/gui/qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod/lib/
 set QTDIR           = $UAL/gui/qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod/
 set QTINC           = $UAL/gui/qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod/include/
