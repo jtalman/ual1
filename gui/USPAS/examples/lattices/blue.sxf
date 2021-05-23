@@ -1,4 +1,4 @@
-blue sequence { 
+ ring sequence { 
    marker { tag = clock6
   };
    drift { tag = oxspace l = 8.13589178

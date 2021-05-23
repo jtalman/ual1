@@ -129,7 +129,7 @@ int main(int argc, char *argv[])
 
   UAL::USPAS::BasicPlayer* player = new UAL::USPAS::BasicPlayer();
   player->setShell(&shell);
-  player->setTurns(1000);
+  player->setTurns(10000);
   player->setFprint(10);
 
   // SoQt::init(gtPlayer);
