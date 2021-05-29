@@ -20,6 +20,10 @@ namespace UAL {
 
   public:
 
+    char* getType(){
+     return "JDT_USPAS_OneTurnKicker";
+    }
+
     /** Constructor */
     OneTurnKicker();
 
