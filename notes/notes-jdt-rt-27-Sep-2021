@@ -1,15 +1,15 @@
-Verbatim history 9/27/2021:
-   115	10:32	git clone git://github.com/jtalman/ual1
-   116	10:36	ll
-   117	10:36	cd ual1/
-   118	10:37	echo $UAL
-   119	10:37	cat ../syntax
-   121	10:39	mkdir notes
-   122	10:39	touch notes/notes-jdt-rt-27-Sep-2021
-   124	10:40	git add .
-   125	10:40	git status -s
-   127	10:40	git config --global user.name "John Talman"
-   128	10:40	git config --global user.email JohnDTalman@gmail.com
-   129	10:41	git remote set-url origin https://jtalman@github.com/jtalman/ual1
-   130	10:41	git commit
-   131	10:41	git push
+
+In cloud
+        - need local repository e.g. $UAL         
+        - F5 refreshes web page 
+
+On web
+         - ^c copy
+         - ^v paste
+         - ^a select all
+         - ^f gives text box to enter string to look for
+
+SYNTAX:     new-syntax  and new-syntex.txt are the same 
+            rt-first-attempt-syntax
+
+token 27 Sep 2021   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+0
