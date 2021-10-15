@@ -3,9 +3,9 @@ CCFLAGS  =
 CCFLAGS  = -g -fpic  -O0 -fno-inline -Wall  -Wno-deprecated
 LD       = g++
 LDFLAGS  =
-LDFLAGS += -Wl,-rpath=$(UAL)/gui/libxml2-2.9.7/.libs/libxml2.so.2.9.7:$(UAL)/gui/run-scripts/USPAS-legacy/examples/longitudinalWithParametersFile/lib/linux/:$(UAL)/gui/root_v4.04.02.source-SL7.6Nitrogen-UAL-mod/lib/
+LDFLAGS += -Wl,-rpath=$(UAL)/gui/libxml2-2.9.7/.libs/libxml2.so.2.9.7:$(UAL)/gui/USPAS/examples/longitudinalDev/lib/linux/:$(UAL)/gui/root_v4.04.02.source-SL7.6Nitrogen-UAL-mod/lib/
 
-APP_DIR  = $(UAL)/gui/run-scripts/USPAS-legacy/examples/longitudinalWithParametersFile/
+APP_DIR  = $(UAL)/gui/USPAS/examples/longitudinalDev/
 SRC_DIR  = .
 LIB_DIR  = $(APP_DIR)/lib/linux/
 OBJ_DIR  = $(LIB_DIR)/obj
