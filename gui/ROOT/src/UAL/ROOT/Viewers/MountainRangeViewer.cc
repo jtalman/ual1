@@ -10,8 +10,8 @@ std::cout << __FILE__ << ": " << __LINE__ << " enter UAL::ROOT::MountainRangeVie
 
   p_separatrix = &UAL::SeparatrixCalculator::getInstance(); 
 
-  m_nbins  = 10;
-  m_nsteps = 10;
+  m_nbins  = 100;
+  m_nsteps = 100;
 
   double ctMax = p_separatrix->getSumL()/p_separatrix->getRFCavity().getHarmon()/2.;
 
