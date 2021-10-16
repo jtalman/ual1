@@ -53,5 +53,5 @@ TablePageUI.cc: TablePageUI.ui
 	cp XXXTablePageUI.ccXXX TablePageUI.cc
 
 $(UAL)/gui/QT/lib/linux/obj/%.o : %.cc
-	$(CC) $(CCFLAGS) -I../../../../../muparser_v134/include/ -I../../../../../../ext/ADXF/src/ -I. -I../../../../src/ -I../../../../../../ext/UI/src/ -I../../../../../../codes/UAL/src/ -I../../../../../../codes/PAC/src/ -I../../../../../../codes/ZLIB/src/ -I../../../../../../codes/TIBETAN/src/ -I../../../../../../ext/SXF/src/ -I../../../../../../codes/ACCSIM/src/ -I../../../../../../codes/AIM/src/ -c $< -o $@
+	$(CC) $(CCFLAGS) -I. -I../../../../src/ -I../../../../../../ext/UI/src/ -I../../../../../../codes/UAL/src/ -I../../../../../../codes/PAC/src/ -I../../../../../../codes/ZLIB/src/ -I../../../../../../codes/TIBETAN/src/ -I../../../../../../ext/SXF/src/ -I../../../../../../codes/ACCSIM/src/ -I../../../../../../codes/AIM/src/ -c $< -o $@
 #	$(CC) $(CCFLAGS) -I. -c $< -o $@;
