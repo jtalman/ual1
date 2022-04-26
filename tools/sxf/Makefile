@@ -1,6 +1,6 @@
 include ./config/$(SXF_ARCH)/Makefile.config
 
-DIRS = ./src ./examples ./api # ./doc
+DIRS = ./src ./examples # ./api # ./doc
 
 compile:  
 	@for dir in $(DIRS); do \
