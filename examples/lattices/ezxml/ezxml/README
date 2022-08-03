@@ -6,7 +6,7 @@ cd ezxml
 
 make
 
-gcc elements.c ./ezxml.o
+gcc element.c ./ezxml.o
       ./a.out SBMihsl
       HIT
       SBMihsl:
@@ -33,3 +33,5 @@ gcc sectors.c ./ezxml.o
       octantFD:
       mend:
 
+gcc elements.c ./ezxml.o
+      ./a.out
