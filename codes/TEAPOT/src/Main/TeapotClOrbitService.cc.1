@@ -83,14 +83,12 @@ void TeapotClOrbitService::define(PAC::Position& orbit, const PAC::BeamAttribute
   }
 
   if(flag) {
-    cerr << "\nJDT DEBUG " << __FILE__ << " line: " << __LINE__ << "\n";
     cerr << "\nparticle lost, closed orbit did not converge in " << nit << " turns\n";
     string msg = " ";
-//  PacDomainError(msg).raise();
+    PacDomainError(msg).raise();
   }
 
   if(nit == TeapotClOrbitService_Nit) {
-    cerr << "\nJDT DEBUG\n";
     cerr << "\nclosed orbit did not converge in " <<  nit << " turns \n";
   }
 
@@ -273,7 +271,6 @@ void TeapotClOrbitService::steerLS(PAC::Position& orbit0, const PAC::BeamAttribu
 
 void TeapotClOrbitService::closedOrbit(PAC::Position& p, const PacVTps& map, int order)
 {
-    cerr << "\nJDT DEBUG " << __FILE__ << " line: " << __LINE__ << "\n";
   int i, size = TeapotClOrbitService_Dim;
 
   TeapotMatrix matrix(size, size);

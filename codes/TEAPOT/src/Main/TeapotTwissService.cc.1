@@ -156,25 +156,19 @@ void TeapotTwissService::define(PacTwissData& twiss, const PacVTps& map)
 
     //======new block==================================
     if(xxx < 0.0) {
-    cerr << "\nJDT DEBUG " << __FILE__ << " line: " << __LINE__ << "\n";
-//    cerr << " mu[0] " << mu[0] << "mu[1] " << mu[1] << "\n";
-      cerr << " map.size() " << map.size() << "\n";
-      cerr << " r_h_sum " << r_h_sum << " r_h_dif " << r_h_dif << " s " << s << " xxx " << xxx << "\n";
       cerr << " void TeapotTwissService::define \n";
       cerr << " wrong map , cos(mu) =" << cos_mu << " \n";
       cerr << " see map in the map_wrong.out file" << " \n";
       char file_name[] = "map_wrong.out";
       map->write(file_name);
       cerr << " STOP. TeapotTwissService. \n";
-    cerr << "\nJDT DEBUG " << __FILE__ << " line: " << __LINE__ << "\n";
-//    exit(1);
+      exit(1);
     }
     //======new block==================================
 
     sin_mu = s*sqrt(xxx);
 
     if(cos_mu == 0) {
-    cerr << "\nJDT DEBUG " << __FILE__ << " line: " << __LINE__ << "\n";
       cerr << id << " unstable, cos(mu) is 0 \n";
       string msg = " ";
       PacDomainError(msg).raise();
