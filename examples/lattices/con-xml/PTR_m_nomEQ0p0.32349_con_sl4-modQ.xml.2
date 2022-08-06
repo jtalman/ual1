@@ -28,8 +28,8 @@
     <xsl:variable name="etaE" select="0.9999"/>
     <xsl:variable name="etaM" select="1.0-$etaE"/>
     <xsl:variable name="del_q" select="-0.009091"/>
-    <xsl:variable name="qFcEh" select="0.5*$del_q*$etaE"/>
-    <xsl:variable name="qDcEh" select="-$qFcEh"/>
+    <xsl:variable name="qFcE" select="$del_q*$etaE"/>
+    <xsl:variable name="qDcE" select="-$qFcE"/>
     <xsl:variable name="qFcMh" select="0.5*$del_q*$etaM"/>
     <xsl:variable name="qDcMh" select="-$qFcMh"/>
     <xsl:variable name="free_llsh" select="($L_LONG_STRAIGHT_NOM - $lQc) div 2"/>
