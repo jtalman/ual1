@@ -12,14 +12,14 @@ void lsh_QDcE(){
  mQDcM.marker_track(&mQDcM,nne);
  QDcMh.quadrupole_track(&QDcMh,nne);
  DlQch.drift_track(&DlQch,nne);
- QDcE.quadrupole_track(&QDcE,nne);
+ QDcEh.quadrupole_track(&QDcEh,nne);
  mQDcE.marker_track(&mQDcE,nne);
 }
 
 void QDcE_lsh(){
  printf("%sQDcE_lsh()\n",six);
  mQDcE.marker_track(&mQDcE,nne);
- QDcE.quadrupole_track(&QDcE,nne);
+ QDcEh.quadrupole_track(&QDcEh,nne);
  DlQch.drift_track(&DlQch,nne);
  QDcMh.quadrupole_track(&QDcMh,nne);
  mQDcM.marker_track(&mQDcM,nne);
