@@ -1,4 +1,6 @@
-<xsl:transform version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:saxon="http://icl.com/saxon" xmlns:math="http://exslt.org/math" extension-element-prefixes="saxon math">
+<xsl:transform version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:saxon="http://icl.com/saxon"
+    xmlns:math="http://exslt.org/math" extension-element-prefixes="saxon math">
     <xsi:elements>
         <element name="mbegin" type="marker"/>
         <element name="mend" type="marker"/>
@@ -14,8 +16,8 @@
         <element name="mQcend" type="marker"/>
         <element name="mllshnom" type="marker"/>
 
-        <element name="mNullSlice" type="quadrupole" l="$n0_length">
-            <mfield a="0" b="0.00000000001"/>
+        <element name="mNullSlice" type="quadrupole" l="$no_length">
+            <mfield a="0" b="$no_strength"/>
         </element>
 
         <element name="Dllshsl" type="drift" l="$llshsl"/>
@@ -42,7 +44,7 @@
         </element>
 
         <element name="RF1" type="rfcavity" l="$tiny">
-            <mfield volt="$rfvolt" harmon="$rfharmon" lag="$rflag"/>
+            <mfield volt="$rfvolt" harmon="$rfharmon" lag='$rflag'/>
         </element> 
     </xsi:elements>
     <!--  -->

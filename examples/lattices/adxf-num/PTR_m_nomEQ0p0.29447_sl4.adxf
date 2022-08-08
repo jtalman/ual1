@@ -22,7 +22,7 @@
 <element name="QFcMh" type="quadrupole" l="0.0000000001">
             <mfield a="0 0" b="0 0.0000000001"/>
         </element>
-<element name="QFcE" type="quadrupole" l="0.0000000001">
+<element name="QFcEh" type="quadrupole" l="0.0000000001">
             <mfield a="0 0" b="0 0.0000000001"/>
         </element>
 <element name="QDcMh" type="quadrupole" l="0.0000000001">
