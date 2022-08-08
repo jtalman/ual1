@@ -17,7 +17,7 @@ drift DlQch           = {.tag="DlQch     ",.length=0.2,.strength=0,.drift_track=
 
 quadrupole mNullSlice = {.tag="mNullSlice",.length=0.0000000001,.strength=+0.0000000001,.quadrupole_track=&quadrupole_track};
 quadrupole QFcMh      = {.tag="QFcMh     ",.length=0.0000000001,.strength=-0.0000004545499999999499,.quadrupole_track=&quadrupole_track};
-quadrupole QFcE       = {.tag="QFcE      ",.length=0.0000000001,.strength=-0.0090900909,.quadrupole_track=&quadrupole_track};
+quadrupole QFcEh      = {.tag="QFcEh     ",.length=0.0000000001,.strength=-0.0090900909,.quadrupole_track=&quadrupole_track};
 quadrupole QDcMh      = {.tag="QDcMh     ",.length=0.0000000001,.strength=+0.0000004545499999999499,.quadrupole_track=&quadrupole_track};
 quadrupole QDcEh      = {.tag="QDcEh     ",.length=0.0000000001,.strength=+0.0090900909,.quadrupole_track=&quadrupole_track};
 
