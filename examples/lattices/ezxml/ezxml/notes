@@ -122,4 +122,8 @@ Create source file ring.c:
          cp ring-template.c ring.c
          gcc ring.c
          ./a.out
- 
+________________________________________________________________
+
+      A <constants> "tree" of some adxf files (e.g. ff_sext_latnat.adxf) exist.
+      File constants.xml is the one for ff_sext_latnat.adxf.
+      Program constants.c manipulates this tree, much like the above elements.c and sectors.c.
