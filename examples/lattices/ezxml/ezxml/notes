@@ -5,7 +5,7 @@ Context:
    make
 ________________________________________________________________
 
-Create source file ring.c:
+("VERBOSE"): Create source file ring.c:
    Discussion:
       cp ring-template.c ring.c
 
@@ -124,7 +124,7 @@ RING:
    mend:AT:: +1.000000e-10 +1.000000e-06 +0.000000e+00 +0.000000e+00 +0.000000e+00 +0.000000e+00 +0.000000e+00
 ________________________________________________________________
 
-Create source file ring.c:
+("STREAMLINED"): Create source file ring.c:
    Discussion:
       Pure template:
          ./touch-C
