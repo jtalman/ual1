@@ -165,3 +165,12 @@ ________________________________________________________________
       File constants.xml is the one for ff_sext_latnat.adxf.
       Program constants.c manipulates this tree, much like the above elements.c and sectors.c.
  
+      gcc constants.c ./ezxml.o -o constants
+      ll constants
+            ... 31600 Oct 26 09:13 constants
+ 
+      ll elements
+            ... 31600 Oct 26 09:05 elements
+
+      ll sectors
+            ... 31648 Oct 26 09:09 sectors
