@@ -4,6 +4,11 @@ Context:
    cd ezxml
    make
 ________________________________________________________________
+Comment:
+   This terminology is a little dated.
+   More current examples are in
+      $UAL/examples/lattices/ezxml/Ring/
+________________________________________________________________
 
 ("VERBOSE"): Create source file ring.c:
    Discussion:
