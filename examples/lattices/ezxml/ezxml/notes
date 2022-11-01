@@ -6,8 +6,13 @@ Context:
 ________________________________________________________________
 Comment:
    This terminology is a little dated.
-   More current examples are in
-      $UAL/examples/lattices/ezxml/Ring/
+   More current examples are in directories (and file)
+      $UAL/examples/lattices/ezxml/create-Ring/notes
+   and
+      $UAL/examples/lattices/ezxml/Ring/notes
+
+   These instructions are to be followed while in directory
+      $UAL/examples/lattices/ezxml/ezxml/
 ________________________________________________________________
 
 ("VERBOSE"): Create source file ring.c:

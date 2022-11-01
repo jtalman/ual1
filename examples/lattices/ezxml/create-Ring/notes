@@ -1,3 +1,30 @@
+A current adxf file must be identified.
+
+      A <constants> "tree" of some adxf files (e.g. ff_sext_latnat.adxf) exist.
+      Representative file constants.xml (for ff_sext_latnat.adxf) is in ../ezxml/
+      Program ../ezxml/constants.c manipulates this tree.
+ 
+      gcc constants.c ./ezxml.o -o constants
+      ll constants
+            ... 31600 Oct 26 09:13 constants
+ 
+      An <elements> "tree" of some adxf files (e.g. PTR_m_nomEQ0p0.32349_sl4.adxf) exist.
+      Representative file elements.xml (for PTR_m_nomEQ0p0.32349_sl4.adxf) is in ../ezxml/
+      Program ../ezxml/elements.c manipulates this tree.
+
+      gcc elements.c ./ezxml.o -o elements
+      ll elements
+            ... 31600 Oct 26 09:05 elements
+ 
+      A <sectors> "tree" of some adxf files (e.g. PTR_m_nomEQ0p0.32349_sl4.adxf) exist.
+      Representative file sectors.xml (for PTR_m_nomEQ0p0.32349_sl4.adxf) is in ../ezxml/
+      Program ../ezxml/sectors.c manipulates this tree.
+
+      gcc sectors.c  ./ezxml.o -o sectors
+      ll sectors
+            ... 31648 Oct 26 09:09 sectors
+________________________________________________________________
+
 ("VERBOSE"): Create source file ring.c:
    Discussion:
       cp Ring-template.c Ring.c
