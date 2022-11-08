@@ -40,12 +40,22 @@ ________________________________________________________________
 
       New file Ring.c now has 1 static user include files
          C-element-tracking-methods
-      that already exists.
+      that already exists. This include file has "minimal" structure for
+         - markers
+         - drifts
+         - quadrupole
+         - sbend
+         - rfcavity
+      that applies to all UAL rings.
+
       It has 3 lattice dependent user include files
          touch C-lattice-elements
          touch C-sector-methods
          touch C-Ring
       that must eventually be populated.
+      Alernatively,
+         ./cp-C
+      does the equivalent.
 
       The above gives a quick spot check compilation.
             gcc Ring.c 
