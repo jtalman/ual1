@@ -1,38 +1,7 @@
-Context:
-   cd $UAL/examples/lattices/ezxml/
-   tar xvfz ezxml-0.8.6.tar.gz
-   cd ezxml
-   make
-________________________________________________________________
-Comment:
-   This terminology is current.
-   Necessary utilities, and more dated examples are in
-      $UAL/examples/lattices/ezxml/ezxml/
-________________________________________________________________
+This is the current working program directory.
 
-("VERBOSE"): Create source file ring.c:
-   Discussion:
-      cp ring-template.c ring.c
+New development is outlined in ../create-Ring/
 
-      New file ring.c now has 1 static user include files
-         C-tracking-methods
-      that already exists.
-________________________________________________________________
+Useful utilities are in ../ezxml/
 
-   $UAL/examples/lattices/ezxml/ezxml/
-
-      A <constants> "tree" of some adxf files (e.g. ff_sext_latnat.adxf) exist.
-      File constants.xml is the one for ff_sext_latnat.adxf.
-      Program constants.c manipulates this tree, much like the above elements.c and sectors.c.
- 
-      gcc constants.c ./ezxml.o -o constants
-      ll constants
-            ... 31600 Oct 26 09:13 constants
- 
-      gcc elements.c ./ezxml.o -o elements
-      ll elements
-            ... 31600 Oct 26 09:05 elements
-
-      gcc sectors.c  ./ezxml.o -o sectors
-      ll sectors
-            ... 31648 Oct 26 09:09 sectors
+Possibly interesting legacy info is also in ../ezxml/
