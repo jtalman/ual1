@@ -1,3 +1,12 @@
+This is the development directory.
+
+The current working program directory is in ../create-Ring/
+
+Useful utilities are in ../ezxml/
+
+Possibly interesting legacy info is also in ../ezxml/
+________________________________________________________________________
+
 A current adxf file must be identified.
 
       A <constants> "tree" of some adxf files (e.g. ff_sext_latnat.adxf) exist.
