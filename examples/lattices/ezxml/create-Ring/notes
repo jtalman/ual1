@@ -2,7 +2,7 @@ This is the development directory. A new adxf file must be identified.
 
 Useful utilities for working with this adxf file, and generally, are in ../ezxml/. ../ezxml/notes may be of interest. Possibly interesting legacy info is also in ../ezxml/.
 
-The current working program directory for adxf file PTR_m_nomEQ0p0.32349_sl4.adxf is in ../create-Ring/
+The current working program directory for adxf file PTR_m_nomEQ0p0.32349_sl4.adxf is in ../Ring/
 ________________________________________________________________________
 
 A current adxf file must be identified.
