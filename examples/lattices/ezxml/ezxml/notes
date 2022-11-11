@@ -186,3 +186,13 @@ ________________________________________________________________
       gcc sectors.c  ./ezxml.o -o sectors
       ll sectors
             ... 31648 Oct 26 09:09 sectors
+
+________________________________________________________________
+
+To programmatically access the constants of the current adxf file:
+      ./constants > constants.work
+      vi constants.work
+      :1,$ s/^/double /
+      :1,$ s/$/;/
+      hand edit = before RHS (right hand side) expression
+gives file that can be included in Ring.c after main().
