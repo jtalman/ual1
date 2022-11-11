@@ -13,6 +13,8 @@ A sector method is made up of:
 */
 
 #include <stdio.h>
+//../../../../codes/UAL/src/UAL/Common/Def.hh
+#include                              "Def.h"
 
 char*thr="   ";
 char*six="      ";
@@ -52,6 +54,11 @@ void octantFD(){                                // ring method
 }
 
 void main(){
+//#include"constants.work"
+//#include"print-constants"
+//#include"Def.h"
+//#include"print-UAL-Def"
+ 
  printf("%s:\n", "Ring");
  printf("   %s:AT:: %+e %+e %+e %+e %+e %+e %+e\n", "INJECT    ",AT,dx,dxp,dy,dyp,dct,de);
 
