@@ -7,6 +7,7 @@ void main(int argc,char* argv[]){
  double S=atof(argv[2]);
  double X,thtIn;
  double fac=180./3.141592653589793;
+ double x,y;
 
  for(i=0;i<argc;i++){
   printf("%d %s\n",i,argv[i]);
@@ -19,4 +20,8 @@ void main(int argc,char* argv[]){
  thtIn=atan(R/X);
  printf("thtIn (rad): %e\n",thtIn);
  printf("thtIn (deg): %e\n",thtIn*fac);
+
+ x=X*cos(thtIn);
+ y=X*sin(thtIn);
+ printf("INJECT@ (%e,%e)\n",x,y);
 }
