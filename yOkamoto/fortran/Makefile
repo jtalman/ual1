@@ -3,7 +3,7 @@ SUBR_OBJS = cmplxerf.o
 
 MAIN_OBJS = gafeld.o fnctnw.o testbmbm.o
 
-all: gafeld fnctnw testbmbm cmplxerf
+all: gafeld fnctnw testbmbm
 	rm -f $(SUBR_OBJS) $(MAIN_OBJS)
 
 testbmbm: testbmbm.f $(SUBR_OBJS)
@@ -15,11 +15,8 @@ gafeld: gafeld.f $(SUBR_OBJS)
 fnctnw: fnctnw.f $(SUBR_OBJS)
 	gfortran $(SUBR_OBJS) -o fnctnw fnctnw.f
 
-cmplxerf: cmplxerf.f $(SUBR_OBJS)
-	gfortran $(SUBR_OBJS) cmplxerf.f
-
 cmplxerf.o: cmplxerf.f
 	gfortran -c cmplxerf.f
 
 clean:
-	rm -f fnctnw $(SUBR_OBJS) $(MAIN_OBJS) fort.* gafeld testbmbm a.out
+	rm -f $(SUBR_OBJS) $(MAIN_OBJS) fort.* a.out testbmbm fnctnw gafeld
