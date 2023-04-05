@@ -1,0 +1,90 @@
+http://ftp.scientificlinux.org/linux/scientific/7.9/x86_64/iso/SL-7.9-x86_64-netinst.iso
+         620M
+         771.6 MB
+         fermilab:         http://ftp.scientificlinux.org/linux/scientific/7/contexts/
+
+Boot off cd with this file
+
+WELCOME TO SCIENTIFIC LINUX 7.9
+
+LANGUAGE
+         English / English (Unites States)
+
+NETWORK & HOSTNAME
+         Wireless (wlp2s0)
+                 Network Name
+                          Kendal WiFi
+                                   (passwd)
+                                   Connect
+         Hostname
+                 x201-4
+                         Apply
+         Done
+
+SOFTWARE SELECTION & INSTALLATION SOURCE seem to find the right URL after a few minutes
+         General Purpose System (1492 packages)   --->>>   Development and Creative Workstation (2014)
+
+INSTALLATION DESTINATION
+        Done
+                Reclaim Space
+                         Delete All
+                         Reclaim Space
+
+CONFIGURATION
+
+ROOT PASSWORD
+
+USER CREATION
+
+Begin Installation
+
+        Complete!
+
+        Reboot
+
+LICENSING
+        Accept
+        Done
+
+FINISH CONFIGURATION
+
+__________________________________________________________________________________________________
+https://mirrors.cloud.tencent.com/raspbian/raspbian/pool/main/libc/libcerf/libcerf_1.3.orig.tar.gz
+          385600
+
+https://sourceforge.net/projects/gnuplot/files/gnuplot/5.4.6/gnuplot-5.4.6.tar.gz/download
+          5655661
+
+open terminalSUBDIRS = config m4 term src man demo share
+
+
+[jtalman@x201-4 Desktop]$ 
+tar xvfz libcerf_1.3.orig.tar.gz
+cd libcerf-1.3/
+./configure
+make
+su
+      (root password)
+make install
+exit
+cd ..
+
+[jtalman@x201-4 Desktop]$ 
+tar xvfz gnuplot-5.4.6.tar.gz
+cd gnuplot-5.4.6/
+ ./configure --with-qt=no
+vi Makefile
+        comment out docs:
+               SUBDIRS = config m4 term src man demo share
+make
+su
+      (root password)
+make install
+exit
+
+tcsh
+setenv LD_LIBRARY_PATH /usr/local/lib/
+
+cd demo/
+gnuplot world.dem
+gnuplot cerf.dem
