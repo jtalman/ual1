@@ -3,12 +3,12 @@ http://ftp.scientificlinux.org/linux/scientific/7.9/x86_64/iso/SL-7.9-x86_64-net
          771.6 MB
          fermilab:         http://ftp.scientificlinux.org/linux/scientific/7/contexts/
 
-Boot off cd with this file
+Boot off cd with this iso file
 
 WELCOME TO SCIENTIFIC LINUX 7.9
 
 LANGUAGE
-         English / English (Unites States)
+         English / English (United States)
 
 NETWORK & HOSTNAME
          Wireless (wlp2s0)
@@ -36,7 +36,7 @@ ROOT PASSWORD
 
 USER CREATION
 
-Begin Installation
+Begin Installation (2014 packages)
 
         Complete!
 
@@ -55,8 +55,7 @@ https://mirrors.cloud.tencent.com/raspbian/raspbian/pool/main/libc/libcerf/libce
 https://sourceforge.net/projects/gnuplot/files/gnuplot/5.4.6/gnuplot-5.4.6.tar.gz/download
           5655661
 
-open terminalSUBDIRS = config m4 term src man demo share
-
+open terminal
 
 [jtalman@x201-4 Desktop]$ 
 tar xvfz libcerf_1.3.orig.tar.gz
