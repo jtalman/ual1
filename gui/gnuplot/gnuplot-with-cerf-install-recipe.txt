@@ -1,42 +1,98 @@
 http://ftp.scientificlinux.org/linux/scientific/7.9/x86_64/iso/SL-7.9-x86_64-netinst.iso
-         620M
-         771.6 MB
-         fermilab:         http://ftp.scientificlinux.org/linux/scientific/7/contexts/
+       Downloaded file: 620 MB
+       Entire disk: 37 items, totalling 771.6 MB
 
-Boot off cd with this iso file
+       Will likely access Fermilab URL files: http://ftp.scientificlinux.org/linux/scientific/7/contexts/
+________________________________________________________________________________________________
+
+Boot off cd with this iso file:
+________________________________________________________________________________________________
 
 WELCOME TO SCIENTIFIC LINUX 7.9
 
-LANGUAGE
+What language would you like to use during the installation process?
          English / English (United States)
+         Continue
 
-NETWORK & HOSTNAME
-         Wireless (wlp2s0)
-                 Network Name
-                          Kendal WiFi
-                                   (passwd)
+INSTALLATION SUMMARY
+_________________________________________________________________________
+
+     LOCALIZATION
+         DATE & TIME
+               Americas/New York timezone
+
+         LANGUAGE SUPPORT
+               English (United States)
+
+         KEYBOARD
+               English (US)
+_________________________________________________________________________
+     SYSTEM
+
+          NETWORK & HOSTNAME
+              Wireless (wlp2s0)
+                      Network Name
+                               Kendal WiFi
+                                   Password
                                    Connect
-         Hostname
+              Hostname
                  x201-4
-                         Apply
+                    Apply
          Done
 
-SOFTWARE SELECTION & INSTALLATION SOURCE seem to find the right URL after a few minutes
-         General Purpose System (1492 packages)   --->>>   Development and Creative Workstation (2014)
-
-INSTALLATION DESTINATION
-        Done
+     INSTALLATION DESTINATION
+         Done
                 Reclaim Space
                          Delete All
                          Reclaim Space
 
-CONFIGURATION
+         Automatic partitioning selected
 
-ROOT PASSWORD
+     KDUMP
+          Kdump is enabled
 
-USER CREATION
+     SECURITY POLICY
+          No profile selected
+_________________________________________________________________________
+
+SOFTWARE
+
+     CONTEXT
+         None Enabled
+              CONTEXT FRAMEWORK
+                   Enabled     Name            Context URL
+                    yes      fermilab      http://ftp.scientificlinux.org/linux/scientific/7/contexts/
+         Done
+
+     SOFTWARE SELECTION & INSTALLATION SOURCE seem to find the right Fermilab URL after a few minutes
+          (once the NETWORK & HOSTNAME tab is set, see above)
+
+     SOFTWARE SELECTION
+         General Purpose System (1492 packages)   --->>>   Development and Creative Workstation (2014)
+         Done
+
+     SOFTWARE SELECTION & INSTALLATION SOURCE seem to find the right files, again, after a few minutes
+
+     INSTALLATION SOURCE
+         Closest Mirror
+_________________________________________________________________________
 
 Begin Installation (2014 packages)
+_________________________________________________________________________
+
+CONFIGURATION
+
+     USER SETTINGS
+          ROOT PASSWORD
+
+     USER CREATION
+          ADVANCED USER CONFIGURATION
+               Specify a user ID manually: 2000
+                    Save changes
+    Done
+
+Finish Configuration
+_________________________________________________________________________
 
         Complete!
 
