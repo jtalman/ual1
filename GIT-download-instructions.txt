@@ -23,7 +23,7 @@ SPOT CHECK
 ----------------------------------------------------------------------------------------
      - cd examples/SXF_TRACKER/data/
      - rm ring.sxf
-     - ln -s PTR_m_nomEQ0.29447_sl4.sxf ring.sxf
+     - ln -s PTR_m_nom=0.29447_sl4.sxf ring.sxf
      -   ( tail ring.sxf should produce "endsequence at = 102.25217... )
      - cd ..
      - make clean
