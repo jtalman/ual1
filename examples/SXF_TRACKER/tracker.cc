@@ -73,7 +73,7 @@ int main(int argc,char * argv[]){
   std::cout << "\nDefine beam parameters." << std::endl;
   // ************************************************************************
 
-  double mass   = 1.8756; // proton rest mass
+  double mass   = 1.8756; // particle rest mass
   double pc = 0.97;
   double energy = sqrt(mass*mass + pc*pc);
   double vByc = pc/energy;
