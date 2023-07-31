@@ -1,7 +1,7 @@
 # gnuplot > load "gnuplot/twiss/PTR_m_nom=0.29447_quads-off.gnuplot"
 
  set xlabel "s [m]"
- set ylabel "beta_x [m]"
+ set ylabel "betas [m]"
 # set xrange [0:50]
 # set yrange [0:200]
 
