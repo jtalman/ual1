@@ -1,5 +1,5 @@
-source $UAL/setup-linux-ual
-setenv LD_LIBRARY_PATH $SXF/lib/$SXF_ARCH/:$LD_LIBRARY_PATH
+: source $UAL/setup-linux-ual
+: setenv LD_LIBRARY_PATH $SXF/lib/$SXF_ARCH/:$LD_LIBRARY_PATH
 
 make clean
 \cp trtrin_Figures trtrin
