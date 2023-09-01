@@ -16,8 +16,9 @@ set title "cosine-like standard particles, quads-off"
 #  set output '| display png:-'
 
  set output "pdf/Fig-p32-t.pdf"
- plot 'PTR_m_nom=0.32349_sl4.sxf__plus_X' u 2 w l, 'PTR_m_nom=0.32349_sl4.sxf_minus_X' u 2 w l
+#plot 'PTR_m_nom=0.32349_sl4.sxf__plus_X' u 2 w l, 'PTR_m_nom=0.32349_sl4.sxf_minus_X' u 2 w l
+ plot 'PTR_m_nomEQ0.32349_sl4.sxf__plus_X' u 2 w l, 'PTR_m_nomEQ0.32349_sl4.sxf_minus_X' u 2 w l
  
  set ylabel "vertical displacement, y(m)"
  set output "pdf/Fig-p32-b.pdf"
- plot 'PTR_m_nom=0.32349_sl4.sxf__plus_Y' u 2 w l, 'PTR_m_nom=0.32349_sl4.sxf_minus_Y' u 2 w l
+ plot 'PTR_m_nomEQ0.32349_sl4.sxf__plus_Y' u 2 w l, 'PTR_m_nomEQ0.32349_sl4.sxf_minus_Y' u 2 w l

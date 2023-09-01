@@ -37,7 +37,7 @@ OBJ_DIR  = ./lib/$(UAL_ARCH)/obj
 compile : $(OBJ_DIR)/DipoleTracker.o ./tracker
 
 clean :
-	rm -f $(OBJ_DIR)/* ./tracker out/cpp/* OUT E* echo.sxf m_m Nu*
+	rm -f P* $(OBJ_DIR)/* ./tracker out/cpp/* OUT E* echo.sxf m_m Nu*
 
 $(OBJ_DIR)/DipoleTracker.o :
 	$(CC) $(CCFLAGS) -c DipoleTracker.cc $(INC) -o $(OBJ_DIR)/DipoleTracker.o
