@@ -1,9 +1,12 @@
 GIT download instructions
 ----------------------------------
-Fri Jul 28 13:24:45 EDT 2023
-VERIFY UAL
-In "~/git-gui-2" (or subsequent) type the following, one line at a time (without the - )
------------------------------------------------------------------------------------------
+
+You may already have "~/UAL/ual1" (or similar)
+If so, rm -rf it, or rename it.
+
+VERIFY new UAL
+In "~/UAL" (or similar) type the following, one line at a time (without the - )
+--------------------------------------------------------------------------------------
       - git clone https://github.com/jtalman/ual1
 ---------------------
       - cd ual1
@@ -18,21 +21,21 @@ In "~/git-gui-2" (or subsequent) type the following, one line at a time (without
       - make >&! make.log
       - emacs make.log
               check for (just 2 html) errors
------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+The "Environment lines"
+        setenv UAL `pwd`
+        source setup-linux-ual
+can be put in
+          ~/.tcshrc
+------------------------------------------------------------------------------------
 SPOT CHECK
-----------------------------------------------------------------------------------------
-     - cd examples/SXF_TRACKER/data/
-     - rm ring.sxf
-     - ln -s PTR_m_nom=0.29447_sl4.sxf ring.sxf
-     -   ( tail ring.sxf should produce "endsequence at = 102.25217... )
-     - cd ..
-     - make clean
-     - make
-     - ./tracker
-     - cd out/cpp/
-     - gnuplot
-     - load "gnuplot/twiss/PTR_m_nom=0.29447_quads-off.gnuplot"
-     - quit gnuplot
-     - cd pdf
-     - evince PTR-mnom=0.29447-quads-off-beta-horz.pdf &
-     - evince PTR-mnom=0.29447-quads-off-phase-advance.pdf &
+In theory, all of the $UAL/examples directories have self explanatory "READMEs"
+In practice, it's a bit disorganized.
+
+For now,
+          $UAL/examples/E2_Typing/run_example
+is a good start.
+
+Ditto for
+          $UAL/examples/E4_Typing/run_example
+------------------------------------------------------------------------------------
