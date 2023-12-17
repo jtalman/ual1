@@ -33,9 +33,9 @@ In theory, all of the $UAL/examples directories have self explanatory "READMEs"
 In practice, it's a bit disorganized.
 
 For now,
-          $UAL/examples/E2_Typing/run_example
+          $UAL/examples/E2_typing_of_sxf_elements/run_example
 is a good start.
 
 Ditto for
-          $UAL/examples/E4_Typing/run_example
+          $UAL/examples/E4_typing_of_sxf_elements/run_example
 ------------------------------------------------------------------------------------
