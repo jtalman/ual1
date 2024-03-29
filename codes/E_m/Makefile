@@ -5,7 +5,7 @@ INC += -I$(UAL)/codes/ZLIB/src/
 INC += -I$(UAL)/codes/ETEAPOT/src/
 INC += -I$(UAL)/codes/ETEAPOT2/src/
 
-compile: quad.o
+compile: quad.o TrackerFactory.o
 
 %.o: %.cc
 	gcc -c $< $(INC) -o $@
