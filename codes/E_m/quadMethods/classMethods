@@ -3,6 +3,7 @@ quad()
   : UAL::PropagatorNode()
 {
 //initialize();
+  init();
   m_ir = 0.0;
 }
 
@@ -49,6 +50,11 @@ else{
 
   m_mdata.setLatticeElement(e);
 
+}
+
+void init(){
+  m_ir=0;
+  m_ir = 0.0;
 }
 
 void copy(const E_m::quad& mt) 
