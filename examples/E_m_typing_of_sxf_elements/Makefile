@@ -33,6 +33,7 @@ LIBS += -L$(UAL_ETEAPOT)/lib/$(UAL_ARCH) 	 -lETeapot
 LIBS += -L$(UAL_ETEAPOT_MltTurn)/lib/$(UAL_ARCH) -lETEAPOT_MltTurn
 LIBS += -L$(UAL_ETEAPOT2)/lib/$(UAL_ARCH)        -lETeapot2
 LIBS += -L$(UAL_E4_interim)/lib/$(UAL_ARCH)      -lE4_interim
+LIBS += -L$(UAL_E_m)/lib/$(UAL_ARCH)             -lE_m
 LIBS += -L$(UAL_PAC)/lib/$(UAL_ARCH)  		 -lPacSMF -lPacOptics -lPac
 LIBS += -L$(UAL_ZLIB)/lib/$(UAL_ARCH) 		 -lZTps
 LIBS += -L$(UAL)/codes/UAL/lib/$(UAL_ARCH) 	 -lUal
