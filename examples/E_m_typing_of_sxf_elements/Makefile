@@ -15,6 +15,7 @@ INC += -I$(UAL_ETEAPOT)/src
 INC += -I$(UAL_ETEAPOT_MltTurn)/src
 INC += -I$(UAL_ETEAPOT2)/src
 INC += -I$(UAL_E4_interim)/src
+INC += -I$(UAL_E_m)/include
 INC += -I$(UAL_PAC)/src
 INC += -I$(UAL)/codes/UAL/include
 INC += -I$(UAL_ZLIB)/src
