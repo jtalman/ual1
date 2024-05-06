@@ -6,10 +6,10 @@ double delGam = gama - eD/mDcc;
 
 double x0 = pacP[0];
 double y0 = pacP[2];
-double phi0 = 1.*atan2(q*y0,q*x0);   // (328)
+double phi0 = 1.*atan2(m_q*y0,m_q*x0);   // (328)
 double rho0 = sqrt(x0*x0 + y0*y0);
-  double delThtTld = sqrt(q*q)*rho0;               //    (325)
-//double delThtTld = fabs(q)*rho0;               //    (325)
+  double delThtTld = sqrt(m_q*m_q)*rho0;               //    (325)
+//double delThtTld = fabs(m_q)*rho0;               //    (325)
 double delAlphTld = (g/2. - 1. + g/2./gammaD/gammaD) * delGam * delThtTld;
 
 double sx = __SPIN__[ip][0];//spin[ip][0];

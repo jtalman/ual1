@@ -17,6 +17,7 @@ INC += -I$(UAL_ETEAPOT2)/src
 INC += -I$(UAL_E4_interim)/src
 INC += -I$(UAL_E_m)/include
 INC += -I$(UAL_PAC)/src
+INC += -I$(UAL_PAC)/include
 INC += -I$(UAL)/codes/UAL/include
 INC += -I$(UAL_ZLIB)/src
 INC += -I$(UAL)/tools/include
@@ -35,21 +36,32 @@ LIBS += -L$(UAL_ETEAPOT_MltTurn)/lib/$(UAL_ARCH) -lETEAPOT_MltTurn
 LIBS += -L$(UAL_ETEAPOT2)/lib/$(UAL_ARCH)        -lETeapot2
 LIBS += -L$(UAL_E4_interim)/lib/$(UAL_ARCH)      -lE4_interim
 LIBS += -L$(UAL_E_m)/lib/$(UAL_ARCH)             -lE_m
-LIBS += -L$(UAL_PAC)/lib/$(UAL_ARCH)  		 -lPacSMF -lPacOptics -lPac
+LIBS += -L$(UAL_PAC)/lib/$(UAL_ARCH)  		 -lPac
+LIBS += -L$(UAL_PAC)/lib/$(UAL_ARCH)  		 -lPacOptics
+LIBS += -L$(UAL_PAC)/lib/$(UAL_ARCH)  		 -lPacSMF
 LIBS += -L$(UAL_ZLIB)/lib/$(UAL_ARCH) 		 -lZTps
 LIBS += -L$(UAL)/codes/UAL/lib/$(UAL_ARCH) 	 -lUal
 LIBS += -L$(SXF)/lib/$(UAL_ARCH) 		 -lSXF
-LIBS += -L$(UAL)/tools/lib/$(UAL_ARCH) 		 -lpcre -lxml2 -lrfftw -lfftw
+LIBS += -L$(UAL)/tools/lib/$(UAL_ARCH) 		 -lpcre
+LIBS += -L$(UAL)/tools/lib/$(UAL_ARCH) 		 -lxml2
+LIBS += -L$(UAL)/tools/lib/$(UAL_ARCH) 		 -lrfftw
+LIBS += -L$(UAL)/tools/lib/$(UAL_ARCH) 		 -lfftw
 LIBS += 					 -lm
 
-compile: ./typing_of_sxf_elements
+compile: ./typing_of_sxf_elements ./E_m-Survey
 
 clean:
-	rm -f typing_of_sxf_elements.o ./typing_of_sxf_elements
+	rm -f typing_of_sxf_elements.o ./typing_of_sxf_elements ./E_m-Survey.o ./E_m-Survey
 	rm -f echo.sxf
 
 typing_of_sxf_elements: typing_of_sxf_elements.o
 	$(LD) -o $@  $(LDFLAGS) $(INC) typing_of_sxf_elements.o $(LIBS)
 
 typing_of_sxf_elements.o: typing_of_sxf_elements.cc
+	$(CC) $(CCFLAGS) $(INC) -c $< -o $@
+
+E_m-Survey: E_m-Survey.o
+	$(LD) -o $@  $(LDFLAGS) $(INC) E_m-Survey.o $(LIBS)
+
+E_m-Survey.o: E_m-Survey.cc
 	$(CC) $(CCFLAGS) $(INC) -c $< -o $@

@@ -43,14 +43,13 @@ namespace E_m{
 #include "ETEAPOT2/Integrator/genMethods/get_vlcyMKS.method"
 #include "ETEAPOT2/Integrator/genMethods/passDrift.method"
 
-    /** Element length */
-//  double m_l;
-
     /** Complexity number */
     double m_ir;
 
     /** Mlt attributes */
     ETEAPOT::MltData m_mdata;
+
+    double m_q;
 
   };
 

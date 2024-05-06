@@ -28,6 +28,7 @@ void setLatticeElements(const UAL::AcceleratorNode& sequence,
                                                const UAL::AttributeSet& attSet)
 {
 //std::cout << "TDJ - server side - File " << __FILE__ << " line " << __LINE__ << " enter method void ETEAPOT2::bend::setLatticeElements(const UAL::AcceleratorNode& sequence,int is0,int is1,const UAL::AttributeSet& attSet)\n"; 
+std::cout << __FILE__ << "enter void setLatticeElements(const UAL::AcceleratorNode& sequence,int is0,int is1,const UAL::AttributeSet& attSet)\n";
 
   if(is0 < sequence.getNodeCount()) m_frontNode = 
                                      *((PacLattElement*) sequence.getNodeAt(is0));
@@ -53,9 +54,69 @@ void setLatticeElement(const PacLattElement& e)
 {
 //std::cout << "TDJ - server side - File " << __FILE__ << " line " << __LINE__ << " enter method void ETEAPOT2::bend::setLatticeElement(const PacLattElement& e)\n";
 //std::cout << "e.getName() " << e.getName() << " e.getPosition() " << e.getPosition() << "\n";
+std::cout << __FILE__ << "enter void setLatticeElement(const PacLattElement& e)\n";
+std::cout << "e.getName() " << e.getName() << " e.getPosition() " << e.getPosition() << "\n";
+std::cout << "=========================================================\n";
+std::cout << "e.getType() " << e.getType() << "\n";
+std::cout << "=========================================================\n";
+PacElemAttributes* attributes = e.getBody();
+std::cout << "attributes->size() " << attributes->size() << "\n";
+
+PacElemBend* bend;
+PacElemMultipole* mult;
+
+double m_angle;
+PacElemAttributes::iterator it;
+std::cout << "typeid(it).name(): " << typeid(it).name() << "\n";
+double* data();
+
+  if(attributes){
+    for(it = attributes->begin(); it != attributes->end(); it++){
+std::cout << "typeid(it).name(): " << typeid(it).name() << "\n";
+std::cout << "typeid(*it).name(): " << typeid(*it).name() << "\n";
+std::cout << "typeid( (*it)._key ).name(): " << typeid( (*it)._key ).name() << "\n";
+std::cout << "(*it)._key: " << (*it)._key << "\n";
+std::cout << "(*it)._size: " << (*it)._size << "\n";
+std::cout << "(*it)._capacity: " << (*it)._capacity << "\n";
+for(int i=0;i<(*it)._size; i++){
+ std::cout << i << "(*it)._data[i]: " << (*it)._data[i] << "\n";
+}
+
+std::cout << "typeid((*it).key()).name(): " << typeid((*it).key()).name() << "\n";
+      switch((*it).key()){
+std::cout << "(*it).key() " << (*it).key() << "\n";
+      case PAC_BEND:
+	bend = (PacElemBend*) &(*it);
+std::cout << "typeid( bend ).name(): " << typeid( bend ).name() << "\n";
+	m_angle = bend->angle();
+std::cout << "PAC_BEND: m_angle:: " << m_angle << "\n";
+	break;
+
+        case PAC_MULTIPOLE:
+	mult = (PacElemMultipole*) &(*it);
+std::cout << "typeid( mult ).name(): " << typeid( mult ).name() << "\n";
+std::cout << "PAC_MULTIPOLE: mult->kl(0):: " << mult->kl(0) << "\n";
+std::cout << "PAC_MULTIPOLE: mult->kl(1):: " << mult->kl(1) << "\n";
+std::cout << "PAC_MULTIPOLE: mult->kl(2):: " << mult->kl(2) << "\n";
+//std::cout << "PAC_MULTIPOLE: mult->kl[1]:: " << mult->kl[1] << "\n";
+//std::cout << "PAC_MULTIPOLE: mult->kl[2]:: " << mult->kl[2] << "\n";
+	break;
+
+      default:
+	break;
+      }
+    }
+  }
+
+std::cout << "=========================================================\n";
+std::cout << "line: " << __LINE__  << "\n";
 //m_data.m_m=ETEAPOT2::bend::m_m;
-  m_data.setLatticeElement(e);
-  m_edata.setLatticeElement(e);
+//m_data.setLatticeElement(e);
+std::cout << "line: " << __LINE__  << "\n";
+//m_edata.setLatticeElement(e);
+std::cout << "line: " << __LINE__  << "\n";
+m_q=mult->kl(1);
+std::cout << "line: " << __LINE__  << " m_q: " << m_q << "\n";
 }
 
 void init(){
