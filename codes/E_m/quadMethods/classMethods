@@ -74,17 +74,19 @@ double* data();
     for(it = attributes->begin(); it != attributes->end(); it++){
 std::cout << "typeid(it).name(): " << typeid(it).name() << "\n";
 std::cout << "typeid(*it).name(): " << typeid(*it).name() << "\n";
-std::cout << "typeid( (*it)._key ).name(): " << typeid( (*it)._key ).name() << "\n";
-std::cout << "(*it)._key: " << (*it)._key << "\n";
-std::cout << "(*it)._size: " << (*it)._size << "\n";
-std::cout << "(*it)._capacity: " << (*it)._capacity << "\n";
+//std::cout << "typeid( (*it)._key ).name(): " << typeid( (*it)._key ).name() << "\n";
+//std::cout << "(*it)._key: " << (*it)._key << "\n";
+//std::cout << "(*it)._size: " << (*it)._size << "\n";
+//std::cout << "(*it)._capacity: " << (*it)._capacity << "\n";
+/*
 for(int i=0;i<(*it)._size; i++){
  std::cout << i << "(*it)._data[i]: " << (*it)._data[i] << "\n";
 }
+*/
 
-std::cout << "typeid((*it).key()).name(): " << typeid((*it).key()).name() << "\n";
+//std::cout << "typeid((*it).key()).name(): " << typeid((*it).key()).name() << "\n";
       switch((*it).key()){
-std::cout << "(*it).key() " << (*it).key() << "\n";
+//std::cout << "(*it).key() " << (*it).key() << "\n";
       case PAC_BEND:
 	bend = (PacElemBend*) &(*it);
 std::cout << "typeid( bend ).name(): " << typeid( bend ).name() << "\n";
