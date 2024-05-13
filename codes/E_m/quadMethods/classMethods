@@ -134,9 +134,11 @@ void copy(const E_m::quad& mt)
   m_mdata = mt.m_mdata;
 }
 
+/*
 const char*  getType(){
   return "JDT:::E_m::quad";
 }
+*/
 
 bool isSequence() { return false; }
 

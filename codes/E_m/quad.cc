@@ -33,6 +33,9 @@ namespace E_m{
 //class quad : public ETEAPOT::BasicTracker {
 
   public:
+const char*  getType(){
+  return "JDT:::E_m::compromise-quad";
+}
 
 #include"ETEAPOT2/Integrator/bendMethods/classGlobals"
 #include"quadMethods/classMethods"
