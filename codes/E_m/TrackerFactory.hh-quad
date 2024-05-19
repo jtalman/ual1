@@ -3,7 +3,7 @@
 #include "UAL/APF/PropagatorNodePtr.hh"
 
 //#include "E_m/rfCavity.cc"
-#include "compromise_quad.cc"
+#include "quad.cc"
 
 namespace{
 #include "ETEAPOT2/Integrator/genMethods/spinExtern"
@@ -35,12 +35,12 @@ namespace E_m {
 
     static bend* createbend();
 
-    static compromise_quad* createcompromise_quad();
+    static quad* createquad();
     static sext* createsext();
     static oct* createoct();
 */
 
-    static compromise_quad* createcompromise_quad();
+    static quad* createquad();
 
     /** Returns the rf cavity tracker */
 //  static rfCavity* createrfCavity();

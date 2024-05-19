@@ -7,8 +7,8 @@ E_m::TrackerFactory* E_m::TrackerFactory::s_theInstance = 0;
 
 E_m::TrackerFactory::TrackerFactory()
 {
-  UAL::PropagatorNodePtr compromise_quadPtr(new E_m::compromise_quad());
-  m_trackers["Quadrupole"] = compromise_quadPtr;
+  UAL::PropagatorNodePtr quadPtr(new E_m::quad());
+  m_trackers["Quadrupole"] = quadPtr;
 
 }
 
@@ -25,7 +25,7 @@ UAL::PropagatorNode* E_m::TrackerFactory::createTracker(const std::string& type)
   E_m::TrackerFactory* factory = getInstance(); 
 
   std::map<std::string, UAL::PropagatorNodePtr>::const_iterator it = factory->m_trackers.find(type);
-  if(it == factory->m_trackers.end()) return createcompromise_quad();
+  if(it == factory->m_trackers.end()) return createquad();
 //if(it == factory->m_trackers.end()) return createrfCavity();
 //if(it == factory->m_trackers.end()) return createDefaultTracker();
   return it->second->clone();  
@@ -52,9 +52,9 @@ E_m::bend* E_m::TrackerFactory::createbend()
   return new E_m::bend();
 }
 
-E_m::compromise_quad* E_m::TrackerFactory::createcompromise_quad()
+E_m::quad* E_m::TrackerFactory::createquad()
 {
-  return new E_m::compromise_quad();
+  return new E_m::quad();
 }
 
 E_m::sext* E_m::TrackerFactory::createsext()
@@ -80,9 +80,9 @@ E_m::rfCavity* E_m::TrackerFactory::createrfCavity()
 //  return new E_m::MatrixTracker();
 // }
 
-E_m::compromise_quad* E_m::TrackerFactory::createcompromise_quad()
+E_m::quad* E_m::TrackerFactory::createquad()
 {
-  return new E_m::compromise_quad();
+  return new E_m::quad();
 }
 
 E_m::TrackerRegister::TrackerRegister()
@@ -97,8 +97,8 @@ E_m::TrackerRegister::TrackerRegister()
   UAL::PropagatorNodePtr dipolePtr(new E_m::bend());
   UAL::PropagatorFactory::getInstance().add("E_m::bend", dipolePtr);
 
-  UAL::PropagatorNodePtr compromise_quadPtr(new E_m::compromise_quad());
-  UAL::PropagatorFactory::getInstance().add("E_m::compromise_quad", compromise_quadPtr);
+  UAL::PropagatorNodePtr quadPtr(new E_m::quad());
+  UAL::PropagatorFactory::getInstance().add("E_m::quad", quadPtr);
 
   UAL::PropagatorNodePtr sextPtr(new E_m::sext());
   UAL::PropagatorFactory::getInstance().add("E_m::sext", sextPtr);
@@ -115,8 +115,8 @@ E_m::TrackerRegister::TrackerRegister()
   UAL::PropagatorFactory::getInstance().add("E_m::rfCavity", rfPtr);
 */
 
-  UAL::PropagatorNodePtr compromise_quadPtr(new E_m::compromise_quad());
-  UAL::PropagatorFactory::getInstance().add("E_m::compromise_quad", compromise_quadPtr);
+  UAL::PropagatorNodePtr quadPtr(new E_m::quad());
+  UAL::PropagatorFactory::getInstance().add("E_m::quad", quadPtr);
 }
 
 static E_m::TrackerRegister theSingleton; 
