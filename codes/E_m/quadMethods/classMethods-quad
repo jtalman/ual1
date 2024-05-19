@@ -1,5 +1,5 @@
-// compromise_quad file
-compromise_quad()
+// quad file
+quad()
   : UAL::PropagatorNode()
 {
 //initialize();
@@ -7,19 +7,19 @@ compromise_quad()
   m_ir = 0.0;
 }
 
-compromise_quad(const E_m::compromise_quad& mt) 
+quad(const E_m::quad& mt) 
   : UAL::PropagatorNode(mt)
 {
   copy(mt);
 }
 
-~compromise_quad()
+~quad()
 {
 }
 
-compromise_quad* clone()
+quad* clone()
 {
-  return new compromise_quad(*this);
+  return new quad(*this);
 }
 
 void setLatticeElements(const UAL::AcceleratorNode& sequence, 
@@ -126,7 +126,7 @@ void init(){
   m_ir = 0.0;
 }
 
-void copy(const E_m::compromise_quad& mt) 
+void copy(const E_m::quad& mt) 
 {
   // m_l   = mt.m_l;
   m_ir  = mt.m_ir;
@@ -136,7 +136,7 @@ void copy(const E_m::compromise_quad& mt)
 
 /*
 const char*  getType(){
-  return "JDT:::E_m::compromise_quad";
+  return "JDT:::E_m::quad";
 }
 */
 

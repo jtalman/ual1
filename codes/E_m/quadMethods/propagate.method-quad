@@ -1,7 +1,7 @@
-// compromise_quad file
+// quad file
 void propagate(UAL::Probe& probe)
 {
-std::cout << __FILE__ << " enter compromise_quad propagate\n";
+std::cout << __FILE__ << " enter quad propagate\n";
 std::cout << " m_l: " << m_l << "\n";
 std::cout << " vD:  " << vD  << "\n";
 std::cout << "line  " << __LINE__ << "\n";
@@ -20,10 +20,10 @@ std::cout << " m_q:   " << m_q   << "\n";
   passDrift( m_l/2., tofD/2. );
   pacP[1]              -= m_q*pacP[0];
   pacP[3]              += m_q*pacP[2];
-  #include"compromise_quadSpinEvolve"
+  #include"quadSpinEvolve"
   passDrift( m_l/2., tofD/2. );
  }
  tofDT                 +=tofD;
  sDT                   += m_l;
-std::cout << __FILE__ << " leave compromise_quad propagate\n";
+std::cout << __FILE__ << " leave quad propagate\n";
 }
