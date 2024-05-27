@@ -49,16 +49,21 @@ const char*  getType(){
     /** Complexity number */
     double m_ir;
 
-    /** Mlt attributes */
-    ETEAPOT::MltData m_mdata;
-
     double m_q;
 
-  };
+    double m_D_MinusTwo;      //   CW!
+    double m_D_MinusOne;      //   CW!
+    double m_D_PlusOne;       //   CW!
+    double m_D_PlusTwo;       //   CW!
 
-  inline ETEAPOT::MltData& compromise_quad::getMltData()
-  {
-      return m_mdata;
-  }
+    double m_q_MinusOne;      //   CW!
+    double m_q_Zero;          //   CW!
+    double m_q_PlusOne;       //   CW!
+
+    double m_l_MinusOne;      //   CW!
+    double m_l_Zero;          //   CW!
+    double m_l_PlusOne;       //   CW!
+
+  };
 
 }

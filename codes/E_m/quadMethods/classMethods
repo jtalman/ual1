@@ -54,54 +54,45 @@ void setLatticeElement(const PacLattElement& e)
 {
 //std::cout << "TDJ - server side - File " << __FILE__ << " line " << __LINE__ << " enter method void ETEAPOT2::bend::setLatticeElement(const PacLattElement& e)\n";
 //std::cout << "e.getName() " << e.getName() << " e.getPosition() " << e.getPosition() << "\n";
+/*
 std::cout << __FILE__ << "enter void setLatticeElement(const PacLattElement& e)\n";
 std::cout << "e.getName() " << e.getName() << " e.getPosition() " << e.getPosition() << "\n";
 std::cout << "=========================================================\n";
 std::cout << "e.getType() " << e.getType() << "\n";
 std::cout << "=========================================================\n";
+*/
 PacElemAttributes* attributes = e.getBody();
-std::cout << "attributes->size() " << attributes->size() << "\n";
+//std::cout << "attributes->size() " << attributes->size() << "\n";
 
 PacElemBend* bend;
 PacElemMultipole* mult;
 
 double m_angle;
 PacElemAttributes::iterator it;
-std::cout << "typeid(it).name(): " << typeid(it).name() << "\n";
+//std::cout << "typeid(it).name(): " << typeid(it).name() << "\n";
 double* data();
 
   if(attributes){
     for(it = attributes->begin(); it != attributes->end(); it++){
-std::cout << "typeid(it).name(): " << typeid(it).name() << "\n";
-std::cout << "typeid(*it).name(): " << typeid(*it).name() << "\n";
-//std::cout << "typeid( (*it)._key ).name(): " << typeid( (*it)._key ).name() << "\n";
-//std::cout << "(*it)._key: " << (*it)._key << "\n";
-//std::cout << "(*it)._size: " << (*it)._size << "\n";
-//std::cout << "(*it)._capacity: " << (*it)._capacity << "\n";
 /*
 for(int i=0;i<(*it)._size; i++){
  std::cout << i << "(*it)._data[i]: " << (*it)._data[i] << "\n";
 }
 */
-
-//std::cout << "typeid((*it).key()).name(): " << typeid((*it).key()).name() << "\n";
       switch((*it).key()){
-//std::cout << "(*it).key() " << (*it).key() << "\n";
       case PAC_BEND:
 	bend = (PacElemBend*) &(*it);
-std::cout << "typeid( bend ).name(): " << typeid( bend ).name() << "\n";
 	m_angle = bend->angle();
-std::cout << "PAC_BEND: m_angle:: " << m_angle << "\n";
 	break;
 
         case PAC_MULTIPOLE:
 	mult = (PacElemMultipole*) &(*it);
-std::cout << "typeid( mult ).name(): " << typeid( mult ).name() << "\n";
-std::cout << "PAC_MULTIPOLE: mult->kl(0):: " << mult->kl(0) << "\n";
-std::cout << "PAC_MULTIPOLE: mult->kl(1):: " << mult->kl(1) << "\n";
-std::cout << "PAC_MULTIPOLE: mult->kl(2):: " << mult->kl(2) << "\n";
-//std::cout << "PAC_MULTIPOLE: mult->kl[1]:: " << mult->kl[1] << "\n";
-//std::cout << "PAC_MULTIPOLE: mult->kl[2]:: " << mult->kl[2] << "\n";
+for(int i=0;i<(*it)._size; i++){
+ std::cout << i << "(*it)._data[i]: " << (*it)._data[i] << "\n";
+}
+for(int i=0;i<mult->_size; i++){
+ std::cout << i << "mult->kl[i]: " << mult->kl(i) << "\n";
+}
 	break;
 
       default:
@@ -130,8 +121,6 @@ void copy(const E_m::compromise_quad& mt)
 {
   // m_l   = mt.m_l;
   m_ir  = mt.m_ir;
-
-  m_mdata = mt.m_mdata;
 }
 
 /*
