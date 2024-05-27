@@ -1,0 +1,13 @@
+cp PacElemBucket.h $UAL/codes/PAC/src/SMF/
+pushd $UAL/codes/PAC/
+ll ./lib/linux/
+make clean
+ll ./lib/linux/
+make
+ll ./lib/linux/
+popd
+
+make clean
+make
+
+./E_m-Survey 1.25
