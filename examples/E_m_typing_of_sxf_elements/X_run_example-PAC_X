@@ -7,6 +7,14 @@ make
 ll ./lib/linux/
 popd
 
+pushd $UAL/codes/E_m/
+ll ./lib/linux/
+make clean
+ll ./lib/linux/
+make
+ll ./lib/linux/
+popd
+
 make clean
 make
 
