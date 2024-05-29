@@ -1,3 +1,7 @@
+: !!!                                                                  !!!
+:       This "near script" alters "server side" code, $UAL/codes/PAC
+: !!!                                                                  !!!
+
 cp PacElemBucket.h $UAL/codes/PAC/src/SMF/
 pushd $UAL/codes/PAC/
 ll ./lib/linux/
@@ -15,7 +19,22 @@ make
 ll ./lib/linux/
 popd
 
+cp working.sxf-CW working.sxf
+
 make clean
 make
 
 ./E_m-Survey 1.25
+
+: !!!                                                                  !!!
+: ...                                                                  ...
+: 0 *it._data[i]: 0                      syntax slightly off!!
+: 1 *it._data[i]: 1
+: 2 *it._data[i]: 2
+: 3 *it._data[i]: 3
+: 4 *it._data[i]: 4
+: 5 *it._data[i]: 5
+: 6 *it._data[i]: 6
+: 7 *it._data[i]: 7
+: ...                                                                  ...
+: !!!                                                                  !!!
