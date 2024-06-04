@@ -2,7 +2,7 @@
 :       This "near script" alters "server side" code, $UAL/codes/PAC
 : !!!                                                                  !!!
 
-cp PacElemBucket.h $UAL/codes/PAC/src/SMF/
+\cp PacElemBucket.h $UAL/codes/PAC/src/SMF/
 pushd $UAL/codes/PAC/
 ll ./lib/linux/
 make clean
@@ -19,7 +19,7 @@ make
 ll ./lib/linux/
 popd
 
-cp working.sxf-CW working.sxf
+\cp working.sxf-CW working.sxf
 
 make clean
 make
