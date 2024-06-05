@@ -19,7 +19,7 @@ make
 ll ./lib/linux/
 popd
 
-\cp working.sxf-CW working.sxf
+\cp working.sxf-CW2 working.sxf
 
 make clean
 make
