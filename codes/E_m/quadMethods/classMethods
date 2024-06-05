@@ -99,6 +99,17 @@ for(int i=0;i<my_size; i++){
 //for(int i=0;i<mult->_size; i++){
 // std::cout << i << "mult->ktl[i]: " << mult->ktl(i) << "\n";
 //}
+
+    m_ehd=mult->kl(1);
+    m_mhd=mult->kl(2);
+
+    m_el=mult->kl(3);
+    m_ml=mult->kl(4);
+
+    m_eq=mult->kl(5);
+    m_mq=mult->kl(6);
+
+    m_D=m_ehd+m_ehd+m_mhd+m_mhd+m_ehd+m_ehd;
 	break;
 
       default:

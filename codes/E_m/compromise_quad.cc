@@ -51,6 +51,7 @@ const char*  getType(){
 
     double m_q;
 
+/*
     double m_D_MinusTwo;      //   CW!
     double m_D_MinusOne;      //   CW!
     double m_D_PlusOne;       //   CW!
@@ -63,6 +64,19 @@ const char*  getType(){
     double m_l_MinusOne;      //   CW!
     double m_l_Zero;          //   CW!
     double m_l_PlusOne;       //   CW!
+*/
+
+    double m_ehd;             //    entry half drift;
+    double m_mhd;             //   middle half drift;
+
+    double m_el;              //    entry length;
+    double m_ml;              //   middle length;
+
+    double m_eq;              //    entry strength;
+    double m_mq;              //   middle strength;
+
+    double m_D;               //   m_ehd+m_ehd+m_mhd+
+                              //   m_mhd+m_ehd+m_ehd
 
   };
 
