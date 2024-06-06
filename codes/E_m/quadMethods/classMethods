@@ -109,7 +109,7 @@ for(int i=0;i<my_size; i++){
     m_eq=mult->kl(5);
     m_mq=mult->kl(6);
 
-    m_D=m_ehd+m_ehd+m_mhd+m_mhd+m_ehd+m_ehd;
+    m_D=m_ehd+m_el+m_ehd+ m_mhd+m_ml+m_mhd+ m_ehd+m_el+m_ehd;
 	break;
 
       default:
