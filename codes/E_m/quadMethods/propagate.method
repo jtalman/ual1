@@ -12,7 +12,7 @@ std::cout << "m_el:     " << m_el     << "\n";
 std::cout << "m_ml:     " << m_ml     << "\n";
 std::cout << "m_eq:     " << m_eq     << "\n";
 std::cout << "m_mq:     " << m_mq     << "\n";
-std::cout << "m_D:      " << m_D      << "\n";
+std::cout << "m_L:      " << m_L      << "\n";
 
  PAC::Bunch& bunch      = static_cast<PAC::Bunch&>(probe);
 //std::cout << "line  " << __LINE__ << "\n";
