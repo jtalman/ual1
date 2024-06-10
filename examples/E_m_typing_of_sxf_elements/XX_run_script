@@ -22,4 +22,4 @@ popd
 make clean
 make
 
-./E_m-Survey 1.25
+./E_m_Survey++ 1.25

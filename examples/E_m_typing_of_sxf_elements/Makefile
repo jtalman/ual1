@@ -48,10 +48,10 @@ LIBS += -L$(UAL)/tools/lib/$(UAL_ARCH) 		 -lrfftw
 LIBS += -L$(UAL)/tools/lib/$(UAL_ARCH) 		 -lfftw
 LIBS += 					 -lm
 
-compile: ./typing_of_sxf_elements ./E_m-Survey
+compile: ./typing_of_sxf_elements ./E_m_Survey++
 
 clean:
-	rm -f typing_of_sxf_elements.o ./typing_of_sxf_elements ./E_m-Survey.o ./E_m-Survey
+	rm -f typing_of_sxf_elements.o ./typing_of_sxf_elements ./E_m_Survey++.o ./E_m_Survey++
 	rm -f echo.sxf
 
 typing_of_sxf_elements: typing_of_sxf_elements.o
@@ -60,8 +60,8 @@ typing_of_sxf_elements: typing_of_sxf_elements.o
 typing_of_sxf_elements.o: typing_of_sxf_elements.cc
 	$(CC) $(CCFLAGS) $(INC) -c $< -o $@
 
-E_m-Survey: E_m-Survey.o
-	$(LD) -o $@  $(LDFLAGS) $(INC) E_m-Survey.o $(LIBS)
+E_m_Survey++: E_m_Survey++.o
+	$(LD) -o $@  $(LDFLAGS) $(INC) E_m_Survey++.o $(LIBS)
 
-E_m-Survey.o: E_m-Survey.cc
+E_m_Survey++.o: E_m_Survey++.cc
 	$(CC) $(CCFLAGS) $(INC) -c $< -o $@
