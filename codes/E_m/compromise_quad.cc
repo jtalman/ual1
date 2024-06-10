@@ -75,8 +75,9 @@ const char*  getType(){
     double m_eq;              //    entry strength;
     double m_mq;              //   middle strength;
 
-    double m_D;               //   m_ehd+m_ehd+m_mhd+
-                              //   m_mhd+m_ehd+m_ehd
+    double m_L;               //   
+                              //  
+    //m_L=m_ehd+m_el+m_ehd+ m_mhd+m_ml+m_mhd+ m_ehd+m_el+m_ehd;
 
   };
 
