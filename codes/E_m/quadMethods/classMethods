@@ -100,16 +100,26 @@ for(int i=0;i<my_size; i++){
 // std::cout << i << "mult->ktl[i]: " << mult->ktl(i) << "\n";
 //}
 
-    m_ehd=mult->kl(1);
-    m_mhd=mult->kl(2);
+    m_NhD=mult->kl(1);
+    m_Nb= mult->kl(2);
+    m_NL= m_NhD+m_Nb+m_NhD;
+    m_NQ= mult->kl(3);
 
-    m_el=mult->kl(3);
-    m_ml=mult->kl(4);
+    m_MhD=mult->kl(4);
+    m_Mb= mult->kl(5);
+    m_ML= m_MhD+m_Mb+m_MhD;
+    m_MQ= mult->kl(6);
 
-    m_eq=mult->kl(5);
-    m_mq=mult->kl(6);
+    m_XhD=mult->kl(7);
+    m_Xb= mult->kl(8);
+    m_XL= m_XhD+m_Xb+m_XhD;
+    m_XQ= mult->kl(9);
 
-    m_L=m_ehd+m_el+m_ehd+ m_mhd+m_ml+m_mhd+ m_ehd+m_el+m_ehd;
+//  m_XhD=m_NhD;
+//  m_Xb= m_Nb;
+//  m_XL= m_NL;
+
+    m_L=  m_NL+m_ML+m_XL;
 	break;
 
       default:
