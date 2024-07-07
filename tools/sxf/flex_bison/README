@@ -15,7 +15,7 @@ Once the whole GIT repository
 has been downloaded and built
       cd ual1
       make clean
-      make > & ! make.log
+      make >&! make.log
 I typically execute a sequence of instructions such as
       tar xvf flex-bison-cpp-example-0.1.4_ELP.tar
       cd flex-bison-cpp-example-0.1.4
