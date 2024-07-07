@@ -17,6 +17,7 @@ has been downloaded and built
       make clean
       make >&! make.log
 I typically execute a sequence of instructions such as
+      cd tools/sxf/flex_bison/
       tar xvf flex-bison-cpp-example-0.1.4_ELP.tar
       cd flex-bison-cpp-example-0.1.4
       ./configure --prefix=/home/rtalman/Desktop/GIT/download/ual1/tools/sxf/INSTALL-0.1.4
