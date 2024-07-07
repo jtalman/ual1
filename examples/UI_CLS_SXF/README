@@ -1,0 +1,27 @@
+Description:
+------------------------------------------
+
+Starter example UI with the SXF file CLS.sxf (Canadian Light Source)
+
+Usage:
+------------------------------------------
+
+$ perl UI_CLS_SXF-256.pl       # to run full perl script
+$ perl -d UI_CLS_SXF-256.pl   # to step through perl script enter "n" (for next step)
+                                               # after that "n" or CR
+Structure:
+------------------------------------------
+
+CLS.pl     - Perl script 
+./data/CLS.sxf 
+./out/  - directory with output files 
+
+Comments concerning UAL
+------------
+1.  All energies are measured in GEV
+2.  This includes electric field units being GeV/m
+3. "mass" is always mc^2, always in GeV units
+3.  "energy" is always "total energy"
+4.  i.e. E = mc^2 + K
+5. gamma = E/mc^2 > 1 for m>0.
+
