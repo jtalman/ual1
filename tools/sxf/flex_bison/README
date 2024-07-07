@@ -20,12 +20,12 @@ I typically execute a sequence of instructions such as
       cd tools/sxf/flex_bison/
       tar xvf flex-bison-cpp-example-0.1.4_ELP.tar
       cd flex-bison-cpp-example-0.1.4
-      ./configure --prefix=/home/rtalman/Desktop/GIT/download/ual1/tools/sxf/flex-bison/INSTALL-flex-bison-cpp-example-0.1.4
+      ./configure --prefix=/home/rtalman/Desktop/GIT/download/ual1/tools/sxf/flex_bison/INSTALL-flex-bison-cpp-example-0.1.4
       make
       make install
 
-Then
-      cd flex_bison/
+Also
+      cd $UAL/tools/sxf/flex_bison/
       cd Practices/
       cd Scanner
       flex scanner.l
@@ -33,3 +33,16 @@ Then
       ./a.out example_expr.txt
 gives a quick orienting example!
 
+And,
+      cd $UAL/tools/sxf/flex_bison/
+      cd Practices/
+      cd Parser
+      cp scanner.l scanner.l.1
+      flex scanner.l
+      cp parser.y parser.y.1
+      bison -dy parser.y
+      cp y.tab.h parser.tab.h
+      cp y.tab.c parser.tab.c
+      gcc main.c parser.tab.c lex.yy.c
+      ./a,out example_expr.txt
+is also a good orienting example.
