@@ -7,3 +7,28 @@ KUDOS to
 
 PHP (or such   ;-)
       https://www.skenz.it/ss
+
+__________________________________________________________
+
+Once the whole GIT repository
+      git clone https://github.com/jtalman/ual1
+has been downloaded and built
+      cd ual1
+      make clean
+      make > & ! make.log
+I typically execute a sequence of instructions such as
+      tar xvf flex-bison-cpp-example-0.1.4_ELP.tar
+      cd flex-bison-cpp-example-0.1.4
+      ./configure --prefix=/home/rtalman/Desktop/GIT/download/ual1/tools/sxf/INSTALL-0.1.4
+      make
+      make install
+
+Then
+      cd flex_bison/
+      cd Practices/
+      cd Scanner
+      flex scanner.l
+      gcc lex.yy.c
+      ./a.out example_expr.txt
+gives a quick orienting example!
+
