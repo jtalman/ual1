@@ -20,6 +20,10 @@ F10 Save and Exit
       Yes
 Save Configuration
  
+WELCOME TO ALMALINUX9.4.
+      English
+      English (United States)
+            Continue
 Network & Host Name
                       // "e.g."
       SpectrumSetup-59
@@ -33,6 +37,7 @@ Installation Destination
       Reclaim All
 Installation Source
       https://linuxsoft.cern.ch/cern/alma/9/BaseOS/x86_64/os/
+                      // wait till url shows
                       // wait till url shows
 Software Selection
       Workstation++
@@ -55,5 +60,7 @@ Begin Installation
      (1345 packages)
 
 Reboot System
-      I unplug thumb drive when screen goes blank
-      this may be a bit of a "race condition"
+      I manually unplug thumb drive, watching for just when screen goes blank.
+      This may be a bit of a "race condition".
+      I get a couple "GRUB lines", in passing.
+      It seems to work, however.
