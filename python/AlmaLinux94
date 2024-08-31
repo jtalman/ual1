@@ -46,12 +46,14 @@ Software Selection
                   Done
 Root Password
        passwd
-// User Creation
-//       passwd
+                      // configure, and run python just as root (hopefully)
+User Creation
+       passwd
+                      // configure, and run python just as root (hopefully)
 Begin Installation
       1345 RPMs
      (1345 packages)
 
-Reboot
+Reboot System
       I unplug thumb drive when screen goes blank
       this may be a bit of a "race condition"
