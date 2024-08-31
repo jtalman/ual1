@@ -8,16 +8,14 @@ umount /dev/sdc1
 mkfs.vfat -I /dev/sdc
 dd if=AlmaLinux-9.4-x86_64-boot.iso of=/dev/sdc bs=4M status= progress && sync
 
-Insert Verbatim 16G on box on which AL94 is to be installed
+Insert Verbatim 16G on install box
 Boot
 F1
-Startup
-      Network Boot
+Network Boot
                       // make this first in boot order
-           USB HDD: Verbatim
+          USB HDD: Verbatim
                       // make this first in boot order
 F10 Save and Exit
-      Yes
 Save Configuration
  
 Network & Host Name
@@ -25,32 +23,18 @@ Network & Host Name
       SpectrumSetup-59
             passwd
                       // "e.g."
-      Host Name
-                      // "e.g."
-            x220-1
-                      // "e.g."
 Installation Destination
       Reclaim All
 Installation Source
       https://linuxsoft.cern.ch/cern/alma/9/BaseOS/x86_64/os/
-                      // wait till url shows
 Software Selection
       Workstation++
-            GNOME Applications
-            Legacy UNIX Compatibility
-            Console Internet Tools
-            Container Management
-            Development Tools
-            Graphical Administration Tools
-            Scientific Support  
-                  Done
 Root Password
        passwd
-// User Creation
-//       passwd
+User Creation
+      passwd
 Begin Installation
-      1345 RPMs
-     (1345 packages)
+      ca 1500 packages
 
 Reboot
       I unplug thumb drive when screen goes blank
