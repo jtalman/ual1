@@ -1,6 +1,8 @@
           AlmaLinux!!!
+        (9.4 and possibly 8.10)
 
-AlmaLinux: GIT minimal download and build instructions
+AlmaLinux:
+           GIT minimal download and build instructions
 
 --------------------------------------------------------------------------------------
 
@@ -10,7 +12,7 @@ If so, rm -rf them, or rename it.
 In e.g. directory "~/git-gui2" (or something similar), using SHELL tcsh, execute the following indented commands, one at a time
 
 --------------------------------------------------------------------------------------
-Get Bits:
+Get Bits (probably already done!):
       git clone https://github.com/jtalman/ual1
 --------------------------------------------------------------------------------------
 Setup Environment:
@@ -19,8 +21,8 @@ Setup Environment:
       source setup-linux-ual
 --------------------------------------------------------------------------------------
 "Patch for AlmaLinux":
-      cp codes_PAC_src_Templates_PacRbTree.h codes/PAC/src/Templates/PacRbTree.h
-      cp tools_sxf_src_sxf_Makefile tools/sxf/src/sxf/Makefile
+      cp AlmaLinux/codes_PAC_src_Templates_PacRbTree.h codes/PAC/src/Templates/PacRbTree.h
+      cp AlmaLinux/tools_sxf_src_sxf_Makefile tools/sxf/src/sxf/Makefile
 --------------------------------------------------------------------------------------
 Build:
       make clean
