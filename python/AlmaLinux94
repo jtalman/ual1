@@ -62,5 +62,7 @@ Begin Installation
 Reboot System
       I manually unplug thumb drive, watching for just when screen goes blank.
       This may be a bit of a "race condition".
-      I get a couple "GRUB lines", in passing.
+      I get a couple "GRUB lines", on reboot, in passing.
+            GRUB Install      // or such
+            Welcome to GRUB   // or such
       It seems to work, however.
