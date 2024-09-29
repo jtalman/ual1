@@ -51,4 +51,8 @@ h
 
 ll
 
-
+su
+      useradd -m -s /usr/bin/tcsh -u 1004 ualusr2011
+      passwd ualusr2011
+            password
+            verify password
