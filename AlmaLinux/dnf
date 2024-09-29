@@ -1,6 +1,6 @@
-Install 94
+Install AlmaLinux 9.4 with talman as user
 
-Select packages from
+Select packages from (file in this directory)
      workstation_package_list
 
 su
@@ -23,5 +23,32 @@ su
 exit
 
 ll /usr/local/grace/bin/xmgrace
+
+(put in PATH!!?)
+      xmgrace
+or
+      /usr/local/grace/bin/xmgrace
+
+vi ~/.tcshrc
+      alias h 'history'
+      alias ll 'ls -ialt'
+
+su
+      vi /etc/passwd
+            .../usr/bin/tcsh
+exit
+
+reboot
+
+login as talman
+echo $shell
+      /usr/bin/tcsh
+
+echo $SHELL
+      /usr/bin/tcsh
+
+h
+
+ll
 
 
