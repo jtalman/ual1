@@ -1,0 +1,27 @@
+Install 94
+
+Select packages from
+     workstation_package_list
+
+su
+      dnf -y install emacs 
+      dnf -y install tcsh 
+      dnf -y install openmotif
+      dnf -y install openmotif-devel
+
+exit
+
+mkdir grace_gather
+cd grace_gather
+tar xvfz grace-5.1.25.tar.gz
+cd grace-5.1.25
+
+su
+      ./configure
+      make clean
+      make install
+exit
+
+ll /usr/local/grace/bin/xmgrace
+
+
