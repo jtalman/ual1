@@ -1,9 +1,11 @@
-          AlmaLinux!!!
+--------------------------------------------------------------------------------------
+           AlmaLinux!!!
         (9.4 and possibly 8.10)
 
 AlmaLinux:
            GIT minimal download and build instructions
 
+           AlmaLinux!!!
 --------------------------------------------------------------------------------------
 
 You may already have a version of the bits in e.g. directory "~/UAL/ual1" (or something similar)
@@ -33,13 +35,20 @@ Verify:
               check for errors
               (hopefully just two unimportant vestigial "html errors" that are ignored by make)
 --------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+
+Documentation:
+      Online documentation is available. A README is in directory $UAL/doc/
+
+PERL:
+      Online documentation is available. A README is in directory $UAL/perl/
 
 Comment:
       You'll likely fine tune this with familiarity.
       A personalized ~/.tcshrc for example.
 
-      Online documentation is available. A README is in directory $UAL/doc/
-
 --------------------------------------------------------------------------------------
 
-          AlmaLinux!!!
+           AlmaLinux!!!
+--------------------------------------------------------------------------------------
