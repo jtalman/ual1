@@ -42,7 +42,7 @@ Documentation:
       Online documentation is available. A README is in directory $UAL/doc/
 
 PERL:
-      Online documentation is available. A README is in directory $UAL/perl/
+      A README / recipe is in directory $UAL/perl/
 
 Comment:
       You'll likely fine tune this with familiarity.
