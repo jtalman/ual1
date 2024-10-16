@@ -4,6 +4,8 @@ KUDOS to:
 setenv LD_PRELOAD /usr/lib64/libxml2.so.2.9.13
           might or might not be necessary
 
+________________________________________________________________________________
+THIS IS ALREADY DONE:
 wget http://ftp.gnu.org/gnu/gcc/gcc-4.8.5/gcc-4.8.5.tar.gz
 tar xvfz gcc-4.8.5.tar.gz
 cd gcc-4.8.5
@@ -32,6 +34,9 @@ cd ..
 tar cvfz gcc-4.8.5_min_mods.tar.gz ./gcc-4.8.5
           88,100,708
                     can upload to git
+
+TO HERE
+________________________________________________________________________________
 
 rm -rf gcc-4.8.5
 
