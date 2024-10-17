@@ -1,0 +1,10 @@
+./xml
+     ignore build errors
+          ll $UAL/gui/libxml2-2.9.7/.libs/libxml2.so.2.9.7 
+
+./qt
+
+setenv PATH_HOLD $PATH
+setenv PATH /home/talman3/gcc/INSTALL-4.8.5/bin:$PATH
+./root
+setenv PATH $PATH_HOLD
