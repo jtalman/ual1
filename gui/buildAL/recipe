@@ -8,3 +8,20 @@ setenv PATH_HOLD $PATH
 setenv PATH /home/talman3/gcc/INSTALL-4.8.5/bin:$PATH
 ./root
 setenv PATH $PATH_HOLD
+echo $PATH
+     "system gcc and g++"
+
+echo "mu"
+./mu
+
+echo "ROOT"
+./ROOT
+
+echo "QT"
+./QT
+
+echo "player"
+./player
+
+echo "list"
+./list
