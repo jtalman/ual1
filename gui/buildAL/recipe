@@ -2,6 +2,10 @@
      ignore build errors
           ll $UAL/gui/libxml2-2.9.7/.libs/libxml2.so.2.9.7 
 
+???
+su
+dnf -y install libX11-devel
+???
 ./qt
 
 follow
