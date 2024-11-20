@@ -5,6 +5,7 @@
 ???
 su
 dnf -y install libX11-devel
+dnf -y install libXext-devel
 ???
 ./qt
 
