@@ -7,6 +7,8 @@ su
 dnf -y install libX11-devel
 dnf -y install libXext-devel
 dnf -y install libXpm-devel
+dnf -y install libGLU
+dnf -y install libGLU-devel
 ???
 ./qt
 
