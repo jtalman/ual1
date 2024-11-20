@@ -38,7 +38,7 @@ tar cvfz gcc-4.8.5_min_mods.tar.gz ./gcc-4.8.5
 TO HERE
 ________________________________________________________________________________
 
-pushd $UAL/gcc/4.8.5/AL94
+pushd ~/gcc/
 
 rm -rf gcc-4.8.5
 
