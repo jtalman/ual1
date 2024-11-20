@@ -12,7 +12,7 @@ e.g. in
      /home/talman/gcc/INSTALL-4.8.5/
 
 setenv PATH_HOLD $PATH
-setenv PATH /home/talman3/gcc/INSTALL-4.8.5/bin:$PATH
+setenv PATH /home/talman/gcc/INSTALL-4.8.5/bin:$PATH
 ./root
 setenv PATH $PATH_HOLD
 echo $PATH
