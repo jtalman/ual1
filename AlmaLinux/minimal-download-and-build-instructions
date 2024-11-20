@@ -43,9 +43,6 @@ Verify:
 --------------------------------------------------------------------------------------
 
 GUI:
-      cd $UAL/gui/build
-      ./all
-   OR
       cd $UAL/gui/buildAL
       "follow recipe"
 
