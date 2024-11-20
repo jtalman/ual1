@@ -10,9 +10,13 @@ dnf -y install libXext-devel
 dnf -y install libXpm-devel
 dnf -y install libGLU
 dnf -y install libGLU-devel
+dnf -y install openldap-devel
+dnf -y install libnsl
+dnf -y install rpcgen
 
 /usr/lib64/libXmu.so
 /usr/lib64/libXi.so
+/usr/lib64/libnsl.so
 
 exit
 ???
