@@ -4,6 +4,13 @@
 
 ./qt
 
+follow
+     $UAL/gcc/4.8.5/AL94/recipe
+to install
+     gcc4.8.5
+e.g. in
+     /home/talman/gcc/INSTALL-4.8.5/
+
 setenv PATH_HOLD $PATH
 setenv PATH /home/talman3/gcc/INSTALL-4.8.5/bin:$PATH
 ./root
