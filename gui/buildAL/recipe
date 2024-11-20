@@ -6,6 +6,7 @@
 su
 dnf -y install libX11-devel
 dnf -y install libXext-devel
+dnf -y install libXpm-devel
 ???
 ./qt
 
