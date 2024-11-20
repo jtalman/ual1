@@ -38,6 +38,8 @@ tar cvfz gcc-4.8.5_min_mods.tar.gz ./gcc-4.8.5
 TO HERE
 ________________________________________________________________________________
 
+pushd $UAL/gcc/4.8.5/AL94
+
 rm -rf gcc-4.8.5
 
 tar xvfz gcc-4.8.5_min_mods.tar.gz
@@ -45,7 +47,7 @@ cd gcc-4.8.5
 
 ./contrib/download_prerequisites
 
-./configure --prefix=/home/talman3/gcc/INSTALL-4.8.5 --enable-languages=c,c++ --disable-multilib --disable-bootstrap
+./configure --prefix=/home/talman/gcc/INSTALL-4.8.5 --enable-languages=c,c++ --disable-multilib --disable-bootstrap
 make
 make install
           no root involved
