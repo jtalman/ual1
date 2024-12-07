@@ -42,7 +42,8 @@ OBJ_DIR  = ./lib/$(UAL_ARCH)/obj
 OBJS = $(OBJ_DIR)/positionPrinter.o \
 	$(OBJ_DIR)/xmgracePrint.o
 
-compile : $(OBJS) ./evolver ./transferMatrix ./determineTwiss ./transferMatrices ./orbitsWithSpin ./ETEAPOT_MltTurn ./spinOrbits
+ compile : $(OBJS) ./evolver ./transferMatrix ./determineTwiss ./transferMatrices ./orbitsWithSpin ./ETEAPOT_MltTurn 
+#compile : $(OBJS) ./evolver ./transferMatrix ./determineTwiss ./transferMatrices ./orbitsWithSpin ./ETEAPOT_MltTurn ./spinOrbits
 #compile : $(OBJS) ./evolver ./transferMatrix ./determineTwiss ./transferMatrices ./orbitsWithSpin ./ETEAPOT_MltTurn ./manualTune ./spinOrbits
 
 clean :
