@@ -1,4 +1,4 @@
-Benchmark-IV Instructions, 4 Dec. 2019
+Benchmark-IV Instructions, 4 Dec. 2019      Fri Dec  6 08:47:40 AM EST 2024   Quick check
 --------------------------
 1. Assume git download and build have been completed, and environment variables
    correctly set.
@@ -31,3 +31,12 @@ Benchmark-IV Instructions, 4 Dec. 2019
          $ cd latex/E_benchmark_IV_updated
          $ pdflatex E_benchmark_IV.tex
    to produce chapter "E_benchmark-IV.pdf".
+
+Fri Dec  6 08:47:40 AM EST 2024
+Quick check
+7. (a) Pick and one of the run scripts e.g.
+          runExampleFor_ETEAPOT_BM-IV-MltTurn-BM-IV-Figure6
+   (b) gnuplot
+        load "gnuplot/BM-IV_Figure6.gnuplot"
+   (c) evince pdf/BM-IV_Figure6r.pdf   latex/E_benchmark_IV_updated/pdf/BM-IV_Figure6r.pdf
+        Except for different time stamps, these plots should agree

@@ -1,4 +1,5 @@
-Benchmark-III Instructions, 16 Nov. 2019
+Benchmark-III Instructions, 16 Nov. 2019      Thu Dec  5  2024   Quick check; run full Benchmark,
+                                                                                                                          then compare new with old
 --------------------------
 1. Assume git download and build have been completed, and environment variables
    correctly set.
@@ -51,3 +52,29 @@ Benchmark-III Instructions, 16 Nov. 2019
 NOTE: All figure numbers are displaced by 2 from the figure numbers in the
       report because the first two figures in the original report have been
       suppressed.
+
+
+8. Thu Dec  5  2024
+    Quick check
+a) select and run the entire (and only) run script;  "runExampleFor_ETEAPOT_BM-III-MltTurn-mod"
+    ending with
+b)    gnuplot
+         load "gnuplot/BM-III_Figure3.gnuplot"
+         load "gnuplot/BM-III_Figure4.gnuplot"
+         load "gnuplot/BM-III_Figure5-6.gnuplot"
+         load "gnuplot/BM-III_Figure7.gnuplot"
+         load "gnuplot/BM-III_Figure8.gnuplot"
+         load "gnuplot/BM-III_Figure9.gnuplot"
+         load "gnuplot/BM-III_Figure10.gnuplot"
+         load "gnuplot/BM-III_Figure11.gnuplot"
+         load "gnuplot/BM-III_Figure12.gnuplot"
+         load "gnuplot/BM-III_Figure13.gnuplot"
+c}   evince   pdf/BM-III_Figure8.pdf    latex/E_benchmark_III_updated/pdf/BM-III_Figure8.pdf
+
+
+
+
+
+                        
+g) These can be compared, paying special attention to time stamps, with previous graphs
+      evince pdf/Fig_III-5.pdf   latex/E_benchmark_III_updated/pdf/Fig_III-5.pdf

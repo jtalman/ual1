@@ -1,4 +1,4 @@
-ETEAPOT-benchmarks/I  Instructions, 3 Dec. 2022
+ETEAPOT-benchmarks/I  Instructions, 3 Dec. 2022       Wed Dec  5 2024 Quick check added.
 -------------------------------
 1. Assume git download and build have been completed, and environment variables
    correctly set.
@@ -47,3 +47,12 @@ each concluding with a gnuplot script to produce plots.
          $ cd E_benchmark_I_updated
          $ pdflatex E_benchmark_I-updated.tex
    to produce chapter "E_benchmark-I.pdf".
+
+Thu Dec  5 AM EST 2024
+
+9. Quick check:
+a) select and run a single rub script; e.g. "runExample_Figure_4"
+b) this should have produced   ../pdf/      Fig_I-4b.pdf
+                                                                Fig_I-4t.pdf
+c) These can be compared, paying special attention to time stamps, with previous graphs
+      evince .../pdf/Fig_I-4b.pdf  latex/E_benchmark_I_updated/pdf/Fig_I-4b.pdf
