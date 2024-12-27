@@ -56,7 +56,7 @@ __________________________________________________________________
 
 setenv PATH_HOLD $PATH
 echo $PATH
-setenv PATH /home/talman/gcc/INSTALL-4.8.5/bin:$PATH
+setenv PATH /home/talman3/gcc/INSTALL-4.8.5/bin:$PATH
 echo $PATH
 
 ./root
