@@ -6,12 +6,12 @@ You should have already executed
 Some assumptions that may have to bw tweaked for your installation:
    - gcc4.8.5
           installed in
-               /home/talman/gcc/INSTALL-4.8.5/
+               /home/talman3/gcc/INSTALL-4.8.5/
    - $UAL/gui/root_v4.04.02.source-SL7.6Nitrogen-UAL-mod/config/Makefile.config 
           has hard coded values for
-               QTLIB          := /home/talman/Desktop/GIT/download/ual1/gui/qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod/lib/libqt-mt.so.3.3.4
-               QTINCDIR       := $(filter-out /usr/include, /home/talman/Desktop/GIT/download/ual1/gui/qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod/include/)
-               QTMOCEXE       := /home/talman/Desktop/GIT/download/ual1/gui/qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod/bin/moc
+               QTLIB          := /home/talman3/Desktop/GIT/download/ual1/gui/qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod/lib/libqt-mt.so.3.3.4
+               QTINCDIR       := $(filter-out /usr/include, /home/talman3/Desktop/GIT/download/ual1/gui/qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod/include/)
+               QTMOCEXE       := /home/talman3/Desktop/GIT/download/ual1/gui/qt-x11-free-3.3.4-SL7.6Nitrogen-UAL-mod/bin/moc
 __________________________________________________________________
 __________________________________________________________________
 __________________________________________________________________
@@ -51,7 +51,7 @@ follow
 to install
      gcc4.8.5
 e.g. in
-     /home/talman/gcc/INSTALL-4.8.5/
+     /home/talman3/gcc/INSTALL-4.8.5/
 __________________________________________________________________
 
 setenv PATH_HOLD $PATH
