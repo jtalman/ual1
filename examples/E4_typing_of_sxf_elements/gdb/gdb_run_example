@@ -1,4 +1,4 @@
-cp gdbinit ~/.gdbinit
+cp gdb/gdbinit ~/.gdbinit
 
 make clean
 make
