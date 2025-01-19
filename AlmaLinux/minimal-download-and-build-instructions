@@ -47,7 +47,8 @@ Verify:
 
 GUI:
       cd $UAL/gui/buildAL
-      "follow recipe"
+      follow "user recipe"
+            e.g. ./ualusr2011/recipe
 
 Documentation:
       Online documentation is available. A README is in directory $UAL/doc/
