@@ -38,7 +38,10 @@ Build:
 Verify:
       emacs make.log
               check for errors
-              (hopefully just two unimportant vestigial "html errors" that are ignored by make)
+              (hopefully just
+                        two unimportant vestigial "html errors" that are ignored by make,
+              and
+                        five unimportant warnings that are ignored by make)
 --------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------
