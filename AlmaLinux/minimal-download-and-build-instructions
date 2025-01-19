@@ -23,13 +23,12 @@ Setup Environment:
       source setup-linux-ual
 --------------------------------------------------------------------------------------
 "Patch for AlmaLinux":
-      cp AlmaLinux/codes_PAC_src_Templates_PacRbTree.h codes/PAC/src/Templates/PacRbTree.h
-      cp AlmaLinux/tools_sxf_src_sxf_Makefile tools/sxf/src/sxf/Makefile
+      \cp AlmaLinux/codes_PAC_src_Templates_PacRbTree.h codes/PAC/src/Templates/PacRbTree.h
+      \cp AlmaLinux/tools_sxf_src_sxf_Makefile tools/sxf/src/sxf/Makefile
 
-(gui) 
-      cp AlmaLinux/all gui/build/all
-      cp AlmaLinux/libxml2-2.9.7-pre-configured.tar.gz gui/libxml2-git-snapshot.tar.gz
-      cp AlmaLinux/gui_ROOT_src_UAL_ROOT_Viewers_TwissViewer.cc gui/ROOT/src/UAL/ROOT/Viewers/TwissViewer.cc
+      \cp AlmaLinux/all gui/build/all
+      \cp AlmaLinux/libxml2-2.9.7-pre-configured.tar.gz gui/libxml2-git-snapshot.tar.gz
+      \cp AlmaLinux/gui_ROOT_src_UAL_ROOT_Viewers_TwissViewer.cc gui/ROOT/src/UAL/ROOT/Viewers/TwissViewer.cc
 --------------------------------------------------------------------------------------
 Build:
       make clean
