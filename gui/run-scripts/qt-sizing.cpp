@@ -16,7 +16,10 @@ int main(int argc, char *argv[]) {
 //    setGeometry(x, y, w, h);
 
     QWidget *window = new QWidget;
-    window->resize(width, height);
+
+    window->resize(w    , h     );
+//  window->resize(width, height);
+
     QPushButton *button = new QPushButton("Click me", window);
     button->show();
     window->show();
