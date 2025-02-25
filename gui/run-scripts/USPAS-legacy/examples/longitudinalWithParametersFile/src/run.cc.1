@@ -162,17 +162,7 @@ int main(int argc, char *argv[])
 
   // SoQt::init(gtPlayer);
 
-/*
-  QFont newFont("Courier", 24, QFont::Bold, true);
-  QApplication::setFont(newFont);
-  QFont font("Arial", 12);
-  QApplication::setFont(font);
-*/
-
   qtApp.setMainWidget(player);
-  int w = QApplication::desktop()->width();
-  int h = QApplication::desktop()->height();
-  player->resize(w,h);
   player->show();
 
   qtApp.exec();

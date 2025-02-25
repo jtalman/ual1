@@ -60,14 +60,6 @@ void UAL::QT::BeamEditor::initTable()
 {
   label->setText( tr( "Beam Parameters" ) );
 
-  QFont font;
-  font.setFamily(QString::fromUtf8("DejaVu Sans"));
-  font.setPointSize(16);
-  font.setBold(true);
-  font.setWeight(75);
-  label->setFont( font );
-  table->setFont( font );
-
   table->setNumCols(3);
 
   table->horizontalHeader()->setLabel(0, tr("Parameter"));
