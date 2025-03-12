@@ -8,6 +8,10 @@ AlmaLinux:
            AlmaLinux!!!
 --------------------------------------------------------------------------------------
 
+Scientific Linux has it's own, similar, recipe:
+   https://github.com/jtalman/ual1/blob/master/minimal-download-and-build-instructions
+
+
 You may already have a version of the bits in e.g. directory "~/UAL/ual1" (or something similar)
 If so, rm -rf them, or rename it.
 
