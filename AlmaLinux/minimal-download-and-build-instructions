@@ -10,7 +10,7 @@ AlmaLinux:
 
 Scientific Linux has it's own, similar, recipe:
    https://github.com/jtalman/ual1/blob/master/minimal-download-and-build-instructions
-
+--------------------------------------------------------------------------------------
 
 You may already have a version of the bits in e.g. directory "~/UAL/ual1" (or something similar)
 If so, rm -rf them, or rename it.
@@ -50,9 +50,11 @@ Verify:
 --------------------------------------------------------------------------------------
 
 GUI:
-      cd $UAL/gui/buildAL
-      follow "user recipe"
-            e.g. ./ualusr2011/recipe
+      identify user, e.g. ualusr2011
+      the following assumes that ualusr2011 is, in fact, the user
+
+      cd $UAL/gui/buildAL/ualusr2011
+            follow file recipe
 
 Documentation:
       Online documentation is available. A README is in directory $UAL/doc/
