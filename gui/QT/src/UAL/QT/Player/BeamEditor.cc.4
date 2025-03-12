@@ -38,15 +38,12 @@ void UAL::QT::BeamEditor::setShell(UAL::QT::PlayerShell* shell)
   table->setText(7, 1, QString::number(p_shell->getCtHalfWidth()));
   table->setText(8, 1, QString::number(p_shell->getDeHalfWidth()));
 
+//table->setText( 9, 1, QString::number( -9999 ) );
   table->setText( 9, 1, QString::number( p_shell->getTurns() ) );
   table->setText( 10, 1, QString::number( p_shell->getPlotUpdates() ) );
+
   table->setText( 11, 1, QString::number( p_shell->getNbins() ) );
   table->setText( 12, 1, QString::number( p_shell->getNsteps() ) );
-
-//table->setText(  9, 1, QString::number( -9999 ) );
-//table->setText( 10, 1, QString::number( -8888 ) );
-//table->setText( 11, 1, QString::number( -7777 ) );
-//table->setText( 12, 1, QString::number( -6666 ) );
 
   std::cout << __FILE__ << ": " << __LINE__ << " leave void UAL::QT::BeamEditor::setShell(UAL::QT::PlayerShell* shell): p_shell->getTurns() " << p_shell->getTurns() << "\n";
 }
