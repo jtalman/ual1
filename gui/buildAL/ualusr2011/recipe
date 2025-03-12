@@ -23,23 +23,26 @@ __________________________________________________________________
                5,313,136
 __________________________________________________________________
 
+These only have to be done once:
+
 ???
-su
+      su
 
-dnf -y install libX11-devel
-dnf -y install libXext-devel
-dnf -y install libXpm-devel
-dnf -y install libGLU
-dnf -y install libGLU-devel
-dnf -y install openldap-devel
-dnf -y install libnsl
-dnf -y install rpcgen
+      dnf -y install libX11-devel
+      dnf -y install libXext-devel
+      dnf -y install libXpm-devel
+      dnf -y install libGLU
+      dnf -y install libGLU-devel
+      dnf -y install openldap-devel
+      dnf -y install libnsl
+      dnf -y install rpcgen
 
-/usr/lib64/libXmu.so
-/usr/lib64/libXi.so
-/usr/lib64/libnsl.so
+      /usr/lib64/libXmu.so
+      /usr/lib64/libXi.so
+      /usr/lib64/libnsl.so
 
-exit
+      exit
+to here.
 ???
 __________________________________________________________________
 
@@ -63,7 +66,7 @@ echo $PATH
 ./root
      1,092,328
 
-ll ../root_v4.04.02.source-SL7.6Nitrogen-UAL-mod/lib/ | wc -l
+ll ../../root_v4.04.02.source-SL7.6Nitrogen-UAL-mod/lib/ | wc -l
      47
 
 setenv PATH $PATH_HOLD
@@ -91,7 +94,7 @@ echo "player"
      230,448
 __________________________________________________________________
 
-cd ../../run-scripts
-echo "./run-longitudinalWithParametersFile"
-./run-longitudinalWithParametersFile
+cd ../../run-scripts/USPAS-legacy/examples/RT-transition
+
+./run-RT-transition
 __________________________________________________________________
