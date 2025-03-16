@@ -1,9 +1,12 @@
+// Qt
 #include <qapplication.h>
-
-#include<TRint.h>
-#include<TSystem.h>
-#include<TStyle.h>
-
+// Coin 3D
+// #include <Inventor/Qt/SoQt.h>
+// Root
+#include "TRint.h"
+#include <TSystem.h>
+#include <TStyle.h>
+// DA
 #include "ZLIB/Tps/Space.hh"
 
 #include "UAL/QT/Player/PlayerShell.hh"
@@ -26,8 +29,8 @@ int main(int argc, char *argv[])
   std::cout << argc << std::endl;
 
   std::string lattice      = argv[1];   // "ring";
-  std::string latticeFile  = argv[2];   // "../../lattices/general_fodo.sxf"; 
-  std::string apdfFile     = argv[3];   // "$UAL/gui/USPAS/examples/project/apdf/eteapot.apdf";
+  std::string latticeFile  = argv[2];   // "../../lattices/eq_tune_fodo.adxf"; 
+  std::string apdfFile     = argv[3];   // "../apdf/tibetan.apdf";
 
   // ************************************************************************
   std::cout << "Declare Qt, ROOT, DA, UAL environment." << std::endl;
@@ -122,14 +125,28 @@ int main(int argc, char *argv[])
   std::cout << "Open the Player application." << std::endl;
   // ************************************************************************  
 
+#include"parameters"
+  shell.setBunchSize(bunchSize);                     // NOT ACTIVE
+  shell.setBunch(Args() << Arg("np", bunchSize));
+
+  shell.setTurns(turns);
+  shell.setPlotUpdates(plotUpdates);
+  std::cout << __LINE__ << "\n";
+  shell.setNbins(nbins);
+  shell.setNsteps(nsteps);
+
   UAL::USPAS::BasicPlayer* player = new UAL::USPAS::BasicPlayer();
   player->setShell(&shell);
-  player->setTurns(10000);
+//player->setTurns(10000);
+  player->setTurns(turns);
   player->setFprint(100);
 
   // SoQt::init(gtPlayer);
 
   qtApp.setMainWidget(player);
+  int w = QApplication::desktop()->width();
+  int h = QApplication::desktop()->height();
+  player->resize(w,h);
   player->show();
 
   qtApp.exec();
